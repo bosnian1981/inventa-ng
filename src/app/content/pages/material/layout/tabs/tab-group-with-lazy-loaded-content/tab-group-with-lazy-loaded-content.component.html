@@ -1,0 +1,64 @@
+<div class="mda-card mda-card-material animated delay-02">
+  <div class="mda-card-header low">
+    <div class="mda-card-header-title">Tab group where the tab content is loaded lazily (when activated)</div>
+    <div class="mda-card-control">
+        <a matTooltip="more info ..." href="https://material.angular.io/components/categories" target="_blank">
+          <i class="fa fa-link"></i>
+        </a>
+      </div>
+  </div>
+  <div class="mda-card-body">
+
+    <div class="mda-card-body-inner">
+
+      <mat-tab-group>
+        <mat-tab label="UI">
+            <mat-tab-group>
+                <mat-tab label="First">
+                  <ng-template matTabContent>
+                    Content 1 - Loaded: {{getTimeLoaded(1) | date:'medium'}}
+                  </ng-template>
+                </mat-tab>
+                <mat-tab label="Second">
+                  <ng-template matTabContent>
+                    Content 2 - Loaded: {{getTimeLoaded(2) | date:'medium'}}
+                  </ng-template>
+                </mat-tab>
+                <mat-tab label="Third">
+                  <ng-template matTabContent>
+                    Content 3 - Loaded: {{getTimeLoaded(3) | date:'medium'}}
+                  </ng-template>
+                </mat-tab>
+              </mat-tab-group>
+              
+        </mat-tab>
+
+        <mat-tab label="HTML">
+          <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button ngxClipboard (click)="copy('html')">
+            <i class="fa fa-copy"></i>
+          </button>
+          <pre>
+            <code highlight [code]="htmlCode"></code>
+          </pre>
+        </mat-tab>
+        <mat-tab label="TS">
+          <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button ngxClipboard (click)="copy('ts')">
+            <i class="fa fa-copy"></i>
+          </button>
+          <pre>
+            <code highlight [code]="tsCode"></code>
+          </pre>
+        </mat-tab>
+        <mat-tab label="CSS">
+          <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button ngxClipboard (click)="copy('css')">
+            <i class="fa fa-copy"></i>
+          </button>
+          <pre>
+            <code highlight [code]="cssCode"></code>
+          </pre>
+        </mat-tab>
+      </mat-tab-group>
+
+    </div>
+  </div>
+</div>

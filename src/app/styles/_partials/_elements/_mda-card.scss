@@ -1,0 +1,208 @@
+.mda-card {
+  display: flex;
+  flex-direction: column;
+  @include shadow($card-shadow);
+  border-radius: 5px;
+  .mda-card-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-grow: 0;
+    height: 40px;
+    background: $card-header-bg;
+    border-bottom: 1px solid $card-header-border;
+    border-radius: 5px 5px 0 0;
+    padding: 0 15px;
+    &.low {
+      height: ($card-header-height / 1.5) + px;
+    }
+    .mda-card-header-title {
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
+      font-weight: 500;
+      color: $card-header-fg;
+      .fa {
+        font-size: 1.4rem !important;
+        margin-right: 10px !important;
+      }
+    }
+    .mda-card-control {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-grow: 1;
+      a {
+        display: flex;
+        align-items: center;
+        i {
+          font-size: 1.3rem;
+        }
+      }
+    }
+    .mda-card-header-subtitle {
+      font-size: 0.7rem;
+      font-weight: 500;
+    }
+    .mda-card-header-image {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      .mat-icon {
+        @include icon-size(50);
+        font-size: 30px;
+        border-radius: 50%;
+        text-align: center;
+        border-radius: 50%;
+        text-align: center;
+        color: $toolbar-card-header-image-icon-fg;
+      }
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+  .mda-card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-items: start;
+    flex-grow: 1;
+    background: $card-body-bg;
+    border-radius: 0 0 5px 5px;
+    .mda-card-body-inner {
+      width: 100%;
+      padding: 20px;
+    }
+    ul.card-list {
+      width: 100%;
+      li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 15px;
+        border-bottom: 1px solid $card-list-item-border;
+        &:last-child {
+          border: none;
+        }
+        font-weight: 400;
+        font-size: 0.9rem;
+        a {
+          color: $card-body-item-text-color;
+        }
+        .mat-progress-bar {
+          margin-top: 3px;
+        }
+        &:hover {
+          background: $card-body-item-hover-bg;
+          cursor: pointer;
+        }
+        .mda-card-body-item-image {
+          width: 40px;
+          i,
+          img {
+            @include shadow($card-item-image-shadow);
+          }
+          img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+          }
+          i {
+            text-align: center;
+            font-size: 25px;
+            color: $card-body-item-icon-bg;
+            width: 40px;
+            height: 40px;
+            padding-left: 2px;
+            line-height: 40px !important;
+            border-radius: 50%;
+          }
+        }
+        .mda-card-body-item-text {
+          flex-grow: 1;
+          padding-left: 20px;
+          color: $card-body-item-text-color;          
+          span {
+            font-size: 0.7rem;
+            font-weight: 400;
+            opacity: 0.7;
+          }
+        }
+        &:hover {
+          opacity: 0.7;
+        }
+        &:active {
+          outline: 0 !important;
+        }
+      }
+    }
+  }
+  .mda-card-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: right;
+    align-items: center;
+    justify-content: flex-end;
+    height: 50px;
+    width: 100%;
+    background: $card-footer-bg;
+    .mda-card-footer-summary {
+      font-size: 0.9rem;
+      padding-left: 15px;
+      padding-bottom: 3px;
+      color: $toolbar-card-footer-text-color;
+      opacity: 0.7;
+    }
+    .mda-card-footer-action {
+      flex-grow: 1;
+      text-align: right;
+
+      button {
+        margin-right: 10px;
+        color: $toolbar-card-footer-text-color;
+        &:hover {
+          opacity: 0.8;
+        }
+        &.mat-raised-button {
+          @include shadow($card-item-image-shadow);
+        }
+      }
+    }
+  }
+  &.transparent {
+    background: none;
+    .mda-card-header {
+      background: none !important;
+      justify-content: center;
+      .mda-card-header-title {
+        text-align: center;
+      }
+    }
+    .mda-card-body {
+      background: none;
+    }
+  }
+  &.mda-card-material {
+    border-radius: 5px;
+    .mda-card-header {
+      border-radius: 5px 5px 0 0;
+    }
+  }
+  &.b-radius-5 {
+    border-radius: 5px;
+    .mda-card-header {
+      border-radius: 5px 5px 0 0;
+    }
+    .mda-card-footer {
+      border-radius: 0 0 5px 5px;
+    }
+  }
+}

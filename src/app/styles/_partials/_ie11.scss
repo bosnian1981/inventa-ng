@@ -1,0 +1,51 @@
+_:-ms-fullscreen,
+:root {
+  .layout-default {
+    &.navbar-position-left {
+      &.navbar-width-default {
+        .mda-card.mda-card-search {
+          left: $vertical-navigation-width-default + px;
+        }
+        &.chat-position-left {
+          .mda-card.mda-card-search {
+            left: $vertical-navigation-width-default + $chat-width + px;
+          }
+        }
+      }
+      &.navbar-width-folded {
+        .mda-card.mda-card-search {
+          left: $vertical-navigation-width-folded + px;
+        }
+        &.chat-position-left {
+          .mda-card.mda-card-search {
+            left: $vertical-navigation-width-folded + $chat-width + px;
+          }
+        }
+      }
+    }
+    &.navbar-position-right {
+      &.navbar-width-default {
+        .mda-toolbar-right .toolbar .mda-card {
+          right: $vertical-navigation-width-default + $chat-width + px !important;
+        }
+      }
+      &.navbar-width-folded {
+        .mda-toolbar-right .toolbar .mda-card {
+          right: $vertical-navigation-width-folded + $chat-width + px !important;
+        }
+      }
+      &.chat-position-left {
+        &.navbar-width-default {
+          .mda-toolbar-right .toolbar .mda-card {
+            right: $vertical-navigation-width-default + px !important;
+          }
+        }
+        &.navbar-width-folded {
+          .mda-toolbar-right .toolbar .mda-card {
+            right: $vertical-navigation-width-folded + px !important;
+          }
+        }
+      }
+    }
+  }
+}

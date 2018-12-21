@@ -1,0 +1,174 @@
+.mda-charts {
+  .mda-card {
+    margin-bottom: 30px;
+    .mda-card-body {
+      min-height: 350px;
+    }
+  }
+  &.mda-ngx-charts {
+    .mda-card-body {
+      height: 400px;
+    }
+  }
+}
+
+.chart-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  .chart-wrapper-inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    padding: 0 10px 10px;
+    caption {
+      margin: 0 15px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+      color: $chart-caption-color;
+    }
+    .chart-body {
+      height: 100%;
+      width: 100%;
+      text-align: center;
+    }
+  }
+  .ngx-charts {
+    text {
+      fill: color(light-grey, light) !important;
+    }
+  }
+}
+
+.ngx-charts {
+  text {
+    fill: $chart-color-text-med;
+  }
+
+  .tooltip-anchor {
+    fill: rgb(255, 255, 255);
+  }
+
+  .gridline-path {
+    stroke: $chart-color-bg-med;
+  }
+
+  .refline-path {
+    stroke: $chart-color-bg-light;
+  }
+
+  .reference-area {
+    fill: #fff;
+  }
+
+  .grid-panel {
+    &.odd {
+      rect {
+        fill: rgba(255, 255, 255, 0.05);
+      }
+    }
+  }
+
+  .force-directed-graph {
+    .edge {
+      stroke: $chart-color-bg-light;
+    }
+  }
+
+  .number-card {
+    p {
+      color: $chart-color-text-light;
+    }
+  }
+
+  .gauge {
+    .background-arc {
+      path {
+        fill: $chart-color-bg-med;
+      }
+    }
+
+    .gauge-tick {
+      path {
+        stroke: $chart-color-text-med;
+      }
+      text {
+        fill: $chart-color-text-med;
+      }
+    }
+  }
+
+  .linear-gauge {
+    .background-bar {
+      path {
+        fill: $chart-color-bg-med;
+      }
+    }
+
+    .units {
+      fill: $chart-color-text-dark;
+    }
+  }
+
+  .timeline {
+    .brush-background {
+      fill: rgba(255, 255, 255, 0.05);
+    }
+
+    .brush {
+      .selection {
+        fill: rgba(255, 255, 255, 0.1);
+        stroke: #aaa;
+      }
+    }
+  }
+
+  .polar-chart .polar-chart-background {
+    fill: rgb(30, 34, 46);
+  }
+}
+
+.chart-legend {
+  .legend-labels {
+    background: rgba(255, 255, 255, 0.05) !important;
+  }
+
+  .legend-item {
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .legend-label {
+    &:hover {
+      color: #fff !important;
+    }
+
+    .active {
+      .legend-label-text {
+        color: #fff !important;
+      }
+    }
+  }
+
+  .scale-legend-label {
+    color: $chart-color-text-med;
+  }
+}
+
+.advanced-pie-legend {
+  color: $chart-color-text-med;
+
+  .legend-item {
+    &:hover {
+      color: #fff !important;
+    }
+  }
+}
+
+.number-card .number-card-label {
+  font-size: 0.8em;
+  color: $chart-color-text-med;
+}

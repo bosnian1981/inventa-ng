@@ -1,0 +1,107 @@
+<div class="auth-page animated bounceInLeft">
+  <div class="row no-gutters">
+    <div class="col-md-6">
+      <div class="mda-card text-center">
+        <div class="mda-card-header">
+          <div class="mda-card-header-title">
+            <i class="fa fa-sign-in"></i> Login
+          </div>
+          <a routerLink="/auth/register" class="transition">
+            Don't have an account? Sign up now!
+          </a>
+        </div>
+        <div class="mda-card-body">
+          <form
+            [formGroup]="form"
+            (ngSubmit)="onSubmit(form.value)"
+            class="text-left"
+          >
+            <div class="form-group">
+              <mat-form-field class="w-100">
+                <input
+                  autocomplete="new-email"
+                  matInput
+                  placeholder="Email"
+                  formControlName="email"
+                  [errorStateMatcher]="matcher"
+                />
+                <mat-error *ngIf="email.hasError('email')">
+                  Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="email.hasError('required')">
+                  Email is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="form-group">
+              <mat-form-field class="w-100">
+                <input
+                  autocomplete="new-password"
+                  type="password"
+                  matInput
+                  placeholder="Password"
+                  formControlName="password"
+                  [errorStateMatcher]="matcher"
+                />
+                <mat-error *ngIf="password.hasError('minlength')">
+                  Password isn't long enough, minimum of 6 characters
+                </mat-error>
+                <mat-error *ngIf="password.hasError('required')">
+                  Password is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="form-group mt-4 d-flex justify-content-between">
+              <div class="row p-0 no-gutters">
+                <div class="col-sm-6 text-left">
+                  <mat-slide-toggle class="example-margin" [checked]="checked">
+                    Keep me signed in.
+                  </mat-slide-toggle>
+                </div>
+                <div class="col-sm-6 text-right">
+                  <a
+                    class="transition pull-right"
+                    routerLink="/auth/recovery"
+                    href="javascript:void(0);"
+                    >Forgot password?</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="form-group mt-4">
+              <div class="row submit no-gutters">
+                <div class="col-sm-5">
+                  <button
+                    class="w-100"
+                    mat-raised-button
+                    color="primary"
+                    [disabled]="!form.valid"
+                    type="submit"
+                  >
+                    Sign in
+                  </button>
+                </div>
+
+                <div class="col-sm-7 text-right">
+                  <div
+                    class="d-flex social-icons size-100 justify-content-end align-items-center"
+                  >
+                    <a matTooltip="" class="align-middle" href="javascript:;">
+                      <i class="fa fa-thumbs-up"></i>
+                    </a>
+                    <a class="align-middle ml-3" href="javascript:;">
+                      <i class="fa fa-google-plus"></i>
+                    </a>
+                    <a class="align-middle ml-3" href="javascript:;">
+                      <i class="fa fa-twitter"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

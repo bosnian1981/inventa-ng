@@ -1,0 +1,349 @@
+// material :: start
+@import '~@angular/material/theming';
+@include mat-core();
+
+// base color defs
+$color-primary: #2E2E2E;
+$color-secondary: #59962e;
+$color-tertiary: #b8b8b8;
+$color-quaternary: rgb(206, 255, 170);
+$color-grey-light: #d4d4d4;
+$color-grey-dark: #1a1919;
+$color-shade-amount: 3%;
+$color-trans-amount: 0.5;
+
+$colors: (
+  primary: (
+    base: $color-primary,
+    light: lighten($color-primary, $color-shade-amount),
+    lighter: lighten($color-primary, $color-shade-amount * 2),
+    dark: darken($color-primary, $color-shade-amount),
+    darker: darken($color-primary, $color-shade-amount * 2),
+    trans: transparentize($color-primary, $color-trans-amount)
+  ),
+  secondary: (
+    base: $color-secondary,
+    light: lighten($color-secondary, $color-shade-amount),
+    lighter: lighten($color-secondary, $color-shade-amount * 2),
+    dark: darken($color-secondary, $color-shade-amount),
+    darker: darken($color-secondary, $color-shade-amount * 2),
+    trans: transparentize($color-secondary, $color-trans-amount)
+  ),
+  tertiary: (
+    base: $color-tertiary,
+    light: lighten($color-tertiary, $color-shade-amount),
+    lighter: lighten($color-tertiary, $color-shade-amount * 2),
+    dark: darken($color-tertiary, $color-shade-amount),
+    darker: darken($color-tertiary, $color-shade-amount * 2),
+    trans: transparentize($color-tertiary, $color-trans-amount)
+  ),
+  quaternary: (
+    base: $color-quaternary,
+    light: lighten($color-quaternary, $color-shade-amount),
+    lighter: lighten($color-quaternary, $color-shade-amount * 2),
+    dark: darken($color-quaternary, $color-shade-amount),
+    darker: darken($color-quaternary, $color-shade-amount * 2),
+    trans: transparentize($color-quaternary, $color-trans-amount)
+  ),
+  light-grey: (
+    base: $color-grey-light,
+    light: lighten($color-grey-light, $color-shade-amount),
+    dark: darken($color-grey-light, $color-shade-amount),
+    trans: transparentize($color-grey-light, $color-trans-amount)
+  ),
+  dark-grey: (
+    base: $color-grey-dark,
+    light: lighten($color-grey-dark, $color-shade-amount),
+    dark: darken($color-grey-dark, $color-shade-amount),
+    trans: transparentize($color-grey-dark, $color-trans-amount)
+  )
+);
+
+@function color($color-name, $color-variant: null) {
+  @if ($color-variant != null) {
+    @return map-get(map-get($colors, $color-name), $color-variant);
+  } @else {
+    @return map-get($colors, $color-name);
+  }
+}
+
+$primary-c: (
+  50: #61ABDB,
+  100: #1E80BF,
+  200: #08629D,
+  contrast: (
+    50: white,
+    100: white,
+    200: white
+  )
+);
+
+$secondary-c: (
+  50: #B28CC2,
+  100: #703B87,
+  200: #56226F,
+  contrast: (
+    50: white,
+    100: white,
+    200: white
+  )
+);
+
+$mat-primary: mat-palette($primary-c, 100);
+$mat-accent: mat-palette($secondary-c, 100);
+$mat-warn: mat-palette($mat-red);
+$body-bg: color(primary, dark);
+
+$theme: mat-dark-theme($mat-primary, $mat-accent, $mat-warn);
+
+// custom body background color
+$background: map-get($theme, background);
+$background: map_merge(
+  $background,
+  (
+    background: $body-bg 
+  )
+);
+$theme: map_merge(
+  $theme,
+  (
+    background: $background
+  )
+);
+
+@include angular-material-theme($theme);
+
+$mat-tooltip-bg: color(primary, darker);
+$mat-tab-body-content-bg: color(primary, base);
+// material :: end
+
+// bootstrap button :: start
+$btn-primary: map-get($primary-c, 100);
+$btn-secondary: map-get($secondary-c, 100);
+// bootstrap button :: end
+
+// shadow default :: start
+$shadow-default: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24) !important;
+// hadow default :: end
+
+// text :: start
+$text-default-color: #f5f5f5;
+$text-oposite-color: color(primary, base);
+// text :: end
+
+// header :: start
+$header-bg: color(secondary, base);
+$header-fg: color(light-grey, base) !default;
+$header-border: color(secondary, light);
+$header-shadow: none;
+$logo-bg: color(secondary, base);
+$logo-first-part-fg: #fff;
+$logo-second-part-fg: #fff;
+$logo-first-part-fg-alt: #fff;
+$logo-second-part-fg-alt: #fff;
+$logo-border-bottom: transparent;
+$header-progress-bar-after-bg: color(secondary, base);
+
+// :: search :: start
+$dropdown-search-bg: color(primary, base);
+$search-input-fg: $text-default-color;
+$search-card-icon-color: rgba($color: $text-default-color, $alpha: 0.5);
+// :: search :: end
+
+// toolbar :: start
+$toolbar-button-shadow: none;
+$toolbar-button-bg: none;
+$toolbar-button-fg: #f5f5f5;
+$toolbar-button-hover-fg: #f1f1f1;
+$toolbar-card-header-image-bg: color(secondary, lighter);
+$toolbar-card-header-image-icon-bg: color(primary, base);
+$toolbar-card-header-image-icon-fg: #b2f7fb;
+$toolbar-card-footer-text-color: $text-default-color;
+// toolbar :: end
+
+// header :: end
+
+// main section :: start
+$main-section-bg: color(primary, lighter) url('assets/images/patterns/crossword.png');
+$main-section-opacity: 0.3;
+// main section :: end
+
+// subheader :: start
+$subheader-bg1: color(secondary, dark);
+$subheader-bg2: url('assets/images/patterns/congruent_outline.png');
+$subheader-title-color: #fff;;
+$subheader-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+// :: breadcrumb :: start
+$breadcrumb-color: color(light-grey, light);
+// :: breadcrumb :: end
+// subheader :: end
+
+// main-nav :: start
+// nav vertical :: start
+$vertical-nav-bg: color(primary, base);
+$nav-expanded-bg: color(primary, light);
+$nav-selected-link: color(secondary, lighter) url('assets/images/patterns/crossword.png');
+$profile-section-bg: transparent;
+$vertical-nav-shadow: 2px 2px 12px -2px rgba(35, 38, 48, 0.8);
+$nav-toggle-button-bg: none;
+$nav-toggle-button-icon-color: #f5f5f5;
+$nav-item-border: color(primary, base);
+$nav-icon-color: color(tertiary, lighter);
+$nav-link-color: $text-default-color;
+$nav-link-hover: color(primary, dark);
+$nav-scrollbar-thumb-bg: color(light-grey, dark);
+$nav-item-font-weight: 300;
+// nav vertical :: end
+
+// nav horizontal :: start
+$nav-horizontal-bg: color(primary, dark);
+$h-nav-subnav-bg: color(primary, base);
+$h-nav-subnav-subnav-bg: transparent;
+// nav horizontal :: end
+// main-nav :: end
+
+// footer :: start
+$footer-bg: color(primary, dark);
+// footer :: end
+
+// user profile page :: start
+$profile-card-bg: color(primary, dark);
+$profile-card-title-color: $text-default-color;
+$profile-card-image-bg: color(primary, light);
+$profile-navigation-bg: color(primary, dark);
+$profile-navigation-item-hover: color(primary, light);
+$profile-content-bg: color(primary, base);
+$profile-icon-bg: color(primary, base);
+
+// chat :: start
+$chat-bg: color(primary, base);
+$chat-header-shadow: none;
+$chat-card-active-border: color(primary, base);
+$chat-card-active-bg: color(primary, lighter);
+$chat-card-active-header-bg: color(secondary, dark);
+$chat-card-active-header-border: transparent;
+$chat-card-active-header-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+$chat-card-active-footer-bg: color(dark-grey, dark);
+$chat-card-header-title-color: #f5f5f5;
+$chat-card-active-footer-border: color(light-grey, dark);
+$chat-send-msg-button: color(tertiary, base);
+$chat-send-msg-button-hover: color(quaternary, base);
+$chat-users-thumb-bg: color(primary, dark);
+$chat-active-thumb-bg: color(light-grey, base);
+$chat-input-color: color(light-grey, light);
+$chat-user-msg-bg: color(secondary, base);
+$chat-me-msg-bg: #f7f7f7;
+$chat-me-msg-fg: color(dark-grey, dark);
+$chat-time-fg: #f7f7f7;
+$chat-status-shadow: 0 0 1px #000000, 0 0 1px #000000;
+$chat-bage-color: $text-default-color;
+// chat :: end
+
+// settings :: start
+$settings-button-bg: color(secondary, light);
+$settings-button-fg: color(primary, base);
+$settings-button-shadow: -4px 1px 9px 0px rgba(201, 121, 247, 0.753);
+$settings-card-bg1: color(primary, base);
+$settings-card-bg2: url('assets/images/patterns/brushed-alum.png');
+$settings-border: color(primary, base);
+$mat-expansion-panel-bg: color(tertiary, base);
+$settings-caption-fg: rgba($color: $text-default-color, $alpha: 0.7);
+$settings-navbar-left: color(primary-base);
+$settings-navbar-right: color(primary, base);
+$skin-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+$skin-shadow-hover: 0 14px 28px rgba(0, 0, 0, 0.25),
+  0 10px 10px rgba(0, 0, 0, 0.22);
+// settings :: end
+
+// card :: start
+$card-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+$card-header-bg: color(primary, dark);
+$card-header-border: color(primary, light);
+$card-transparent-header-bg: none;
+$card-body-bg: rgba($color: color(primary, dark), $alpha: 0.7);
+$card-transparent-body-bg: none;
+$card-header-fg: $text-default-color;
+$card-list-item-border: color(primary, light);
+$card-footer-bg: color(primary, light);
+$card-body-item-icon-bg: color(secondary, base);
+$card-body-item-text-color: $text-default-color;
+$card-body-item-hover-bg: color(primary, light);
+$card-item-image-shadow: 0px 1px 15px 1px rgba(2, 160, 169, 0.5);
+$card-transparent-border: #272727;
+// card :: end
+
+// calendar :: start
+$calendar-border-color-light: color(primary, lighter);
+$calendar-border-color-dark: color(primary, darker);
+$calendar-bg1-light: color(primary, light);
+$calendar-bg1-base: color(primary, base);
+$calendar-bg1-dark: color(primary, dark);
+$calendar-bg2-light: color(dark-grey, light);
+$calendar-bg2-base: color(dark-grey, base);
+$calendar-bg2-dark: color(dark-grey, dark);
+// calendar :: end
+
+// dashboard :: start
+$dashboard-card-border: 1px solid #272727;
+$visitors-bg1: color(secondary, darker);
+$visitors-bg2: none;
+$info-card-header-bg: transparent;
+$analytics-card-bg1: color(primary, base);
+$analytics-card-bg2: color(primary, darker);
+$analytics-card-header-bg: color(primary, light);
+$marketing-chart-bg: color(primary, dark);
+$todo-card-bg: color(primary, darker);
+$todo-card-header-bg: color(primary, base);
+$todo-main-bg: color(primary, lighter) url('assets/images/patterns/cartographer.png');
+$todo-categories-bg: color(primary, base);
+$todo-categories-bg-hover: color(primary, darker);
+$todo-new-category-bg: color(primary, base);
+$todo-new-category-border: color(primary, darker);
+$todo-categories-border: color(primary, lighter);
+// dashboard :: end
+
+// chart :: start
+$chart-caption-color: $text-default-color;
+$chart-text-color: $text-default-color;
+$chart-color-bg-darkest: #13141b;
+$chart-color-bg-darker: #1b1e27;
+$chart-color-bg-dark: #232837;
+$chart-color-bg-med: #2f3646;
+$chart-color-bg-light: #455066;
+$chart-color-bg-lighter: #5b6882;
+
+$chart-color-text-dark: #72809b;
+$chart-color-text-med-dark: #919db5;
+$chart-color-text-med: #a0aabe;
+$chart-color-text-med-light: #d9dce1;
+$chart-color-text-light: #f0f1f6;
+$chart-color-text-lighter: #fff;
+// chart :: end
+
+// form :: start
+$form-label-color: $text-default-color;
+$form-input-bg: color(primary, light);
+$form-input-fg: $text-default-color;
+$form-control-border: transparent;
+// form :: end
+
+// page loader :: start
+$page-loading-wrapper-bg: rgba(0, 0, 0, 0.8);
+// page loader :: end
+
+// auth :: start
+$auth-icon-bg: color(secondary, light);
+$auth-icon-color: $text-default-color;
+$auth-card-bg: color(secondary, light);
+$auth-card-body-bg: color(primary, lighter);
+// auth :: end
+
+// hljs :: start
+$hljs-bg: color(light-grey, base);
+// hljs :: end
+
+// icons :: start
+$icon-box-bg: color(primary, base);
+$icon-box-border: color(primary, lighter);
+// icons : end

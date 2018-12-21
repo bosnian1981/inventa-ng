@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-sm-6 col-md-3" *ngFor="let item of statistics; let i = index">
+    <div [ngClass]="item.name" class="mda-card animated fadeIn delay-0{{ i }}">
+      <div class="mda-card-header low">
+        <div class="mda-card-header-title">{{ item.name | titlecase }}</div>
+        <div class="mda-card-header-icon">
+          <i class="fa fa-{{ item.icon }}"></i>
+        </div>
+      </div>
+      <div class="mda-card-body">
+        <span class="value">{{ item.value }}</span>
+      </div>
+      <div class="mda-card-footer">
+        <i class="fa fa-arrow-{{ item.changePercent < 0 ? 'down' : 'up' }}"></i>
+        {{ item.changePercent < 0 ? item.changePercent * -1 : item.changePercent }}% Since {{ item.changeSince }}
+      </div>
+    </div>
+  </div>
+</div>

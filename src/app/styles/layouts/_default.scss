@@ -1,0 +1,1133 @@
+// layout default :: start
+
+  a {
+    color: $text-default-color;
+  }
+
+  // shadow default :: start
+  .shadow {
+    @include shadow($shadow-default);
+  }
+  // shadow default :: end
+
+  pre {
+    margin-bottom: 0 !important;
+    display: flex !important;
+  }
+
+  .hljs {
+    background: $hljs-bg;
+    padding: 0 !important;
+    width: 100%;
+  }
+
+  .language-markup {
+    text-shadow: 0 1px #fff;
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 2;
+    -moz-tab-size: 2;
+    -o-tab-size: 2;
+    tab-size: 2;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .mda-nav-vertical {
+    @include media-breakpoint-up(xl) {
+      @include side('left', 'right', 0);
+    }
+
+    @include width($vertical-navigation-width-default);
+    @include transition(all, 0.3);
+
+    // @include media-breakpoint-down(lg) {
+    //   &.navbar-width-hide {
+    //     .mda-nav-vertical {
+    //       left: -$vertical-navigation-width-default + px;
+    //     }
+    //   }
+    // }
+
+    .nav-toggle-button {
+      @include media-breakpoint-up(xl) {
+        @include margin-fixed(left, $vertical-navigation-width-default - 20);
+      }
+      @include margin-fixed(top, ($header-height - 40) / 2);
+    }
+  }
+
+  &.navbar-above {
+    @include media-breakpoint-down(lg) {
+      .mda-nav-vertical {
+        z-index: 1000;
+        .nav-toggle-button {
+          @include margin-fixed(
+            left,
+            $vertical-navigation-width-default - 20,
+            !important
+          );
+        }
+      }
+    }
+
+    #overlay {
+      display: block !important;
+    }
+    &.navbar-width-folded {
+      .mda-nav-vertical .nav-toggle-button {
+        @include margin-fixed(
+          left,
+          $vertical-navigation-width-folded / 2 - 20,
+          !important
+        );
+      }
+    }
+  }
+  .mda-main-section {
+    margin-left: $vertical-navigation-width-default + px;
+    margin-right: $chat-width + px;
+    @include media-breakpoint-down(lg) {
+      margin-left: 0;
+    }
+    position: relative;
+    min-width: 0;
+    margin-right: $chat-width + px;
+    @include transition(margin-left, 0.3);
+    &::after {
+      content: '';
+      background: $main-section-bg;
+      opacity: $main-section-opacity;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      @include transition(background, 0.3);
+      z-index: -3;
+    }
+    .ps {
+      position: relative !important;
+      width: 100%;
+    }
+    .mda-main-perfect-scrollbar {
+      .ps-content {
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - #{$header-height}px);
+      }
+      .ps.ps--active-y > .ps__rail-y {
+        width: 7px;
+        background: transparent;
+        .ps__thumb-y {
+          right: 0px;
+          width: 7px;
+        }
+        &:hover,
+        &:active {
+          width: 12px;
+          background: rgba(255, 255, 255, 0.7);
+          .ps__thumb-y {
+            right: 1px;
+            width: 10px;
+            background: rgba(82, 123, 156, 0.9);
+          }
+        }
+      }
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mda-content {
+      flex-grow: 1;
+      margin: -48px 50px 30px 30px;
+      background: transparent;
+      @include media-breakpoint-down(lg) {
+        margin: -47px 20px 20px;
+      }
+    }
+  }
+  .mda-main-perfect-scrollbar {
+    @include margin-fixed('top', $header-height);
+    @include height-substract($header-height);
+  }
+  .mda-header {
+    @include position(fixed);
+    @include margin-fixed('left', $vertical-navigation-width-default);
+    @include margin-fixed('right', 0);
+    border-bottom: 1px solid $header-border;
+    @include media-breakpoint-down(lg) {
+      left: 0;
+    }
+    .logo {
+      display: none !important;
+    }
+  }
+  .mda-footer {
+    @include position(relative);
+  }
+  .mda-chat {
+    @include media-breakpoint-up(xl) {
+      @include side('right', 'left', 0);
+    }
+    @include media-breakpoint-down(lg) {
+      right: -$chat-width + px;
+    }
+  }
+
+  @include footer-fixed(
+    'footer-below-fixed',
+    $vertical-navigation-width-default,
+    $chat-width,
+    $footer-height + $header-height
+  );
+  @include media-breakpoint-down(lg) {
+    @include footer-fixed(
+      'footer-below-fixed',
+      0,
+      0,
+      $footer-height + $header-height
+    );
+    &.footer-below-fixed {
+      .mda-footer {
+        z-index: 90;
+      }
+    }
+  }
+  @include footer-fixed(
+    'footer-above',
+    0,
+    $chat-width,
+    $footer-height + $header-height
+  );
+
+  &.navbar-variant-v2 {
+    .profile-section {
+      display: none;
+    }
+  }
+
+  // layout default : chat hidden :: start
+  &.chat-hide {
+    .mda-toolbar-right .toolbar .mda-card {
+      right: 0 !important;
+    }
+    .mda-chat {
+      @include margin-fixed('right', -$chat-width);
+      .mda-chat-card-active {
+        display: none;
+      }
+      &.show {
+        @include margin-fixed('right', 0);
+        .mda-chat-card-active {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+    .mda-main-section {
+      @include margin('right', 0);
+    }
+
+    @include footer-fixed-right('footer-below-fixed', 0);
+    @include footer-fixed-right('footer-above', 0);
+  }
+  // layout default : chat hidden :: end
+
+  // layout default : chat left :: start
+  &.chat-position-left {
+    .mda-chat {
+      z-index: 107;
+      perfect-scrollbar > .ps.ps--active-y > .ps__rail-y {
+        left: 0 !important;
+        right: auto;
+      }
+      @include side('left', 'right', 0);
+      @include margin-fixed('top', 0);
+      .mda-chat-card-active {
+        top: 0;
+        left: $chat-width + px;
+        .mda-chat-card-footer {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .mda-nav-vertical {
+      @include side('left', 'right', $chat-width);
+      .nav-toggle-button {
+        @include margin-fixed(
+          left,
+          $vertical-navigation-width-default + $chat-width - 20
+        );
+      }
+    }
+    .mda-header {
+      @include margin-fixed(
+        'left',
+        $chat-width + $vertical-navigation-width-default
+      );
+    }
+    .mda-main-section {
+      @include margin('left', $chat-width + $vertical-navigation-width-default);
+      @include margin('right', 0);
+    }
+
+    @include footer-fixed-left-right(
+      'footer-below-fixed',
+      $chat-width + $vertical-navigation-width-default,
+      0
+    );
+    @include footer-fixed-left-right('footer-above', $chat-width, 0);
+
+    // layout default : navbar left : chat left : chat hidden :: start
+    &.chat-hide {
+      .mda-chat {
+        @include margin-fixed('left', -$chat-width);
+      }
+      .mda-nav-vertical {
+        @include side('left', 'right', 0);
+      }
+      .mda-header {
+        @include margin-fixed('left', $vertical-navigation-width-default);
+        @include margin-fixed('right', 0);
+        .mda-card-search {
+          width: calc(100vw - #{$vertical-navigation-width-default}px);
+        }
+      }
+      .mda-main-section {
+        @include margin('left', $vertical-navigation-width-default);
+        @include margin('right', 0);
+      }
+
+      @include footer-fixed-left(
+        'footer-below-fixed',
+        $vertical-navigation-width-default
+      );
+      @include footer-fixed-left('footer-above', 0);
+    }
+    // layout default : navbar left : chat left : chat hidden :: end
+  }
+  // layout default : chat left :: end
+
+  // layout default : navbar right :: start
+  &.navbar-position-right {
+    .logo {
+      justify-content: flex-end;
+      a {
+        padding-right: 20px;
+        img {
+          order: 2;
+          @include media-breakpoint-up(xl) {
+            margin-left: 20px;
+          }
+        }
+        span {
+          order: -1;
+        }
+      }
+    }
+
+    .mda-nav-vertical {
+      @include side('right', 'left', $chat-width);
+      .nav-toggle-button {
+        @include side(
+          right,
+          left,
+          $vertical-navigation-width-default + $chat-width - 20
+        );
+      }
+    }
+    .mda-main-section {
+      @include margin(
+        'right',
+        $chat-width + $vertical-navigation-width-default
+      );
+      @include margin('left', 0);
+    }
+    .mda-header {
+      @include margin-fixed(
+        'right',
+        $chat-width + $vertical-navigation-width-default
+      );
+      @include margin-fixed('left', 0);
+      .mda-toolbar-right {
+        padding-right: 20px;
+      }
+      .mda-toolbar-left {
+        padding-left: 20px;
+      }
+    }
+    .mda-chat {
+      @include side('right', 'left', 0);
+      @include margin-fixed('top', 0);
+      z-index: 102;
+      .mda-chat-card-active {
+        top: 0;
+        .mda-chat-card-footer {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    @include footer-fixed-left-right(
+      'footer-below-fixed',
+      0,
+      $vertical-navigation-width-default + $chat-width
+    );
+    @include footer-fixed-left-right('footer-above', 0, $chat-width);
+
+    &.header-below-static {
+      .mda-header {
+        .mda-toolbar-left {
+          padding-left: 10px;
+        }
+        .mda-toolbar-right {
+          .toolbar {
+            .mda-card {
+              @include margin-fixed(right, 5);
+            }
+          }
+        }
+      }
+    }
+
+    // layout default : navbar right : chat hidden :: start
+    &.chat-hide {
+      .mda-chat {
+        @include margin-fixed('left', -$chat-width);
+      }
+      .mda-nav-vertical {
+        @include side('right', 'left', 0);
+        .nav-toggle-button {
+          @include side(right, left, $vertical-navigation-width-default - 20);
+        }
+      }
+      .mda-header {
+        @include margin-fixed('right', $vertical-navigation-width-default);
+        .mda-card-search {
+          width: calc(100vw - #{$vertical-navigation-width-default}px);
+        }
+      }
+      .mda-main-section {
+        @include margin('left', 0);
+        @include margin('right', $vertical-navigation-width-default);
+      }
+
+      @include footer-fixed-right(
+        'footer-below-fixed',
+        $vertical-navigation-width-default
+      );
+      @include footer-fixed-right('footer-above', 0);
+
+      // layout default : navbar right : chat-hidden : navbar hidden :: start
+      &.navbar-width-hide {
+        .mda-nav-vertical {
+          @include side('right', 'left', -$vertical-navigation-width-default);
+          .nav-toggle-button {
+            @include side(
+              right,
+              left,
+              $vertical-navigation-width-folded / 2 - 12
+            );
+          }
+        }
+        .mda-header {
+          @include margin-fixed('right', 0);
+          .mda-toolbar-left {
+            padding-left: $vertical-navigation-width-folded / 2 - 20 + px;
+          }
+          .mda-toolbar-right {
+            padding-right: $vertical-navigation-width-folded + px;
+          }
+          .mda-card-search {
+            width: 100vw;
+          }
+        }
+        .mda-main-section {
+          @include margin('right', 0);
+        }
+      }
+      // layout default : navbar right : chat-hidden : navbar hidden :: end
+    }
+    // layout default : navbar right : chat hidden :: end
+
+    // layout default : navbar right : chat left :: start
+    &.chat-position-left {
+      .mda-chat {
+        @include side('left', 'right', 0);
+        @include margin-fixed('top', $header-height);
+        .mda-chat-card-active {
+          top: $header-height + px;
+          left: $chat-width + px;
+          .mda-chat-card-footer {
+            margin-bottom: $header-height + px;
+          }
+        }
+      }
+      .mda-nav-vertical {
+        @include side('right', 'left', 0);
+        .nav-toggle-button {
+          @include side(right, left, $vertical-navigation-width-default - 20);
+        }
+      }
+      .mda-header {
+        @include margin-fixed('left', 0);
+        @include margin-fixed('right', $vertical-navigation-width-default);
+        .mda-card-search {
+          left: $chat-width + px;
+        }
+        .mda-toolbar-right .toolbar .mda-card {
+          right: 0;
+          left: auto;
+        }
+      }
+      .mda-main-section {
+        @include margin('left', $chat-width);
+        @include margin('right', $vertical-navigation-width-default);
+      }
+
+      @include footer-fixed-left-right(
+        'footer-below-fixed',
+        $chat-width,
+        $vertical-navigation-width-default
+      );
+      @include footer-fixed-left-right('footer-above', $chat-width, 0);
+
+      // layout default : navbar right : chat left : header static :: start
+      &.header-below-static {
+        .mda-chat {
+          @include margin-fixed('top', 0);
+        }
+      }
+      // layout default : navbar right : chat left : header static :: end
+
+      // layout default : navbar right : chat left : chat hidden :: start
+      &.chat-hide {
+        .mda-chat {
+          @include margin-fixed('left', -$chat-width);
+        }
+        .mda-main-section {
+          @include margin('left', 0);
+        }
+
+        @include footer-fixed-left('footer-below-fixed', 0);
+        @include footer-fixed-left('footer-above', 0);
+      }
+      // layout default : navbar right : chat left : chat hidden :: end
+    }
+    // layout default : navbar right : chat left :: end
+  }
+  // layout default : navbar right :: end
+
+  // layout default : navbar folded :: start
+  &.navbar-width-folded {
+    .mda-nav-vertical {
+      @include width($vertical-navigation-width-folded);
+      .nav-toggle-button {
+        @include margin-fixed(left, $vertical-navigation-width-folded / 2 - 20);
+      }
+      .logo a {
+        display: none;
+      }
+      .profile-section {
+        display: none;
+      }
+      .navigation {
+        width: 100%;
+        margin-left: 0;
+        @include transition(all, 0.3);
+        .nav-title {
+          display: none;
+        }
+        .card {
+          a {
+            justify-content: center;
+            padding-left: $vertical-navigation-width-folded / 2 + px !important;
+            padding-right: 0 !important;
+
+            i {
+              @include icon-size(23);
+              left: auto;
+            }
+            b {
+              display: none;
+            }
+          }
+          .collapse {
+            display: none;
+          }
+        }
+        &:hover {
+          width: $vertical-navigation-width-default + px;
+          background: $vertical-nav-bg;
+          .nav-title {
+            display: table-cell;
+            white-space: nowrap;
+            overflow: hidden;
+          }
+          .card {
+            a {
+              justify-content: start;
+              padding-left: $vertical-navigation-width-folded / 2 + 20 + px !important;
+              i {
+                @include icon-size(20);
+                left: 30px;
+              }
+              b {
+                display: block;
+                overflow: hidden;
+              }
+            }
+            .collapse:not(.show) {
+              display: none;
+            }
+            .collapse.show {
+              display: block;
+            }
+          }
+          #nav0 > div.card div.card {
+            a {
+              padding-left: $vertical-navigation-width-folded / 2 + 30 + px !important;
+              i {
+                left: 40px;
+              }
+            }
+            div.card {
+              a {
+                padding-left: $vertical-navigation-width-folded / 2 + 40 + px !important;
+                i {
+                  left: 50px;
+                  &.sm {
+                    left: 70px !important;
+                  }
+                }
+              }
+              div.card {
+                a {
+                  padding-left: $vertical-navigation-width-folded / 2 + 50 + px !important;
+                  i {
+                    left: 60px;
+                    &.sm {
+                      left: 80px !important;
+                    }
+                  }
+                }
+                div.card {
+                  a {
+                    padding-left: $vertical-navigation-width-folded / 2 + 60 +
+                      px !important;
+                    i {
+                      left: 70px;
+                      &.sm {
+                        left: 90px !important;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .mda-main-section {
+      @include margin('left', $vertical-navigation-width-folded);
+    }
+    .mda-header {
+      @include margin-fixed('left', $vertical-navigation-width-folded);
+      .mda-card-search {
+        width: calc(
+          100vw - #{$vertical-navigation-width-folded + $chat-width}px
+        ) !important;
+      }
+    }
+
+    @include footer-fixed-left(
+      'footer-below-fixed',
+      $vertical-navigation-width-folded
+    );
+
+    // layout default : navbar folded : chat hidden :: start
+    &.chat-hide {
+      .mda-chat {
+        @include margin-fixed('right', -$chat-width);
+      }
+      .mda-main-section {
+        @include margin('right', 0);
+      }
+
+      .mda-card-search {
+        width: calc(100vw - #{$vertical-navigation-width-folded}px) !important;
+      }
+
+      @include footer-fixed-right('footer-below-fixed', 0);
+      @include footer-fixed-right('footer-above', 0);
+    }
+    // layout default : navbar folded : chat hidden :: end
+
+    // layout default : navbar folded : chat left :: start
+    &.chat-position-left {
+      .mda-chat {
+        @include margin-fixed('left', 0);
+        z-index: 102;
+      }
+      .mda-nav-vertical {
+        @include margin-fixed('left', $chat-width);
+        .nav-toggle-button {
+          @include margin-fixed(
+            left,
+            $vertical-navigation-width-folded + ($chat-width / 2 - 20)
+          );
+        }
+      }
+      .mda-header {
+        @include margin-fixed(
+          'left',
+          $chat-width + $vertical-navigation-width-folded
+        );
+      }
+
+      .mda-main-section {
+        @include margin(
+          'left',
+          $chat-width + $vertical-navigation-width-folded
+        );
+      }
+
+      @include footer-fixed-left-right(
+        'footer-below-fixed',
+        $chat-width + $vertical-navigation-width-folded,
+        0
+      );
+      @include footer-fixed-left-right('footer-above', $chat-width, 0);
+
+      // layout default : navbar folded : chat left : header static :: start
+      &.header-below-static {
+        .mda-header {
+          @include margin-fixed('left', 0);
+        }
+      }
+      // layout default : navbar folded : chat left : header static :: end
+
+      // layout default : navbar folded : chat left : chat hidden :: start
+      &.chat-hide {
+        .mda-chat {
+          @include margin-fixed('left', -$chat-width);
+        }
+        .mda-nav-vertical {
+          @include margin-fixed('left', 0);
+          .nav-toggle-button {
+            @include margin-fixed(left, $vertical-navigation-width-folded - 20);
+          }
+        }
+        .mda-header {
+          @include margin-fixed('left', $vertical-navigation-width-folded);
+        }
+        .mda-main-section {
+          @include margin('left', $vertical-navigation-width-folded);
+        }
+
+        @include footer-fixed-left(
+          'footer-below-fixed',
+          $vertical-navigation-width-folded
+        );
+        @include footer-fixed-left('footer-above', 0);
+      }
+      // layout default : navbar folded : chat left : chat hidden :: end
+    }
+    // layout default : navbar folded : chat left :: end
+
+    // layout default : navbar folded : navbar right :: start
+    &.navbar-position-right {
+      .mda-nav-vertical {
+        @include side('right', 'left', $chat-width);
+        .nav-toggle-button {
+          @include side(
+            right,
+            left,
+            ($vertical-navigation-width-folded / 2) - 20 + $chat-width
+          );
+        }
+        .navigation:hover {
+          margin-left: -($vertical-navigation-width-default -
+                $vertical-navigation-width-folded + px);
+        }
+      }
+      .mda-main-section {
+        @include margin(
+          'right',
+          $chat-width + $vertical-navigation-width-folded
+        );
+        @include margin('left', 0);
+      }
+      .mda-header {
+        @include margin-fixed(
+          'right',
+          $chat-width + $vertical-navigation-width-folded
+        );
+        @include margin-fixed('left', 0);
+      }
+
+      @include footer-fixed-left-right(
+        'footer-below-fixed',
+        0,
+        $vertical-navigation-width-folded + $chat-width
+      );
+      @include footer-fixed-left-right('footer-above', 0, $chat-width);
+
+      .mda-chat {
+        z-index: 102;
+      }
+
+      // layout default : navbar folded : navbar right : chat hide :: start
+      &.chat-hide {
+        .mda-chat {
+          @include margin-fixed('right', -$chat-width);
+        }
+        .mda-nav-vertical {
+          @include side('right', 'left', 0);
+          .nav-toggle-button {
+            @include margin-fixed(
+              right,
+              ($vertical-navigation-width-folded / 2) - 20
+            );
+          }
+        }
+        .mda-main-section {
+          @include margin('right', $vertical-navigation-width-folded);
+        }
+        .mda-header {
+          @include margin-fixed('right', $vertical-navigation-width-folded);
+        }
+
+        @include footer-fixed-right(
+          'footer-below-fixed',
+          $vertical-navigation-width-folded
+        );
+        @include footer-fixed-right('footer-above', 0);
+      }
+      // layout default : navbar folded : navbar right : chat hide :: end
+
+      // layout default : navbar folded : navbar right : chat left :: start
+      &.chat-position-left {
+        .mda-chat {
+          @include side('left', 'right', 0);
+        }
+        .mda-nav-vertical {
+          @include side('right', 'left', 0);
+          .nav-toggle-button {
+            @include margin-fixed(
+              right,
+              ($vertical-navigation-width-folded / 2) - 20
+            );
+          }
+        }
+        .mda-main-section {
+          @include margin('right', $vertical-navigation-width-folded);
+          @include margin('left', $chat-width);
+        }
+        .mda-header {
+          @include margin-fixed('right', $vertical-navigation-width-folded);
+          .mda-card-search {
+            left: $chat-width + px;
+          }
+        }
+
+        @include footer-fixed-left-right(
+          'footer-below-fixed',
+          $chat-width,
+          $vertical-navigation-width-folded
+        );
+        @include footer-fixed-left-right('footer-above', $chat-width, 0);
+
+        // layout default : navbar folded : navbar right : chat left : chat hide :: start
+        &.chat-hide {
+          .mda-chat {
+            @include margin-fixed('left', -$chat-width);
+          }
+          .mda-nav-vertical {
+            @include side('right', 'left', 0);
+            .nav-toggle-button {
+              @include margin-fixed(
+                right,
+                $vertical-navigation-width-folded - 20
+              );
+            }
+          }
+          .mda-main-section {
+            @include margin('left', 0);
+          }
+          .mda-header {
+            @include margin-fixed('left', 0);
+            @include margin-fixed('right', $vertical-navigation-width-folded);
+          }
+
+          @include footer-fixed-left('footer-below-fixed', 0);
+          @include footer-fixed-left('footer-above', 0);
+        }
+        // layout default : navbar folded : navbar right : chat left : chat hide :: end
+      }
+      // layout default : navbar folded : navbar right : chat left :: end
+    }
+    // layout default : navbar folded : navbar right :: end
+  }
+  // layout default : navbar folded :: end
+
+  // layout default : navbar hidden :: start
+  &.navbar-width-hide {
+    .mda-nav-vertical {
+      left: -$vertical-navigation-width-default + px;
+      .nav-toggle-button {
+        left: $vertical-navigation-width-default - 20 + px;
+        background: $toolbar-button-bg;
+        .mat-icon {
+          color: $toolbar-button-fg;
+          &:hover {
+            color: $toolbar-button-hover-fg;
+          }
+        }
+      }
+    }
+    .mda-main-section {
+      @include margin('left', 0);
+      @include margin('right', $chat-width);
+      @include media-breakpoint-down(lg) {
+        @include margin('right', 0);
+      }
+    }
+    .mda-header {
+      @include margin-fixed('left', 0);
+      @include margin-fixed('right', 0);
+      .mda-toolbar-left {
+        padding-left: 35px;
+      }
+      .mda-card.mda-card-search {
+        width: calc(100vw - #{$chat-width}px);
+        @include media-breakpoint-down(lg) {
+          left: 0 !important;
+        }
+      }
+      .logo {
+        display: flex !important;
+        min-width: $vertical-navigation-width-default + px;
+        @include media-breakpoint-down(xs) {
+          min-width: $vertical-navigation-width-folded + px;
+        }
+      }
+    }
+
+    @include footer-fixed-left('footer-below-fixed', 0);
+    @include footer-fixed-left('footer-above', 0);
+
+    // layout default : navbar hidden : chat hidden :: start
+    &.chat-hide {
+      .mda-header {
+        .mda-card.mda-card-search {
+          width: 100vw !important;
+        }
+      }
+    }
+    // layout default : navbar hidden : chat hidden :: end
+
+    // layout default : navbar hidden : chat left :: start
+
+    &.chat-position-left {
+      .mda-main-section {
+        @include margin('right', 0);
+        @include margin('left', $chat-width);
+      }
+      .mda-header {
+        @include margin-fixed('right', 0);
+        @include margin-fixed('left', 0);
+        .mda-card-search {
+          left: $chat-width + px;
+        }
+      }
+      .mda-chat {
+        @include side('left', 'right', 0);
+        @include margin-fixed('top', $header-height);
+        .mda-chat-card-active {
+          top: $header-height + px;
+          .mda-chat-card-footer {
+            margin-bottom: $header-height + px;
+          }
+        }
+      }
+
+      @include footer-fixed-left('footer-below-fixed', $chat-width);
+      @include footer-fixed-left('footer-above', $chat-width);
+
+      // layout default : navbar hidden : chat left : chat hidden :: start
+      &.chat-hide {
+        .mda-chat {
+          @include margin-fixed('left', -$chat-width);
+        }
+        .mda-main-section {
+          @include margin('left', 0);
+        }
+
+        @include footer-fixed-left('footer-below-fixed', 0);
+        @include footer-fixed-left('footer-above', 0);
+      }
+      // layout default : navbar hidden : chat left : chat hidden :: end
+    }
+    // layout default : navbar hidden : chat left :: end
+  }
+  // layout default : navbar hidden :: end
+
+  // layout default : navbar horizontal :: start
+  &.navbar-horizontal {
+    .mda-header {
+      @include margin-fixed('left', 0);
+      .mda-toolbar-left {
+        padding-left: 0;
+      }
+      .mda-card-search {
+        top: $header-height + $horizontal-navigation-height + px;
+        width: calc(100vw - #{$chat-width}px);
+      }
+    }
+    .mda-nav-horizontal {
+      @include margin-fixed('top', $header-height);
+      @include margin-fixed('left', 0);
+      @include margin-fixed('right', $chat-width);
+      a {
+        color: $nav-link-color;
+      }
+    }
+    .mda-main-section {
+      @include margin('left', 0);
+      @include margin('right', $chat-width);
+    }
+    .mda-main-perfect-scrollbar {
+      @include margin-fixed(
+        'top',
+        $header-height + $horizontal-navigation-height
+      );
+      @include height-substract($header-height + $horizontal-navigation-height);
+    }
+
+    @include footer-fixed-left('footer-below-fixed', 0);
+    @include footer-fixed-left('footer-above', 0);
+
+    // layout default : navbar horizontal : chat hidden :: start
+    &.chat-hide {
+      .mda-chat {
+        @include margin-fixed('right', -$chat-width);
+      }
+      .mda-main-section {
+        @include margin('right', 0);
+      }
+      .mda-nav-horizontal {
+        @include margin-fixed('right', 0);
+      }
+
+      @include footer-fixed-right('footer-below-fixed', 0);
+      @include footer-fixed-right('footer-above', 0);
+    }
+    // layout default : navbar horizontal : chat hidden :: end
+
+    // layout default : navbar horizontal : chat left :: start
+    &.chat-position-left {
+      .mda-nav-horizontal {
+        @include margin-fixed('left', $chat-width);
+        @include margin-fixed('right', 0);
+      }
+      .mda-main-section {
+        @include margin('right', 0);
+        @include margin('left', $chat-width);
+      }
+      .mda-header {
+        @include margin-fixed('left', 0);
+      }
+      .mda-chat {
+        @include side('left', 'right', 0);
+        @include margin-fixed('top', $header-height);
+        .mda-chat-card-active {
+          top: $header-height + px;
+          .mda-chat-card-footer {
+            margin-bottom: $header-height + px;
+          }
+        }
+      }
+
+      @include footer-fixed-left-right('footer-below-fixed', $chat-width, 0);
+      @include footer-fixed-left-right('footer-above', $chat-width, 0);
+
+      // layout default : navbar horizontal : chat left : chat hidden :: start
+      &.chat-hide {
+        .mda-chat {
+          @include margin-fixed('left', -$chat-width);
+        }
+        .mda-main-section {
+          @include margin('left', 0);
+        }
+        .mda-nav-horizontal {
+          @include margin-fixed('left', 0);
+        }
+        .mda-header {
+          @include margin-fixed('left', 0);
+        }
+
+        @include footer-fixed-left('footer-below-fixed', 0);
+        @include footer-fixed-left('footer-above', 0);
+      }
+      // layout default : navbar horizontal : chat left : chat hidden :: end
+    }
+    // layout default : navbar horizontal : chat left :: end
+  }
+  // layout default : navbar horizontal :: end
+
+  // header below static :: start
+  &.header-below-static {
+    .mda-header {
+      display: block;
+      @include position(relative);
+      @include margin-fixed('left', 0);
+    }
+    .mda-main-perfect-scrollbar {
+      @include margin-fixed('top', 0);
+      @include height-substract(0);
+    }
+    .mda-chat {
+      @include margin-fixed('top', 0);
+    }
+  }
+  // header below static :: end
+
+  // header above :: start
+  &.header-above {
+    .mda-header {
+      @include margin-fixed('left', 0, !important);
+      @include margin-fixed('right', 0, !important);
+    }
+    .mda-nav-vertical {
+      @include margin-fixed('top', $header-height);
+      .navigation {
+        height: calc(100vh - #{$header-height + $footer-height}px);
+      }
+    }
+    .mda-main-section {
+      @include margin('top', $header-height);
+    }
+    .mda-main-perfect-scrollbar {
+      @include margin-fixed('top', 0);
+    }
+    .mda-chat {
+      @include margin-fixed('top', $header-height);
+      .mda-chat-card-active {
+        top: $header-height + px;
+        .mda-chat-card-footer {
+          margin-bottom: $header-height + px;
+        }
+      }
+    }
+  }
+  // header above :: end
+

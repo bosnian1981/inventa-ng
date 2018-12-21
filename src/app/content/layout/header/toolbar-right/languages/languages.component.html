@@ -1,0 +1,21 @@
+<div class="mda-card-header">
+  <div class="mda-card-header-inner">
+    <div class="mda-card-header-title">Change Language</div>
+    <div class="mda-card-header-image">
+      <img class="animated jello delay-1s" alt="{{selectedLanguage ? selectedLanguage.name : 'English'}}" src="assets/images/flags/{{selectedLanguage? selectedLanguage.image : 'english'}}.svg">
+    </div>
+  </div>
+</div>
+
+<div class="mda-card-body">
+  <ul class="card-list">
+    <li *ngFor="let language of languages; let i = index" class="animated slideInRight delay-0{{i}}" (click)="changeLanguage(language)">
+      <div class="mda-card-body-item-image">
+        <img src="assets/images/flags/{{ language.image }}.svg" alt="{{language.name}}">
+      </div>
+      <div class="mda-card-body-item-text">
+        {{ language.name }}
+      </div>
+    </li>
+  </ul>
+</div>

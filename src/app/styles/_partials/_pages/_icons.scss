@@ -1,0 +1,49 @@
+.mda-card-body {
+  .icon-search-box {
+    padding: 25px 25px 0;
+  }
+  .mat-card {
+    background: none;
+    &.icons {
+      padding: 10px 25px;
+      .mat-card-header {
+        .mat-card-header-text {
+          margin: 0;
+          .mat-card-title {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            font-weight: 300;
+          }
+        }
+      }
+      .icon-search-box {
+        background: none;
+      }
+      .mat-icon,
+      i {
+        font-size: 45px;
+        width: 45px;
+        height: 45px;
+        color: $text-default-color;
+        margin: 0 10px;
+      }
+      .icon-title {
+        color: $text-default-color;
+        font-size: 0.8rem;
+        font-weight: 300;
+        padding-top: 10px;
+      }
+      .icon-box-wrapper {
+        .icon-box {
+          border: 1px solid $icon-box-border;
+          background: $icon-box-bg;
+          &:hover {
+            cursor: pointer;
+            opacity: 0.7;
+            border: 1px solid;
+          }
+        }
+      }
+    }
+  }
+}

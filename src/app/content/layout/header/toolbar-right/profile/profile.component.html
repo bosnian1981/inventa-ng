@@ -1,0 +1,58 @@
+<div class="mda-card-header">
+  <div class="mda-card-header-inner">
+    <div class="mda-card-header-title">Mark Ayala</div>
+    <div class="mda-card-header-subtitle">PROJECT MANAGER</div>
+    <div class="mda-card-header-image">
+      <img alt="profile" class="animated bounceIn delay-05" src="assets/images/users/user_1.jpg">
+    </div>
+  </div>
+</div>
+<div class="mda-card-body">
+  <ul class="card-list">
+    <li class="user-profile animated slideInRight delay-01" (click)="select('/user')">
+      <div class="mda-card-body-item-image">
+        <i class="fa fa-user"></i>
+      </div>
+      <div class="mda-card-body-item-text">
+        My Profile
+      </div>
+    </li>
+    <li class="animated slideInRight delay-02" (click)="select('/user')">
+      <div class="mda-card-body-item-image">
+        <i class="fa fa-envelope"></i>
+      </div>
+      <div class="mda-card-body-item-text">
+        Inbox
+      </div>
+    </li>
+    <li class="animated slideInRight delay-03" (click)="select('/user')">
+      <div class="mda-card-body-item-image">
+        <i class="fa fa-cog"></i>
+      </div>
+      <div class="mda-card-body-item-text">
+        Settings
+      </div>
+    </li>
+    <li class="animated slideInRight delay-04" (click)="select('/user')">
+      <div class="mda-card-body-item-image">
+        <i class="fa fa-question"></i>
+      </div>
+      <div class="mda-card-body-item-text">
+        Help
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="mda-card-footer">
+  <div class="mda-card-footer-summary">
+    <a href="javascript:;">
+      <i class="fa fa-shopping-cart"></i> Buy This Theme
+    </a>
+  </div>
+  <div class="mda-card-footer-action">
+    <button routerLink="/auth/login" mat-raised-button mat-icon-button color="primary" matTooltip="Logout" class="footer-action-button">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,114 @@
+import { Component, OnInit } from '@angular/core';
+import { ClipboardService } from 'ngx-clipboard';
+import { ToastrService } from 'ngx-toastr';
+
+@Component({
+  selector: 'app-ripples',
+  templateUrl: './ripples.component.html',
+  styleUrls: ['./ripples.component.scss']
+})
+export class RipplesComponent implements OnInit {
+  public htmlCode: string;
+  tsCode: string;
+  cssCode: string;
+  centered = false;
+  disabled = false;
+  unbounded = false;
+
+  radius: number;
+  color: string;
+
+  constructor(
+    private _clipboardService: ClipboardService,
+    private toastr: ToastrService
+  ) {}
+
+  ngOnInit() {
+    this.htmlCode = `
+    <mat-checkbox [(ngModel)]="centered" class="example-ripple-checkbox">Centered</mat-checkbox>
+    <mat-checkbox [(ngModel)]="disabled" class="example-ripple-checkbox">Disabled</mat-checkbox>
+    <mat-checkbox [(ngModel)]="unbounded" class="example-ripple-checkbox">Unbounded</mat-checkbox>
+
+    <mat-form-field class="example-ripple-form-field">
+      <input matInput [(ngModel)]="radius" type="number" placeholder="Radius">
+    </mat-form-field>
+    <mat-form-field class="example-ripple-form-field">
+      <input matInput [(ngModel)]="color" type="text" placeholder="Color">
+    </mat-form-field>
+
+
+    <div class="example-ripple-container mat-elevation-z4"
+        matRipple
+        [matRippleCentered]="centered"
+        [matRippleDisabled]="disabled"
+        [matRippleUnbounded]="unbounded"
+        [matRippleRadius]="radius"
+        [matRippleColor]="color">
+      Click me
+    </div>
+    `;
+
+    this.tsCode = `
+    import {Component} from '@angular/core';
+
+    /**
+     * @title MatRipple basic usage
+     */
+    @Component({
+      selector: 'ripple-overview-example',
+      templateUrl: 'ripple-overview-example.html',
+      styleUrls: ['ripple-overview-example.css'],
+    })
+    export class RippleOverviewExample {
+      centered = false;
+      disabled = false;
+      unbounded = false;
+
+      radius: number;
+      color: string;
+    }
+    `;
+
+    this.cssCode = `
+    .example-ripple-container {
+      cursor: pointer;
+      text-align: center;
+
+      width: 300px;
+      height: 300px;
+      line-height: 300px;
+
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+
+      -webkit-user-drag: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /** Styles to make the demo look better. */
+    .example-ripple-checkbox {
+      margin: 6px 12px 6px 0;
+    }
+
+    .example-ripple-form-field {
+      margin: 0 12px 0 0;
+    }
+    `;
+  }
+
+  copy(type: string) {
+    let code: string;
+    if (type === 'html') {
+      code = this.htmlCode;
+    } else if (type === 'ts') {
+      code = this.tsCode;
+    } else if (type === 'css') {
+      code = this.cssCode;
+    }
+
+    this._clipboardService.copyFromContent(code);
+    this.toastr.success('Code copied!');
+  }
+}

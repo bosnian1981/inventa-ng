@@ -1,0 +1,14 @@
+<div class="mda-card-body h-100">
+  <mat-icon class="animated swing delay-1s flex-grow-0">search</mat-icon>
+  <input [autofocus]="showSearchBox" placeholder="search ..." class="flex-grow-1 ml-3">
+</div>
+
+<div [hidden]="!showSearchBox" class="d-none mda-dropdown-search" [exclude]="'button.search-btn'" (clickOutside)="closeSearchBox()">
+  <button class="mda-dropdown-search-close-icon" mat-button matPrefix mat-icon-button (click)="closeSearchBox()">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <div class="dropdown-body">
+    <input [autofocus]="showSearchBox" placeholder="search ...">
+  </div>
+</div>

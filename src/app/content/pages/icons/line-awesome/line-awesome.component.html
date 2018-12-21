@@ -1,0 +1,45 @@
+<div class="mda-card mda-card-material animated bounceInUp">
+  <div class="mda-card-header low">
+    <div class="mda-card-header-title">Line Awesome Icons</div>
+    <div class="mda-card-control">
+        <a matTooltip="more info ..." href="https://icons8.com/line-awesome" target="_blank">
+          <i class="fa fa-link"></i>
+        </a>
+      </div>
+  </div>
+
+  <div class="mda-card-body">
+    <mat-form-field class="w-100 icon-search-box">
+      <input
+        [(ngModel)]="searchText"
+        matInput
+        placeholder="Search icon by icon name ..."
+      />
+    </mat-form-field>
+
+    <mat-card
+      class="icons w-100"
+    >
+      <mat-card-content>
+        <div class="row">
+          <div
+            *ngFor="let item of getIcons()"
+            class="col-md-4 col-xl-3 text-center icon-box-wrapper"
+          >
+            <mat-card
+              class="mb-3 icon-box"
+              matTooltip="Copy to clipboard"
+              matTooltipPosition="above"
+              (click)="copyToClipboard(item.name)"
+            >
+              <i style="font-size: 44px; width: 44px; height: 44px;" [ngClass]="item.name"></i>
+              <i style="font-size: 34px; width: 34px; height: 34px; color: #6DBDC2" [ngClass]="item.name"></i>
+              <i style="font-size: 24px; width: 24px; height: 24px; color: #FD7E14" [ngClass]="item.name"></i>
+              <div class="icon-title">{{ item.name }}</div>
+            </mat-card>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

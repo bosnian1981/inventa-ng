@@ -1,0 +1,398 @@
+<div class="mda-settings" [class.show]="showSettingsBlock">
+  <div
+    class="mda-settings-button"
+    [class.show]="showSettingsBlock"
+    matTooltip="Theme Settings"
+    (click)="showSettings()"
+  >
+    <mat-icon
+      class="mda-settings-button-icon rotating"
+      *ngIf="!showSettingsBlock"
+      >settings</mat-icon
+    >
+    <mat-icon class="mda-settings-button-icon" *ngIf="showSettingsBlock"
+      >close</mat-icon
+    >
+  </div>
+
+  <perfect-scrollbar class="mda-settings-perfect-scrollbar">
+    <mat-card class="mda-setting-card">
+      <mat-card-header>
+        <mat-card-title>Theme Options</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-accordion>
+          <mat-expansion-panel expanded class="panel-colors">
+            <mat-expansion-panel-header>
+              <mat-panel-title> Colors </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <caption class="mt-2 d-block">
+              Light Colors
+            </caption>
+
+            <div class="row">
+              <div class="col-3 text-center">
+                <div
+                  class="skin light-blue mb-3"
+                  matTooltip="Light Blue"
+                  matTooltipPosition="above"
+                  (click)="changeColors('light-blue')"
+                  [class.selected]="settings.theme.skin === 'light-blue'"
+                ></div>
+              </div>
+              <div class="col-3 text-center">
+                <div
+                  class="skin light-grey mb-3"
+                  matTooltip="Light Grey"
+                  matTooltipPosition="above"
+                  (click)="changeColors('light-grey')"
+                  [class.selected]="settings.theme.skin === 'light-grey'"
+                ></div>
+              </div>
+              <div class="col-3 text-center">
+                <div
+                  class="skin light-green mb-3"
+                  matTooltip="Light Green"
+                  matTooltipPosition="above"
+                  (click)="changeColors('light-green')"
+                  [class.selected]="settings.theme.skin === 'light-green'"
+                ></div>
+              </div>
+              <div class="col-3 text-center">
+                <div
+                  class="skin light-purple mb-3"
+                  matTooltip="Light Purple"
+                  matTooltipPosition="above"
+                  (click)="changeColors('light-purple')"
+                  [class.selected]="settings.theme.skin === 'light-purple'"
+                ></div>
+              </div>
+            </div>
+
+            <caption class="mt-2 d-block">
+              Dark Colors
+            </caption>
+
+            <div class="row">
+              <div class="col-3 text-center">
+                <div
+                  class="skin dark-blue mb-3"
+                  matTooltip="Dark Blue"
+                  matTooltipPosition="above"
+                  (click)="changeColors('dark-blue')"
+                  [class.selected]="settings.theme.skin === 'dark-blue'"
+                ></div>
+              </div>
+              <div class="col-3 text-center">
+                <div
+                  class="skin dark-black mb-3"
+                  matTooltip="Dark Black"
+                  matTooltipPosition="above"
+                  (click)="changeColors('dark-black')"
+                  [class.selected]="settings.theme.skin === 'dark-black'"
+                ></div>
+              </div>
+              <div class="col-3 text-center">
+                <div
+                  class="skin dark-green mb-3"
+                  matTooltip="Dark Green"
+                  matTooltipPosition="above"
+                  (click)="changeColors('dark-green')"
+                  [class.selected]="settings.theme.skin === 'dark-green'"
+                ></div>
+              </div>
+              <div class="col-3 text-center">
+                <div
+                  class="skin dark-purple mb-3"
+                  matTooltip="Dark Purple"
+                  matTooltipPosition="above"
+                  (click)="changeColors('dark-purple')"
+                  [class.selected]="settings.theme.skin === 'dark-purple'"
+                ></div>
+              </div>
+            </div>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel class="layouts" *ngIf="isBigScreen">
+            <mat-expansion-panel-header>
+              <mat-panel-title> Layout </mat-panel-title>
+              <mat-panel-description> </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <div class="row">
+              <div class="col-4 text-center">
+                <div
+                  class="layout default"
+                  matTooltip="Default"
+                  matTooltipPosition="above"
+                  (click)="changeLayout('default')"
+                  [class.selected]="settings.theme.layout === 'default'"
+                >
+                  <div class="header"></div>
+                  <div class="nav"></div>
+                  <div class="footer"></div>
+                </div>
+              </div>
+              <div *ngIf="allowHorizontalLayout" class="col-4 text-center">
+                <div
+                  class="layout horizontal"
+                  matTooltip="Horizontal"
+                  matTooltipPosition="above"
+                  (click)="changeLayout('horizontal')"
+                  [class.selected]="settings.theme.layout === 'horizontal'"
+                >
+                  <div class="header"></div>
+                  <div class="nav"></div>
+                  <div class="footer"></div>
+                </div>
+              </div>
+            </div>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel
+            *ngIf="settings.theme.layout != 'horizontal' && isBigScreen"
+            class="settings-navbar"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title> Navbar </mat-panel-title>
+              <mat-panel-description> </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <div
+              *ngIf="settings.theme.layout === 'default'"
+              class="vertical-nav-more-options"
+            >
+              <caption class="mt-2 d-block">
+                Navbar Type
+              </caption>
+
+              <div class="row">
+                <div class="col-4 text-center">
+                  <div
+                    class="settings-navbar default"
+                    matTooltip="Default"
+                    matTooltipPosition="above"
+                    [class.selected]="settings.theme.navbar.width === 'default'"
+                    (click)="changeNavbarWidth('default')"
+                  >
+                    <div class="header"></div>
+                    <div class="nav"></div>
+                    <div class="footer"></div>
+                  </div>
+                </div>
+                <div class="col-4 text-center">
+                  <div
+                    class="settings-navbar folded"
+                    matTooltip="Folded"
+                    matTooltipPosition="above"
+                    [class.selected]="settings.theme.navbar.width === 'folded'"
+                    (click)="changeNavbarWidth('folded')"
+                  >
+                    <div class="header"></div>
+                    <div class="nav"></div>
+                    <div class="footer"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div *ngIf="settings.theme.navbar.width != 'hide'">
+                <caption class="mt-2">
+                  Position
+                </caption>
+
+                <mat-radio-group>
+                  <mat-radio-button
+                    [checked]="settings.theme.navbar.position === 'left'"
+                    value="1"
+                    (change)="changeNavbarPosition('left')"
+                    >Left</mat-radio-button
+                  >
+                  <mat-radio-button
+                    [checked]="settings.theme.navbar.position === 'right'"
+                    value="2"
+                    (change)="changeNavbarPosition('right')"
+                    class="ml-3"
+                    >Right</mat-radio-button
+                  >
+                </mat-radio-group>
+
+                <div *ngIf="settings.theme.navbar.width === 'default'">
+                  <caption class="mt-2">
+                    Variant
+                  </caption>
+
+                  <div class="row">
+                    <div class="col-4">
+                      <div
+                        class="settings-navbar-variant v1"
+                        matTooltip="With Profile Section"
+                        matTooltipPosition="above"
+                        (click)="changeNavbarVariant('v1')"
+                        [class.selected]="
+                          settings.theme.navbar.variant === 'v1'
+                        "
+                      >
+                        <div class="header"></div>
+                        <div class="nav text-center">
+                          <i class="fa fa-user mt-2"></i>
+                          <div class="nav-row mt-1"></div>
+                          <div class="nav-row"></div>
+                          <div class="nav-row mb-1"></div>
+                        </div>
+                        <div class="footer"></div>
+                      </div>
+                    </div>
+
+                    <div class="col-4">
+                      <div
+                        class="settings-navbar-variant v2"
+                        matTooltip="Without Profile Section"
+                        matTooltipPosition="above"
+                        (click)="changeNavbarVariant('v2')"
+                        [class.selected]="
+                          settings.theme.navbar.variant === 'v2'
+                        "
+                      >
+                        <div class="header"></div>
+                        <div class="nav">
+                          <div class="nav-row mt-2"></div>
+                          <div class="nav-row"></div>
+                          <div class="nav-row"></div>
+                          <div class="nav-row"></div>
+                          <div class="nav-row"></div>
+                          <div class="nav-row mb-2"></div>
+                        </div>
+                        <div class="footer"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-expansion-panel>
+
+          <!-- <mat-expansion-panel
+            *ngIf="settings.theme.layout === 'default'"
+            class="topbar"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title> Header </mat-panel-title>
+              <mat-panel-description> </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <div class="row">
+              <div class="col-4">
+                <mat-radio-button
+                  [checked]="settings.theme.header.state == 'below-static'"
+                  value="1"
+                  (change)="changeHeaderState('below-static')"
+                  >Below Static</mat-radio-button
+                >
+              </div>
+              <div class="col-4">
+                <mat-radio-button
+                  [checked]="settings.theme.header.state == 'below-fixed'"
+                  value="2"
+                  (change)="changeHeaderState('below-fixed')"
+                  >Below Fixed</mat-radio-button
+                >
+              </div>
+            </div>
+            <mat-radio-group> </mat-radio-group>
+          </mat-expansion-panel> -->
+
+          <mat-expansion-panel
+            *ngIf="settings.theme.layout != 'boxed'"
+            class="footer"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title> Footer </mat-panel-title>
+              <mat-panel-description> </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <mat-radio-group>
+              <div class="row">
+                <div class="col-4">
+                  <mat-radio-button
+                    [checked]="settings.theme.footer.state === 'below-static'"
+                    value="1"
+                    (change)="changeFooterState('below-static')"
+                    >Below Static</mat-radio-button
+                  >
+                </div>
+                <div class="col-4">
+                  <mat-radio-button
+                    [checked]="settings.theme.footer.state === 'below-fixed'"
+                    value="2"
+                    (change)="changeFooterState('below-fixed')"
+                    >Below Fixed</mat-radio-button
+                  >
+                </div>
+                <div class="col-4">
+                  <mat-radio-button
+                    *ngIf="settings.theme.layout === 'default' && isBigScreen"
+                    [checked]="settings.theme.footer.state === 'above'"
+                    value="3"
+                    (change)="changeFooterState('above')"
+                    >Above</mat-radio-button
+                  >
+                </div>
+              </div>
+            </mat-radio-group>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel class="chat" *ngIf="isBigScreen">
+            <mat-expansion-panel-header>
+              <mat-panel-title> Chat </mat-panel-title>
+              <mat-panel-description> </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <div class="row">
+              <div class="col-6">
+                <mat-slide-toggle
+                  [checked]="settings.theme.chat.hide"
+                  (change)="hideChat($event, null)"
+                >
+                  Hide
+                </mat-slide-toggle>
+              </div>
+            </div>
+
+            <div *ngIf="!settings.theme.chat.hide">
+              <caption class="mt-2">
+                Position
+              </caption>
+
+              <mat-radio-group>
+                <mat-radio-button
+                  [checked]="settings.theme.chat.position === 'left'"
+                  value="1"
+                  (change)="changeChatPosition('left')"
+                  >Left</mat-radio-button
+                >
+                <mat-radio-button
+                  [checked]="settings.theme.chat.position === 'right'"
+                  value="2"
+                  (change)="changeChatPosition('right')"
+                  class="ml-3"
+                  >Right</mat-radio-button
+                >
+              </mat-radio-group>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+
+        <div class="mt-2 text-center">
+          <button
+            mat-button
+            matTooltip="Paste Settings to app/_settings/settings.service.ts"
+            (click)="copySettings()"
+          >
+            Copy Settings
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </perfect-scrollbar>
+</div>

@@ -1,0 +1,115 @@
+// auth pages
+app-login,
+app-recovery,
+app-register {
+  width: 100%;
+}
+.auth-page,
+.error {
+  display: flex;
+  height: 100%;
+  padding: 150px 0;
+  .row {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0 50px;
+    @include media-breakpoint-down(md) {
+      padding: 0 10px;
+    }
+
+    .mda-card {
+      border-radius: 5px;
+      .mda-card-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        padding-bottom: 20px;
+        min-height: 160px;
+        @include media-breakpoint-down(md) {
+          min-height: 120px;
+        }
+        border-radius: 5px 5px 0 0;
+        background: $auth-card-bg;
+        border-bottom: none;
+        color: $auth-icon-color;
+        @include shadow($subheader-shadow);
+        .mda-card-header-title {
+          font-family: 'primelight', Arial, sans-serif;
+          font-size: 2.5rem;
+          text-transform: uppercase;
+          color: $auth-icon-color;
+
+          @include media-breakpoint-down(md) {
+            font-size: 2rem;
+          }
+          i {
+            font-size: 40px;
+            position: absolute;
+            top: -45px;
+            left: 50%;
+            margin-left: -35px;
+            background: $auth-icon-bg;
+            color: $auth-icon-color;
+            padding: 15px;
+            border-radius: 50%;
+            border: 10px solid $body-bg;
+          }
+        }
+        a {
+          color: $auth-icon-color;
+        }
+      }
+      .mda-card-body {
+        padding: 40px;
+        border-radius: 0 0 5px 5px;
+        background: $auth-card-body-bg;
+        @include media-breakpoint-down(md) {
+          padding: 20px;
+        }
+        .row.submit {
+          padding: 0;
+        }
+        form {
+          width: 100%;
+          @include media-breakpoint-down(xs) {
+            .row.password-register {
+              .col-sm-6 {
+                padding: 0 !important;
+              }
+            }
+          }
+
+          .mat-form-field-label-wrapper,
+          .mat-slide-toggle-content,
+          a {
+            font-size: 0.9rem;
+            font-weight: 300;
+          }
+          .mat-slide-toggle-content {
+            top: -0.5em;
+            opacity: 0.7;
+          }
+        }
+      }
+      .social-icons {
+        @include media-breakpoint-down(xs) {
+          justify-content: center !important;
+          margin-top: 20px;
+        }
+        i {
+          font-size: 28px;
+          color: #f5f5f5;
+          background: color(secondary, base);
+          border-radius: 50%;
+          text-align: center;
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+        }
+      }
+    }
+  }
+}
+// end - account pages

@@ -1,0 +1,13 @@
+
+<!-- search dropdown :: start -->
+<div #searchCard id="search-card" class="mda-card mda-card-search d-none animated"
+  (clickOutside)="hideSearchCard()" [exclude]="'.toolbar-search-button'">
+  <app-search class="h-100"></app-search>
+</div>
+
+<button class="toolbar-button toolbar-search-button" mat-button mat-icon-button matTooltip="Search ..." (click)="toggleSearchCard()">
+  <mat-icon>search</mat-icon>
+</button>
+<!-- search dropdown :: end -->
+
+<app-full-screen></app-full-screen>

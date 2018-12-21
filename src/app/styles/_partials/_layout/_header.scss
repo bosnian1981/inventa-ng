@@ -1,0 +1,226 @@
+// header :: start
+.mda-header {
+  display: flex;
+  top: 0;
+  height: $header-height + px;
+  background: $header-bg;
+  color: $header-fg;
+  @include shadow($header-shadow);
+  @include transition(all, 0.3);
+  z-index: 99;
+
+  @include media-breakpoint-down(xs) {
+    z-index: 106;
+  }
+
+  .mda-header-inner {
+    display: flex;
+    align-items: center;
+  }
+
+  .mda-card {
+    position: fixed;
+    top: $header-height + 1 + px;
+    border-radius: 0;
+    animation-duration: 0.3s;
+
+    .mda-card-header {
+      border-radius: 0;
+    }
+
+    .mda-card-body {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background: $card-header-bg;
+      border-radius: 0;
+    }
+
+    .mda-card-footer {
+      border-radius: 0 0 0 3px;
+    }
+  }
+
+  // toolbars :: start
+  .mda-header-toolbars {
+
+    // toolbar buttons :: start
+    .toolbar-button {
+      width: 40px;
+      height: 40px;
+      margin: 15px;
+      border-radius: 50%;
+      background: $toolbar-button-bg;
+      @include shadow($toolbar-button-shadow);
+      @include transition(all, 0.3);
+      z-index: 99;
+
+      &:active {
+        @include shadow($toolbar-button-shadow,  !important);
+      }
+
+      &.mat-button {
+        .mat-icon {
+          color: $toolbar-button-fg;
+          @include transition(all, 0.2);
+        }
+
+        &:hover {
+          .mat-icon {
+            color: $toolbar-button-hover-fg;
+            //   @include icon-size(26);
+          }
+        }
+      }
+
+      img {
+        width: 40px;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        @include transition(ease-in-out, 0.2);
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        img {
+          -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+        }
+      }
+
+      &.toolbar-profile-button {
+        width: 45px;
+        height: 45px;
+        margin: 13px;
+
+        img {
+          width: 45px;
+        }
+      }
+
+      &.toolbar-language-button {
+        width: 30px !important;
+        height: 30px !important;
+        img {
+          width: 30px;
+        }
+      }
+    }
+
+    figure.toolbar-button {
+      overflow: hidden;
+    }
+
+    // toolbar buttons :: end
+
+    // mda toolbar left :: start
+    .mda-toolbar-left {
+      padding-left: 40px;
+
+      @include media-breakpoint-down(lg) {
+        padding-left: 75px !important;
+      }
+
+      @include media-breakpoint-down(xs) {
+        display: none !important;
+      }
+
+      .mda-card {
+        left: 0;
+        right: auto;
+
+        &.mda-card-search {
+          height: $chat-header-height + px;
+          width: calc(100vw - #{$vertical-navigation-width-default + $chat-width}px);
+          overflow: hidden;
+
+          .mda-card-body {
+            background: $dropdown-search-bg;
+            padding-left: 25px;
+            border-radius: 0;
+
+            .mat-icon {
+              @include icon-size(45);
+              color: $search-card-icon-color;
+            }
+
+            input {
+              height: 40px;
+              background: transparent;
+              border: none;
+              outline: none;
+              font-size: 30px;
+              color: $search-input-fg;
+              font-weight: 300;
+              padding-bottom: 5px;
+              @include placeholder-color($search-input-fg);
+            }
+          }
+        }
+      }
+    }
+
+    // mda toolbar left :: end
+
+    // mda toolbar right :: start
+    .mda-toolbar-right {
+      .toolbar {
+        display: flex;
+        align-items: center;
+
+        .mda-card {
+          right: $chat-width + 5 + px;
+          width: 400px;
+
+          @include media-breakpoint-down(xs) {
+            width: 100%;
+          }
+        }
+
+        #language-card.mda-card {
+          width: 300px;
+        }
+
+        #profile-card.mda-card {
+          width: 300px;
+
+          .mda-card-footer {
+            height: 60px;
+
+            a {
+              color: $toolbar-card-footer-text-color;
+            }
+          }
+        }
+
+        &.md {
+          justify-content: flex-end;
+          position: absolute;
+          top: $header-height + 1 + px;
+          right: 0;
+          width: 100vw;
+          border: 1px solid $card-header-border;
+          background: $header-bg;
+          animation-duration: 0.3s;
+
+          .mda-card {
+            width: 100vw;
+            max-width: 480px;
+            top: $header-height + 3 + px;
+          }
+        }
+      }
+    }
+
+    // mda toolbar right :: end
+  }
+
+  // toolbars :: end
+
+  .mat-progress-bar-fill::after {
+    background-color: $header-progress-bar-after-bg;
+  }
+}
+
+// header :: end

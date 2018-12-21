@@ -1,0 +1,32 @@
+<div class="mda-card-header">
+  <div class="mda-card-header-inner">
+    <div class="mda-card-header-title">Alerts</div>
+    <div class="mda-card-header-image">
+      <mat-icon class="animated swing delay-1s">notifications</mat-icon>
+    </div>
+  </div>
+</div>
+<div class="mda-card-body">
+  <ul class="card-list">
+    <li *ngFor="let alert of alerts; let i = index" class="animated slideInRight delay-0{{i}}" (click)="select()">
+      <div class="mda-card-body-item-image">
+        <i class="{{ alert.icon }}"></i>
+      </div>
+      <div class="mda-card-body-item-text">
+        {{ alert.name }} <br>
+        <span>{{ alert.time }}</span>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="mda-card-footer">
+  <div class="mda-card-footer-summary">
+    Total: <span>9 alerts</span>
+  </div>
+  <div class="mda-card-footer-action">
+    <button mat-button class="footer-action-button">
+      view all ...
+    </button>
+  </div>
+</div>

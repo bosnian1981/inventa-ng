@@ -1,0 +1,65 @@
+<div class="mda-card mda-card-material animated delay-02">
+    <div class="mda-card-header low">
+      <div class="mda-card-header-title">Tooltip that demonstrates auto-hiding when it clips out of its scrolling container</div>
+      <div class="mda-card-control">
+          <a matTooltip="more info ..." href="https://material.angular.io/components/categories" target="_blank">
+            <i class="fa fa-link"></i>
+          </a>
+        </div>
+    </div>
+    <div class="mda-card-body">
+  
+      <div class="mda-card-body-inner">
+  
+        <mat-tab-group>
+          <mat-tab label="UI">
+            <mat-form-field>
+              <mat-select placeholder="Tooltip position" [formControl]="position">
+                <mat-option *ngFor="let positionOption of positionOptions" [value]="positionOption">
+                  {{positionOption}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            
+            <div class="example-container" cdk-scrollable>
+              <button mat-raised-button #tooltip="matTooltip"
+                      matTooltip="Info about the action"
+                      [matTooltipPosition]="position.value"
+                      matTooltipHideDelay="100000"
+                      aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+                      class="example-button">
+                Action
+              </button>
+            </div>
+            
+          </mat-tab>
+  
+          <mat-tab label="HTML">
+            <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button ngxClipboard (click)="copy('html')">
+              <i class="fa fa-copy"></i>
+            </button>
+            <pre>
+              <code highlight [code]="htmlCode"></code>
+            </pre>
+          </mat-tab>
+          <mat-tab label="TS">
+            <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button ngxClipboard (click)="copy('ts')">
+              <i class="fa fa-copy"></i>
+            </button>
+            <pre>
+              <code highlight [code]="tsCode"></code>
+            </pre>
+          </mat-tab>
+          <mat-tab label="CSS">
+            <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button ngxClipboard (click)="copy('css')">
+              <i class="fa fa-copy"></i>
+            </button>
+            <pre>
+              <code highlight [code]="cssCode"></code>
+            </pre>
+          </mat-tab>
+        </mat-tab-group>
+  
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,39 @@
+<div class="mda-card">
+    <div class="mda-card-header low">
+        
+      <div class="mda-card-header-title">
+        <i class="fa fa-pie-chart"></i> OS Usage
+      </div>
+    </div>
+    <div class="mda-card-body">
+      <div class="row m-0 w-100">
+        <div
+          class="col-lg-6 col-md-12 site-analytics-card visitors animated bounce delay-01"
+        >
+          <div class="chart-wrapper  w-100 h-100">
+            <ngx-charts-pie-chart
+              [scheme]="colorScheme"
+              [results]="data"
+              [legend]="showLegend"
+              [explodeSlices]="explodeSlices"
+              [labels]="showLabels"
+              [doughnut]="doughnut"
+              [gradient]="gradient"
+              (select)="onSelect($event)">
+            </ngx-charts-pie-chart>
+          </div>
+        </div>
+  
+        <div
+          class="col-lg-6 col-md-12 p-4 pr-5 site-analytics-card visitors animated bounce delay-01s">
+          <ul class="pl-3" class="w-100">
+            <li class="pt-2 pb-2" *ngFor="let item of data; let i = index;">
+                <span  [style.color]="colorScheme.domain[i]">{{item.name}}</span> <span class="float-right">{{item.value}}%</span>
+                <mat-progress-bar mode="determinate" value="{{item.value}}"></mat-progress-bar>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  

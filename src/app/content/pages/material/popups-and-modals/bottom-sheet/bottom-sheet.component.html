@@ -1,0 +1,57 @@
+<div class="mda-section">
+  <div class="row m-0 w-100">
+    <div class="col-md-12 pl-2 mb-4 pr-2 animated bounceInUp">
+      
+        <div class="mda-card mda-card-material animated delay-02">
+            <div class="mda-card-header low">
+              <div class="mda-card-header-title">Bottom Sheet Overview</div>
+              <div class="mda-card-control">
+                  <a matTooltip="more info ..." href="https://material.angular.io/components/categories" target="_blank">
+                    <i class="fa fa-link"></i>
+                  </a>
+                </div>
+            </div>
+            <div class="mda-card-body">
+          
+              <div class="mda-card-body-inner">
+          
+                <mat-tab-group>
+                  <mat-tab label="UI">
+                      <p>You have receive a file called "cat-picture.jpeg".</p>
+
+                      <button mat-raised-button (click)="openBottomSheet()">Open file</button>
+                  </mat-tab>
+          
+                  <mat-tab label="HTML">
+                    <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button ngxClipboard (click)="copy('html')">
+                      <i class="fa fa-copy"></i>
+                    </button>
+                    <pre>
+                      <code highlight [code]="htmlCode"></code>
+                    </pre>
+                  </mat-tab>
+                  <mat-tab label="TS">
+                    <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button ngxClipboard (click)="copy('ts')">
+                      <i class="fa fa-copy"></i>
+                    </button>
+                    <pre>
+                      <code highlight [code]="tsCode"></code>
+                    </pre>
+                  </mat-tab>
+                  <mat-tab label="CSS">
+                    <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button ngxClipboard (click)="copy('css')">
+                      <i class="fa fa-copy"></i>
+                    </button>
+                    <pre>
+                      <code highlight [code]="cssCode"></code>
+                    </pre>
+                  </mat-tab>
+                </mat-tab-group>
+          
+              </div>
+            </div>
+          </div>
+
+    </div>
+  </div>
+</div>

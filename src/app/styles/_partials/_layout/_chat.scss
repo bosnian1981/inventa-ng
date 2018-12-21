@@ -1,0 +1,271 @@
+.mda-chat {
+  @include perfect-scrollbar-thumb-width(5);
+  position: fixed;
+  top: $header-height + px;
+  bottom: 0;
+  width: $chat-width + px;
+  background: $chat-bg;
+  @include shadow($shadow-default);
+  z-index: 104;
+  @include media-breakpoint-down(lg) {
+    right: -$chat-width + px;
+  }
+  // chat users :: start
+  .chat-users {
+    @include perfect-scrollbar-thumb-bg($chat-users-thumb-bg);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // chat header :: start
+    .chat-header {
+      width: $chat-header-height - 10 + px;
+      height: $chat-header-height - 10 + px;
+      margin-top: 5px;
+      @include shadow($chat-header-shadow);
+
+      border-radius: 50%;
+      cursor: pointer;
+      i {
+        @include icon-size(34);
+        opacity: 0.6;
+      }
+      &:hover {
+        background: color(primary, darker);
+        opacity: 0.7;
+      }
+    }
+    // chat header :: end
+
+    // chat content :: start
+    .chat-content {
+      position: absolute;
+      top: $chat-header-height + px;
+      bottom: 0;
+      right: 0;
+      padding-top: 10px;
+
+      // chat participants :: start
+      .chat-participants {
+        height: 100%;
+        margin-bottom: $chat-header-height + 10 + px;
+        .mda-chat-perfect-scrollbar {
+          width: $chat-width + px;
+          .chat-user {
+            position: relative;
+            &:hover {
+              cursor: pointer;
+            }
+            img {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              margin: 10px 0;
+            }
+            .chat-status {
+              position: absolute;
+              bottom: 7px;
+              right: 16px;
+              width: 12px;
+              height: 12px;
+              border: 2px solid $chat-bg;
+              border-radius: 50%;
+              &.online {
+                background: rgb(5, 245, 5);
+              }
+              &.offline {
+                background: rgb(102, 102, 102);
+              }
+              &.busy {
+                background: rgb(255, 53, 53);
+              }
+            }
+            .chat-new-messages {
+              position: absolute;
+              top: 3px;
+              left: 10px;
+              width: 20px;
+              height: 20px;
+              padding-top: 2px;
+              padding-left: 2px;
+              text-align: center;
+              border-radius: 50%;
+              background: rgb(7, 170, 7);
+              color: $chat-bage-color;
+              font-size: 0.7rem;
+            }
+          }
+        }
+        // chat participants :: end
+      }
+    }
+    // chat content :: end
+  }
+  // chat users :: end
+
+  // chat active :: start
+  .mda-chat-card-active {
+    @include perfect-scrollbar-thumb-bg($chat-active-thumb-bg);
+    display: none;
+    position: fixed;
+    right: $chat-width + px;
+    top: $header-height + 1 + px;
+    background: $chat-card-active-bg;
+    width: $chat-card-active-width + px;
+    animation-duration: 0.5s;
+    height: 100%;
+    border-left: 1px solid color(secondary, darker);
+    z-index: 98;
+    @include media-breakpoint-down(sm) {
+      width: calc(100vw - #{$chat-width}px);
+    }
+    // chat active header :: start
+    .mda-chat-card-header {
+      width: 100%;
+      flex-basis: $chat-header-height + px;
+      background: $chat-card-active-header-bg;
+      @include shadow($chat-card-active-header-shadow);
+      .mda-chat-card-header-title {
+        margin-left: 15px;
+        font-size: 1.1rem;
+        font-weight: 300;
+        color: $chat-card-header-title-color;
+      }
+      .mda-chat-card-header-img {
+        margin-right: 15px;
+        margin-bottom: -55px;
+        img {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    // chat active header :: end
+
+    // chat active body :: start
+    .mda-chat-card-body {
+      width: 100%;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; /* align items in Main Axis */
+      align-items: stretch; /* align items in Cross Axis */
+      align-content: stretch; /* Extra space in Cross Axis */
+      .contact-not-selected {
+        font-size: 0.9rem;
+        padding: 0 60px;
+        .mat-icon {
+          font-size: 100px;
+          width: 100px;
+          height: 100px;
+          opacity: 0.1;
+        }
+        span.text {
+          opacity: 0.7;
+          font-weight: 400;
+        }
+      }
+      .chat-body {
+        margin: 0 20px 20px;
+        .chat-messages {
+          position: relative;
+          margin-bottom: 30px;
+          .chat-message {
+            width: 250px;
+            font-size: 0.8rem;
+            padding: 7px;
+            background: $chat-user-msg-bg;
+            border-radius: 15px;
+            float: left;
+            @include clearfix;
+            word-wrap: break-word;
+            color: $chat-card-header-title-color;
+          }
+          caption {
+            position: absolute;
+            bottom: -17px;
+            left: 5px;
+            display: block;
+            font-size: 0.7rem;
+            color: $chat-time-fg;
+            opacity: 0.7;
+            font-weight: 400;
+          }
+          &.me {
+            .chat-message {
+              float: right;
+              background: $chat-me-msg-bg;
+              color: $chat-me-msg-fg;
+            }
+            caption {
+              text-align: right;
+              right: 5px;
+            }
+          }
+        }
+      }
+    }
+    // chat active body :: end
+
+    // chat active footer :: start
+    .mda-chat-card-footer {
+      flex-basis: $chat-header-height + px;
+      margin-bottom: $chat-header-height + px;
+      width: 100%;
+      background: $chat-card-active-footer-bg;
+      img {
+        height: 40px;
+        border-radius: 50%;
+        margin-left: 20px;
+      }
+      .input-message input {
+        background: no-repeat;
+        border: none;
+        outline: none;
+        width: 200px;
+        margin: 0 15px;
+        color: $chat-input-color;
+        font-weight: 300;
+        &::placeholder {
+          color: $chat-input-color;
+          opacity: 0.7;
+        }
+      }
+      .send-msg-btn button {
+        margin-right: 15px;
+        .mat-icon {
+          color: $chat-send-msg-button;
+        }
+        &:hover .mat-icon {
+          color: $chat-send-msg-button-hover;
+        }
+      }
+    }
+    // chat active footer :: end
+
+    // chat active show :: start
+    &.show {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; /* align items in Main Axis */
+      align-items: stretch; /* align items in Cross Axis */
+      align-content: stretch; /* Extra space in Cross Axis */
+    }
+    // chat active show :: end
+  }
+  // chat active :: end
+}
+
+&.settings-hide {
+  .mda-chat .chat-users {
+    bottom: 0;
+  }
+}

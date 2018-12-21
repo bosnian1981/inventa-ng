@@ -1,0 +1,56 @@
+<div class="mda-card mda-card-material animated delay-02">
+  <div class="mda-card-header low">
+    <div class="mda-card-header-title">Simple Autocomplete</div>
+    <div class="mda-card-control">
+      <a matTooltip="more info ..." href="https://material.angular.io/components/categories" target="_blank">
+        <i class="fa fa-link"></i>
+      </a>
+    </div>
+  </div>
+  <div class="mda-card-body">
+
+    <div class="mda-card-body-inner">
+
+      <mat-tab-group>
+        <mat-tab label="UI">
+          <form class="example-form">
+            <mat-form-field class="example-full-width">
+              <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of options" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </form>
+        </mat-tab>
+
+        <mat-tab label="HTML">
+          <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button ngxClipboard (click)="copy('html')">
+            <i class="fa fa-copy"></i>
+          </button>
+          <pre>
+              <code highlight [code]="htmlCode"></code>
+            </pre>
+        </mat-tab>
+        <mat-tab label="TS">
+          <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button ngxClipboard (click)="copy('ts')">
+            <i class="fa fa-copy"></i>
+          </button>
+          <pre>
+              <code highlight [code]="tsCode"></code>
+            </pre>
+        </mat-tab>
+        <mat-tab label="CSS">
+          <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button ngxClipboard (click)="copy('css')">
+            <i class="fa fa-copy"></i>
+          </button>
+          <pre>
+              <code highlight [code]="cssCode"></code>
+            </pre>
+        </mat-tab>
+      </mat-tab-group>
+
+    </div>
+  </div>
+</div>

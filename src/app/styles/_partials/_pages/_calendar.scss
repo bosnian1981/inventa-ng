@@ -1,0 +1,113 @@
+.mda-card.calendar {
+  h3 {
+    font-weight: 300;
+    color: $text-default-color;
+  }
+  .cal-month-view {
+    .cal-header .cal-cell {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: $text-default-color;
+    }
+    .cal-days,
+    .cal-cell-row,
+    .cal-cell {
+      border-color: $calendar-border-color-light !important;
+    }
+    .cal-day-cell.cal-today {
+      background-color: $calendar-bg1-light;
+    }
+    .cal-cell-row:hover {
+      background-color: $calendar-bg2-base;
+      .cal-cell:hover {
+        background-color: $calendar-bg2-dark;
+      }
+    }
+    .cal-day-number {
+      color: $text-default-color;
+      opacity: 1;
+    }
+    .cal-out-month .cal-day-number {
+      opacity: 0.4;
+    }
+    .cal-day-cell.cal-weekend .cal-day-number {
+      color: $red;
+    }
+    .cal-open-day-events {
+      background: $calendar-bg2-base;
+      box-shadow: none;
+      border-bottom: 1px solid $calendar-border-color-dark;
+    }
+  }
+  .cal-week-view {
+    .cal-day-headers {
+      border-color: $calendar-border-color-light !important;
+      .cal-header {
+        font-size: 0.9rem;
+        font-weight: 300;
+        color: $text-default-color;
+        &:first-child {
+          border-color: $calendar-border-color-light !important;
+          &:not(:last-child) {
+            border-color: $calendar-border-color-light !important;
+          }
+        }
+        &.cal-weekend span {
+          color: $yellow;
+        }
+        &.cal-today {
+          background-color: $calendar-bg1-light;
+        }
+        &:not(:last-child) {
+          border-color: $calendar-border-color-light !important;
+        }
+      }
+    }
+    .cal-all-day-events {
+      border-color: $calendar-border-color-light !important;
+    }
+    .cal-time-events {
+      border-color: $calendar-border-color-light !important;
+    }
+    .cal-day-column {
+      border-color: $calendar-border-color-light !important;
+    }
+
+    .cal-hour:not(:last-child) .cal-hour-segment,
+    .cal-hour:last-child :not(:last-child) .cal-hour-segment {
+      border-color: $calendar-border-color-light !important;
+    }
+    .cal-hour-odd {
+      background-color: $calendar-bg1-light;
+    }
+    .cal-time-events
+      .cal-day-columns:not(.cal-resize-active)
+      .cal-hour-segment:hover {
+      background-color: $calendar-bg2-base;
+    }
+    .cal-day-headers .cal-header:hover,
+    .cal-day-headers .cal-drag-over {
+      background-color: $calendar-bg2-base;
+    }
+  }
+
+  .cal-day-view .cal-hour-rows {
+    border-color: $calendar-border-color-light !important;
+    .cal-hour:not(:last-child) .cal-hour-segment,
+    .cal-hour:last-child :not(:last-child) .cal-hour-segment {
+      border-color: $calendar-border-color-light !important;
+    }
+    .cal-hour-segment {
+      .cal-time {
+        font-weight: 300;
+      }
+      &:hover {
+        background-color: $calendar-bg2-base;
+      }
+    }
+    .cal-hour:nth-child(odd) {
+      background-color: $calendar-bg1-light;
+    }
+  }
+}
+

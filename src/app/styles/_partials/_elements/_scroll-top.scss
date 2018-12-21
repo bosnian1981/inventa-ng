@@ -1,0 +1,9 @@
+button.scroll-top {
+  position: fixed;
+  bottom: $footer-height - 30 + px;
+  right: $chat-width + 20 + px;
+
+  background: $text-default-color;
+  color: $card-header-bg;
+  opacity: 0.6;
+}

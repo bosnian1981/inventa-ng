@@ -1,0 +1,34 @@
+<div class="mda-card-header">
+  <div class="mda-card-header-inner">
+    <div class="mda-card-header-title">New Messages</div>
+    <div class="mda-card-header-image">
+      <mat-icon class="animated jello delay-1s">email</mat-icon>
+    </div>
+  </div>
+</div>
+<div class="mda-card-body">
+  <ul class="card-list">
+    <li *ngFor="let user of users; let i = index" class="animated slideInRight delay-0{{i}}" (click)="select()">
+      <div class="mda-card-body-item-image">
+        <img matTooltip="{{ user.name }} {{ user.surname }}" src="/assets/images/users/{{ user.image }}.jpg"
+          alt="{{ user.username }}">
+      </div>
+      <div class="mda-card-body-item-text">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        <br>
+        <span>Today at {{ randomTimes[i] }} PM</span>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="mda-card-footer">
+  <div class="mda-card-footer-summary">
+    Total: <span>23 messages</span>
+  </div>
+  <div class="mda-card-footer-action">
+    <button mat-button class="footer-action-button">
+      view all ...
+    </button>
+  </div>
+</div>

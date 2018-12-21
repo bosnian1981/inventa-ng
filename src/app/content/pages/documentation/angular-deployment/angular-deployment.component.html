@@ -1,0 +1,119 @@
+<div class="documentation">
+
+    <div class="mda-card animated bounceInUp delay-03">
+        <div class="mda-card-header low">
+          <div class="mda-card-header-title">Simplest deployment possible</div>
+          <div class="mda-card-control">
+            <a matTooltip="more info ..." href="https://angular.io/guide/deployment#simplest-deployment-possible" target="_blank">
+              <i class="fa fa-link"></i>
+            </a>
+          </div>
+        </div>
+        <div class="mda-card-body p-3">
+          <p>For the simplest deployment, create a production build and copy the output directory to a web server.</p>
+          <p>1. Start with the production build:</p>
+          <mat-card class="w-100 p-3 mb-3">
+            <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button (click)="copy(simplestDeployment)">
+              <i class="fa fa-copy"></i>
+            </button>
+            <pre><code highlight [code]="simplestDeployment"></code></pre>
+          </mat-card>
+          <p class="mt-3">2. Copy everything within the output folder (<code>dist/</code> by default) to a folder on the server.</p>
+          <p>3. Configure the server to redirect requests for missing files to <code>index.html</code></p>
+        </div>
+      </div>
+
+  <div class="mda-card animated bounceInUp delay-03 mt-3">
+    <div class="mda-card-header low">
+      <div class="mda-card-header-title">Angular compilation</div>
+      <div class="mda-card-control">
+        <a matTooltip="more info ..." href="https://angular.io/guide/aot-compiler#angular-compilation" target="_blank">
+          <i class="fa fa-link"></i>
+        </a>
+      </div>
+    </div>
+    <div class="mda-card-body p-3">
+      <p>Angular offers two ways to compile your application:</p>
+      <p><span class="text-primary">Just-in-Time (JIT)</span>, which compiles your app in the browser at runtime.</p>
+      <p><span class="text-primary">Ahead-of-Time (AOT)</span>,  which compiles your app at build time.</p>
+    </div>
+  </div>
+
+  <div class="mda-card animated bounceInUp delay-03 mt-3">
+    <div class="mda-card-header low">
+      <div class="mda-card-header-title">JiT - Just-in-Time compilation</div>
+      <div class="mda-card-control">
+        <a matTooltip="more info ..." href="https://angular.io/guide/aot-compiler#angular-compilation" target="_blank">
+          <i class="fa fa-link"></i>
+        </a>
+      </div>
+    </div>
+    <div class="mda-card-body p-3">
+      <p>JIT compilation is the default when you run the ng build (build only) or ng serve (build and serve locally) CLI commands:</p>
+      <mat-card class="w-100 p-3 mb-3">
+        <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button (click)="copy(jitCode)">
+          <i class="fa fa-copy"></i>
+        </button>
+        <pre><code highlight [code]="jitCode"></code></pre>
+      </mat-card>
+    </div>
+  </div>
+
+  <div class="mda-card animated bounceInUp delay-03 mt-3">
+    <div class="mda-card-header low">
+      <div class="mda-card-header-title">AoT - Ahead-of-Time compilation</div>
+      <div class="mda-card-control">
+        <a matTooltip="more info ..." href="https://angular.io/guide/aot-compiler#angular-compilation" target="_blank">
+          <i class="fa fa-link"></i>
+        </a>
+      </div>
+    </div>
+    <div class="mda-card-body p-3">
+        <p>For AOT compilation, include the --aot option with the ng build or ng serve command:</p>
+        <mat-card class="w-100 p-3 mb-3">
+          <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button (click)="copy(aotCode)">
+            <i class="fa fa-copy"></i>
+          </button>
+          <pre><code highlight [code]="aotCode"></code></pre>
+        </mat-card>
+
+        <p class="mt-3">The ng build command with the --prod meta-flag (ng build --prod) compiles with AOT by default.</p>
+    
+    </div>
+
+  </div>
+
+  <div class="mda-card animated bounceInUp delay-03 mt-3">
+    <div class="mda-card-header low">
+      <div class="mda-card-header-title">Why compile with AOT?</div>
+      <div class="mda-card-control">
+        <a matTooltip="more info ..." href="https://angular.io/guide/aot-compiler#why-compile-with-aot" target="_blank">
+          <i class="fa fa-link"></i>
+        </a>
+      </div>
+    </div>
+    <div class="mda-card-body p-3">
+        <ul class="list-group list-group-flush mt-2">
+          <li class="list-group-item">
+              <span class="text-primary">Faster rendering</span> - With AOT, the browser downloads a pre-compiled version of the application. The browser loads executable code so it can render the application immediately, without waiting to compile the app first.
+          </li>
+
+          <li class="list-group-item">
+              <span class="text-primary">Fewer asynchronous requests</span> - The compiler inlines external HTML templates and CSS style sheets within the application JavaScript, eliminating separate ajax requests for those source files.
+          </li>
+
+          <li class="list-group-item">
+              <span class="text-primary">Smaller Angular framework download size</span> - There's no need to download the Angular compiler if the app is already compiled. The compiler is roughly half of Angular itself, so omitting it dramatically reduces the application payload.
+          </li>
+
+          <li class="list-group-item">
+              <span class="text-primary">Detect template errors earlier</span> - The AOT compiler detects and reports template binding errors during the build step before users can see them.
+          </li>
+
+          <li class="list-group-item">
+              <span class="text-primary">Better security</span> - AOT compiles HTML templates and components into JavaScript files long before they are served to the client. With no templates to read and no risky client-side HTML or JavaScript evaluation, there are fewer opportunities for injection attacks.
+          </li>
+        </ul>
+    </div>
+  </div>
+</div>

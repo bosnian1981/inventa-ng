@@ -1,0 +1,71 @@
+<div class="mda-card animated bounceInUp delay-02 mt-4">
+  <div class="mda-card-header low">
+    <div class="mda-card-header-title">Costom Alert</div>
+    <div class="mda-card-control">
+      <a
+        matTooltip="more info ..."
+        href="https://ng-bootstrap.github.io/#/components/alert/examples"
+        target="_blank"
+      >
+        <i class="fa fa-link"></i>
+      </a>
+    </div>
+  </div>
+  <div class="mda-card-body p-3">
+    <mat-tab-group class="w-100">
+      <mat-tab label="UI">
+        <p>
+          <ngb-alert type="custom" [dismissible]="false"
+            ><strong>Whoa!</strong> This is a custom alert.</ngb-alert
+          >
+        </p>
+      </mat-tab>
+
+      <mat-tab label="HTML">
+        <button
+          class="copyCodeBtn"
+          matTooltip="copy code ..."
+          mat-button
+          mat-icon-button
+          ngxClipboard
+          (click)="copy('html')"
+        >
+          <i class="fa fa-copy"></i>
+        </button>
+        <pre>
+                <code highlight [code]="htmlCode"></code>
+              </pre>
+      </mat-tab>
+      <mat-tab label="TS">
+        <button
+          class="copyCodeBtn"
+          matTooltip="copy code ..."
+          mat-button
+          mat-icon-button
+          ngxClipboard
+          (click)="copy('ts')"
+        >
+          <i class="fa fa-copy"></i>
+        </button>
+        <pre>
+                <code highlight [code]="tsCode"></code>
+              </pre>
+      </mat-tab>
+      <mat-tab label="CSS">
+        <button
+          class="copyCodeBtn"
+          matTooltip="copy code ..."
+          mat-button
+          mat-icon-button
+          ngxClipboard
+          (click)="copy('css')"
+        >
+          <i class="fa fa-copy"></i>
+        </button>
+        <pre>
+                <code highlight [code]="cssCode"></code>
+              </pre>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

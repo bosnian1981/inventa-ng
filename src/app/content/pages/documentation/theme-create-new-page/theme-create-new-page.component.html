@@ -1,0 +1,82 @@
+<div class="documentation">
+    <div class="mda-card animated bounceInUp delay-02">
+      <div class="mda-card-header low">
+        <div class="mda-card-header-title">Create a new Page?</div>
+      </div>
+      <div class="mda-card-body d-block p-3">
+        <p>To create a new page please follow these steps: </p>
+  
+        <ul class="list-group list-group-flush mt-3">
+  
+            <li class="list-group-item">
+                1. Open up a terminal and navigate to <span class="text-primary">app/pages</span> folder.
+            </li>
+            <li class="list-group-item">
+                2. Generate a new module: <code>ng g module page-name</code>
+            </li>
+  
+            <li class="list-group-item">
+                3. <code>cd page-name</code> to change directory into the newModule folder
+            </li>
+
+            <li class="list-group-item">
+                4. Generate a new component: <code>ng g component page-name --flat</code>
+            </li>
+            
+            <li class="list-group-item">
+                <p>5. Configure the routes at <span class="text-primary">new-page.module.ts</span></p>
+              
+                Now, <span class="text-primary">new-page.module.ts</span> shuld look like below:
+
+                <mat-card class="w-100 p-3">
+                  <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button (click)="copy(code)">
+                    <i class="fa fa-copy"></i>
+                  </button>
+                  <pre><code highlight [code]="code"></code></pre>
+                </mat-card>
+            </li>
+
+            <li class="list-group-item">
+                <p>6. Add a new route to <span class="text-primary">pages.routing.ts</span> located at <span class="text-primary">app/pages/</span></p>
+              
+                <mat-card class="w-100 p-3">
+                  <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button (click)="copy(routeCode)">
+                    <i class="fa fa-copy"></i>
+                  </button>
+                  <pre><code highlight [code]="routeCode"></code></pre>
+                </mat-card>
+            </li>
+
+            <li class="list-group-item">
+                <p>7. And the last step is to add a link to the new page to the <span class="text-primary">Navigation</span>.</p>
+                <p>You can find navigation data in <span class="text-primary">nav.data.ts</span> located at <span class="text-primary">app/layout/navigation/nav-core</span></p>
+                
+                <p><span class="text-primary pt-2">Root Navigation Link</span></p>
+                <p>Below is an example of adding new link to root of the Navigation:</p>
+                <mat-card class="w-100 p-3">
+                  <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button (click)="copy(navigationRoot)">
+                    <i class="fa fa-copy"></i>
+                  </button>
+                  <pre><code highlight [code]="navigationRoot"></code></pre>
+                </mat-card>
+                <p class="mt-3">In above example new link is added to the root list of the navigation items and below Dashboard link.</p>
+
+                <p><span class="text-primary mt-3 pt-2">Sublink</span></p>
+                <p>In order to add link as sublink of other link, we need to add a foreign id of the parent link.</p>
+                <p>For example if we want to add new link as a sublink of Dashboard link we will add the following code:</p>
+                <mat-card class="w-100 p-3">
+                    <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button (click)="copy(sublink)">
+                      <i class="fa fa-copy"></i>
+                    </button>
+                    <pre><code highlight [code]="sublink"></code></pre>
+                  </mat-card>
+
+                  <p class="mt-4">New page is available by the following this url <span class="text-primary">http://localhost:4200/new-page</span></p>
+            </li>
+
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+  

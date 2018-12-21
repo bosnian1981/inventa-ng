@@ -1,0 +1,19 @@
+<div class="mda-card">
+  <div class="mda-card-header low">
+    <div class="mda-card-header-title">
+      <i class="fa fa-pie-chart"></i> Quarterly Sales
+    </div>
+    <div class="mda-card-control">
+      <ul class="years">
+        <li (click)="getData(2016)">2016</li>
+        <li (click)="getData(2017)">2017</li>
+        <li (click)="getData(2018)">2018</li>
+      </ul>
+    </div>
+  </div>
+  <div class="mda-card-body">
+    <div class="chart-wrapper pt-2 pb-3 w-100 h-100">
+      <canvas id="pieChart"></canvas>
+    </div>
+  </div>
+</div>

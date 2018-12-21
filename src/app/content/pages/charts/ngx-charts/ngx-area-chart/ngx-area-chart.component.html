@@ -1,0 +1,31 @@
+<div class="mda-card mda-card-chart animated bounceInUp delay-1s">
+  <div class="mda-card-header low">
+    <div class="mda-card-header-title">Area Chart</div>
+    <div class="mda-card-control">
+      <a
+        matTooltip="more info ..."
+        href="https://swimlane.gitbook.io/ngx-charts/examples/"
+        target="_blank"
+      >
+        <i class="fa fa-link"></i>
+      </a>
+    </div>
+  </div>
+  <div class="mda-card-body p-3">
+    <ngx-charts-area-chart
+      [scheme]="colorScheme"
+      [results]="multi"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      [autoScale]="autoScale"
+      (select)="onSelect($event)"
+    >
+    </ngx-charts-area-chart>
+  </div>
+</div>

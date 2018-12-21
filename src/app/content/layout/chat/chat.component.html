@@ -1,0 +1,84 @@
+<!-- folded chat :: start -->
+<div class="chat-users" id="chatUsers">
+  <!-- folded chat header :: start -->
+  <div matTooltip="Open Team Chat" (click)="toggleChatActive(null)" class="chat-header d-flex flex-shrink-0 justify-content-center align-items-center">
+    <i class="fa fa-comments"></i>
+  </div>
+  <!-- folded chat header :: end -->
+
+  <!-- folded chat participants :: start -->
+  <div class="chat-content">
+    <div class="chat-participants d-flex flex-column align-items-stretch flex-shrink-1">
+      <perfect-scrollbar class="mda-chat-perfect-scrollbar">
+        <div *ngFor="let user of users" class="chat-user text-center animated" [class.zoomOut]="user === selectedUser"
+          [class.d-none]="user === selectedUser" (click)="toggleChatActive(user)">
+          <img class="shadow" matTooltip="{{ user.name }} {{ user.surname }}" src="/assets/images/users/{{ user.image }}.jpg"
+            alt="{{ user.username }}">
+
+          <div class="chat-status" [ngClass]="user.status"></div>
+          <div *ngIf="user.newMessages > 0" class="chat-new-messages">{{ user.newMessages }}</div>
+        </div>
+      </perfect-scrollbar>
+    </div>
+  </div>
+  <!-- folded chat participants :: end -->
+
+</div>
+<!-- folded chat :: end -->
+
+<!-- active chat :: start -->
+<div [class.show]="showActiveBox" id="chatBody" class="mda-chat-card-active animated" [ngClass]="animationClass" (clickOutside)="onClickedOutside($event)" [exclude]="'.chat-users'">
+  <!-- active chat header :: start -->
+  <div class="mda-chat-card-header d-flex align-items-center justify-content-end">
+    <div class="mda-chat-card-header-title flex-grow-1">
+      {{ selectedUser ? selectedUser.name + ' ' + selectedUser.surname : 'Team Chat' }}
+      <!-- <caption *ngIf="selectedUser" class="{{ selectedUser.status }}">{{ selectedUser.status }}</caption> -->
+    </div>
+    <div *ngIf="selectedUser" class="mda-chat-card-header-img">
+      <img class="animated" #selectedUserImg src="/assets/images/users/{{ selectedUser.image }}.jpg" alt="{{ selectedUser.username }}"
+        (click)="toggleChatActive()">
+    </div>
+  </div>
+  <!-- active chat header :: end -->
+
+  <!-- active chat body :: start -->
+  <div class="mda-chat-card-body pt-5">
+    <div *ngIf="!selectedUser" class="contact-not-selected d-flex flex-column w-100 h-100 justify-content-center align-items-center">
+      <mat-icon class="d-block">chat</mat-icon><br>
+      <span class="text text-center">Select a contact to start a conversation</span>
+    </div>
+
+    <perfect-scrollbar class="mda-chat-perfect-scrollbar" #chatPS>
+      <div *ngIf="selectedUser" class="chat-body d-flex flex-column h-100">
+        <div *ngFor="let msg of messages; index as i;" class="chat-messages" [class.me]="msg.sender === 2">
+          <div class="chat-message">
+            <p class="p-0 m-0">{{ msg.message }}</p>
+          </div>
+          <caption class="m-0 p-0">{{ msg.time }}</caption>
+        </div>
+      </div>
+    </perfect-scrollbar>
+
+  </div>
+  <!-- active chat body :: end -->
+
+  <!-- active chat footer :: start -->
+  <div *ngIf="selectedUser" class="mda-chat-card-footer d-flex flex-row align-items-center justify-content-start">
+    <div class="d-flex align-items-center flex-grow-1 ">
+      <img src="/assets/images/users/user_1.jpg">
+
+      <div class="input-message flex-grow-1">
+        <input type="text" placeholder="Type message ..." [(ngModel)]="messageText" (keydown.enter)="sendMessage(messageText)">
+      </div>
+
+      <div class="send-msg-btn">
+        <button mat-button mat-icon-button (click)="sendMessage(messageText)">
+          <mat-icon>send</mat-icon>
+        </button>
+      </div>
+
+    </div>
+  </div>
+  <!-- active chat footer :: end -->
+</div>
+<!-- active chat :: end -->

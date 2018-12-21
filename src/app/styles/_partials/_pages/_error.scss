@@ -1,0 +1,33 @@
+app-not-found {
+  width: 100%;
+  .error {
+    display: flex;
+    height: 100%;
+    padding: 150px 0;
+    .row {
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 0 50px;
+      .mat-card {
+        .mat-card-header {
+          i {
+            font-size: 55px;
+            position: absolute;
+            top: -45px;
+            left: 50%;
+            margin-left: -47px;
+            background: $auth-icon-bg;
+            color: $auth-icon-color;
+            padding: 10px;
+            border-radius: 50%;
+            border: 10px solid $body-bg;
+          }
+        }
+        .mat-card-content {
+          padding-top: 40px;
+        }
+      }
+    }
+  }
+}

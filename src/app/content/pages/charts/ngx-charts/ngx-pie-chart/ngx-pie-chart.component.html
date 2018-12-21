@@ -1,0 +1,26 @@
+<div class="mda-card mda-card-chart animated bounceInUp delay-1s">
+  <div class="mda-card-header low">
+    <div class="mda-card-header-title">Pie Chart</div>
+    <div class="mda-card-control">
+      <a
+        matTooltip="more info ..."
+        href="https://swimlane.gitbook.io/ngx-charts/examples/"
+        target="_blank"
+      >
+        <i class="fa fa-link"></i>
+      </a>
+    </div>
+  </div>
+  <div class="mda-card-body p-3">
+    <ngx-charts-pie-chart
+      [scheme]="colorScheme"
+      [results]="single"
+      [legend]="showLegend"
+      [explodeSlices]="explodeSlices"
+      [labels]="showLabels"
+      [doughnut]="doughnut"
+      (select)="onSelect($event)"
+    >
+    </ngx-charts-pie-chart>
+  </div>
+</div>

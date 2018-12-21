@@ -1,0 +1,34 @@
+
+// header :: start 
+$header-height: 80;
+// header :: end 
+
+// subheader :: start 
+$subheader-height: 150;
+// subheader :: end 
+
+// navigation :: start
+$nav-items-padding-left-default: 65;
+$vertical-navigation-width-default: 265;
+$vertical-navigation-width-folded: 80;
+$horizontal-navigation-height: $header-height;
+// navigation :: end
+
+// chat :: start
+$chat-width: 70; // folded chat width
+$chat-full-width: 360; // open and active chat width
+$chat-header-height: $header-height;
+$chat-card-active-width: 350;
+$card-header-height: $header-height;
+// chat :: end
+
+// footer :: start 
+$footer-height: 60;
+// footer :: end 
+
+// settings :: start
+$settings-width: 420;
+$settings-button-width: 40;
+$settings-button-height: 40;
+$settings-button-margin: 10;
+// settings :: end

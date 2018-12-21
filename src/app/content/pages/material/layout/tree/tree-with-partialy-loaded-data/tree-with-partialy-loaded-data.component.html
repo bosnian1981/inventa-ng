@@ -1,0 +1,72 @@
+<div class="mda-card mda-card-material animated delay-02">
+    <div class="mda-card-header low">
+      <div class="mda-card-header-title">Tree with partially loaded data</div>
+      <div class="mda-card-control">
+          <a matTooltip="more info ..." href="https://material.angular.io/components/categories" target="_blank">
+            <i class="fa fa-link"></i>
+          </a>
+        </div>
+    </div>
+    <div class="mda-card-body">
+
+      <div class="mda-card-body-inner">
+  
+        <mat-tab-group>
+          <mat-tab label="UI">
+              <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+                  <!-- Leaf node -->
+                  <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+                    <button mat-icon-button disabled></button>
+                    {{node.item}}
+                  </mat-tree-node>
+                
+                  <!-- expandable node -->
+                  <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+                    <button mat-icon-button
+                            [attr.aria-label]="'toggle ' + node.filename"
+                            (click)="loadChildren(node)"
+                            matTreeNodeToggle>
+                      <mat-icon class="mat-icon-rtl-mirror">
+                        {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                      </mat-icon>
+                    </button>
+                    {{node.item}}
+                  </mat-tree-node>
+                
+                  <mat-tree-node *matTreeNodeDef="let node; when: isLoadMore">
+                    <button mat-button (click)="loadMore(node.loadMoreParentItem)">
+                      Load more...
+                    </button>
+                  </mat-tree-node>
+                </mat-tree>
+          </mat-tab>
+  
+          <mat-tab label="HTML">
+            <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button ngxClipboard (click)="copy('html')">
+              <i class="fa fa-copy"></i>
+            </button>
+            <pre>
+              <code highlight [code]="htmlCode"></code>
+            </pre>
+          </mat-tab>
+          <mat-tab label="TS">
+            <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button ngxClipboard (click)="copy('ts')">
+              <i class="fa fa-copy"></i>
+            </button>
+            <pre>
+              <code highlight [code]="tsCode"></code>
+            </pre>
+          </mat-tab>
+          <mat-tab label="CSS">
+            <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button ngxClipboard (click)="copy('css')">
+              <i class="fa fa-copy"></i>
+            </button>
+            <pre>
+              <code highlight [code]="cssCode"></code>
+            </pre>
+          </mat-tab>
+        </mat-tab-group>
+  
+      </div>
+    </div>
+  </div>

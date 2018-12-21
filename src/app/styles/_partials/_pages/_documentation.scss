@@ -1,0 +1,15 @@
+.documentation {
+    .mda-card {
+        .mda-card-header-title {
+            font-weight: bold !important;
+        }
+        .mda-card-body {
+            font-weight: normal;
+            .copyCodeBtn {
+                display: block !important;
+                top: 7px;
+                right: 9px;
+            }
+        }
+    }
+}

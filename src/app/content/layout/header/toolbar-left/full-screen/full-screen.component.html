@@ -1,0 +1,6 @@
+<button *ngIf="!fullscreen" class="toolbar-button toolbar-full-screen-button" mat-button mat-icon-button matTooltip="Full Screen" (click)="toggleFullScreen()">
+  <mat-icon>fullscreen</mat-icon>
+</button>
+<button *ngIf="fullscreen" class="toolbar-button toolbar-full-screen-button" mat-button mat-icon-button matTooltip="Exit Full Screen" (click)="toggleFullScreen()">
+  <mat-icon>fullscreen_exit</mat-icon>
+</button>

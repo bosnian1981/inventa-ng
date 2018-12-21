@@ -1,0 +1,155 @@
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  display: flex;
+  flex: initial;
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  overflow: hidden;
+  // letter-spacing: 1px !important;
+  font-weight: 300;
+}
+
+.mda-wrapper,
+app-pages {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+button:focus,
+input:focus {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+a {
+  outline: none !important;
+  &:active,
+  &:focus {
+    outline-style: none !important;
+    -moz-outline-style: none !important;
+    outline: none !important;
+  }
+  &:hover {
+    text-decoration: none;
+    opacity: 0.7;
+  }
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+  outline: none;
+}
+
+label {
+  margin-bottom: 0;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.form-group {
+  margin-bottom: 0;
+}
+
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  z-index: 999; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+// paddings :: start 
+// padding left :: start
+.pl-15 { 
+  padding-left: 15px !important;
+}
+.pl-30 { 
+  padding-left: 30px !important;
+}
+.pl-45 { 
+  padding-left: 45px !important;
+}
+.pl-60 { 
+  padding-left: 60px !important;
+}
+.pl-75 { 
+  padding-left: 75px !important;
+}
+// padding left :: start
+
+// padding right :: start
+.pr-15 { 
+  padding-right: 15px !important;
+}
+.pr-30 { 
+  padding-right: 30px !important;
+}
+.pr-45 { 
+  padding-right: 45px !important;
+}
+.pr-60 { 
+  padding-right: 60px !important;
+}
+.pr-75 { 
+  padding-right: 75px !important;
+}
+// padding right :: end
+// paddings :: end 
+
+@include media-breakpoint-down(xs) {
+  .mda-footer {
+    .button-cover {
+      display: flex;
+      justify-content: center;
+    }
+    & > span {
+      display: none !important;
+    }
+  }
+}
+
+@font-face {
+  font-family: 'primelight';
+  src: url('assets/fonts/prime/primelight-webfont.woff2') format('woff2'),
+    url('assets/fonts/prime/primelight-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'primeregular';
+  src: url('assets/fonts/prime/primeregular-webfont.woff2') format('woff2'),
+    url('assets/fonts/prime/primeregular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

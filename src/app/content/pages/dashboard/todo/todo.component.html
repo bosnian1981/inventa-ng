@@ -1,0 +1,111 @@
+<div class="mda-card">
+  <div class="mda-card-header low">
+    <div class="mda-card-header-title">
+        <i class="fa fa-check"></i> To Do List
+    </div>
+  </div>
+  <div class="mda-card-body">
+    <div class="row w-100 no-gutters flex-grow-1">
+      <div class="col-xl-4">
+        <div class="todo-categories">
+          <ul>
+            <li *ngFor="let category of categories">
+              <a href="javascript:;">
+                <i class="{{ category.icon }}"></i>
+                <span class="category-text">{{ category.name }}</span>
+                <span class="category-open-tasks">{{
+                  category.openTasks
+                }}</span>
+              </a>
+            </li>
+          </ul>
+          <div class="new-category">
+            <button mat-button class="mat-button-with-icon" (click)="toggleCategory()">
+              <mat-icon>add</mat-icon> Add new Category
+            </button>
+
+            <mat-form-field *ngIf="showCategory" class="w-100 pt-2">
+                <input
+                  matInput
+                  placeholder="New category ..."
+                />
+                <button
+                  mat-button
+                  matSuffix
+                  mat-icon-button
+                  aria-label="Clear"
+                  (click)="addToDoItem($event)"
+                >
+                  <mat-icon>add</mat-icon>
+                </button>
+              </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-8">
+        <div class="todo-main">
+          <mat-form-field class="w-100">
+            <input
+              matInput
+              placeholder="New task ..."
+              (keyup)="addToDoItem($event)"
+              [(ngModel)]="newTodoText"
+            />
+            <button
+              mat-button
+              matSuffix
+              mat-icon-button
+              aria-label="Clear"
+              (click)="addToDoItem($event)"
+            >
+              <mat-icon>add</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <ul class="todo-list" perfectScrollbar>
+            <li
+              *ngFor="let item of getNotDeleted()"
+              [class]="item.priority"
+              [ngClass]="{ checked: item.isChecked, active: item.isActive }"
+              (mouseenter)="item.isActive = true"
+              (mouseleave)="item.isActive = false"
+            >
+              <mat-checkbox [(ngModel)]="item.isChecked">
+                <span
+                  class="checkbox-text"
+                  [ngClass]="item.isChecked ? 'deleted' : ''"
+                  >{{ item.text }}</span
+                ></mat-checkbox
+              >
+
+              <button
+                mat-button
+                mat-icon-button
+                class="task-delete-btn"
+                (click)="item.deleted = true"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
+              <!--
+                <i class="fa fa-trash text-danger" (click)="item.deleted = true"></i>
+              -->
+            </li>
+          </ul>
+
+          <div class="mda-portlet-footer mt-2">
+            <div class="text-right">
+              <button
+                mat-button
+                mat-icon-button
+                matTooltip="Show all ..."
+                matTooltipPosition="above"
+              >
+                <mat-icon>more_horiz</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

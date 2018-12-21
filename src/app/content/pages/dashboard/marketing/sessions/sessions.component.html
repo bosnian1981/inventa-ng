@@ -1,0 +1,13 @@
+<div class="chart-wrapper-inner">
+    <caption>
+      Sessions by channel
+    </caption>
+    <div class="chart-body">
+        <ul class="pl-3" class="w-100">
+            <li class="p-3" *ngFor="let item of data; let i = index;">
+                <span>{{item.name}}</span> <span class="float-right">{{item.value / 1000}}K</span>
+                <mat-progress-bar mode="determinate" value="{{(item.value / 2000) * 100}}"></mat-progress-bar>
+            </li>
+          </ul>
+    </div>
+  </div>

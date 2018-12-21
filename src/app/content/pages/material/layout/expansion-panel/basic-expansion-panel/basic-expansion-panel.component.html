@@ -1,0 +1,79 @@
+<div class="mda-card mda-card-material animated delay-02">
+  <div class="mda-card-header low">
+    <div class="mda-card-header-title">Basic expansion panel</div>
+    <div class="mda-card-control">
+      <a matTooltip="more info ..." href="https://material.angular.io/components/categories" target="_blank">
+        <i class="fa fa-link"></i>
+      </a>
+    </div>
+    
+  </div>
+  <div class="mda-card-body">
+
+    <div class="mda-card-body-inner">
+
+      <mat-tab-group>
+        <mat-tab label="UI">
+            <mat-accordion>
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Personal data
+                    </mat-panel-title>
+                    <mat-panel-description>
+                      Type your name and age
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+              
+                  <mat-form-field>
+                    <input matInput placeholder="First name">
+                  </mat-form-field>
+              
+                  <mat-form-field>
+                    <input matInput placeholder="Age">
+                  </mat-form-field>
+                </mat-expansion-panel>
+                <mat-expansion-panel (opened)="panelOpenState = true"
+                                     (closed)="panelOpenState = false">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Self aware panel
+                    </mat-panel-title>
+                    <mat-panel-description>
+                      Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+                  <p>I'm visible because I am open</p>
+                </mat-expansion-panel>
+              </mat-accordion>
+        </mat-tab>
+
+        <mat-tab label="HTML">
+          <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button ngxClipboard (click)="copy('html')">
+            <i class="fa fa-copy"></i>
+          </button>
+          <pre>
+            <code highlight [code]="htmlCode"></code>
+          </pre>
+        </mat-tab>
+        <mat-tab label="TS">
+          <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button ngxClipboard (click)="copy('ts')">
+            <i class="fa fa-copy"></i>
+          </button>
+          <pre>
+            <code highlight [code]="tsCode"></code>
+          </pre>
+        </mat-tab>
+        <mat-tab label="CSS">
+          <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button ngxClipboard (click)="copy('css')">
+            <i class="fa fa-copy"></i>
+          </button>
+          <pre>
+            <code highlight [code]="cssCode"></code>
+          </pre>
+        </mat-tab>
+      </mat-tab-group>
+
+    </div>
+  </div>
+</div>

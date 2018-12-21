@@ -1,0 +1,105 @@
+@import 'base';
+@import 'layouts/_variables';
+@import '_partials/_elements/_loading-spinner';
+
+.skin-dark-blue {
+  @import 'skins/_dark-blue';
+  @import '_partials/partials';
+  @import 'custom';
+  &.layout-default {
+    @import 'layouts/_default';
+  }
+  &.layout-horizontal {
+    @import 'layouts/_horizontal';
+  }
+}
+.skin-dark-black {
+  @import 'skins/_dark-black';
+  @import '_partials/partials';
+  @import 'custom';
+  &.layout-default {
+    @import 'layouts/_default';
+  }
+  &.layout-horizontal {
+    @import 'layouts/_horizontal';
+  }
+}
+.skin-dark-green {
+  @import 'skins/_dark-green';
+  @import '_partials/partials';
+  @import 'custom';
+  &.layout-default {
+    @import 'layouts/_default';
+  }
+  &.layout-horizontal {
+    @import 'layouts/_horizontal';
+  }
+}
+.skin-dark-purple {
+  @import 'skins/_dark-purple';
+  @import '_partials/partials';
+  @import 'custom';
+  &.layout-default {
+    @import 'layouts/_default';
+  }
+  &.layout-horizontal {
+    @import 'layouts/_horizontal';
+  }
+}
+.skin-light-blue {
+  @import 'skins/_light-blue';
+  @import '_partials/partials';
+  @import 'custom';
+  &.layout-default {
+    @import 'layouts/_default';
+  }
+  &.layout-horizontal {
+    @import 'layouts/_horizontal';
+  }
+}
+.skin-light-green {
+  @import 'skins/_light-green';
+  @import '_partials/partials';
+  @import 'custom';
+  &.layout-default {
+    @import 'layouts/_default';
+  }
+  &.layout-horizontal {
+    @import 'layouts/_horizontal';
+  }
+}
+.skin-light-grey {
+  @import 'skins/_light-grey';
+  @import '_partials/partials';
+  @import 'custom';
+  &.layout-default {
+    @import 'layouts/_default';
+  }
+  &.layout-horizontal {
+    @import 'layouts/_horizontal';
+  }
+}
+.skin-light-purple {
+  @import 'skins/_light-purple';
+  @import '_partials/partials';
+  @import 'custom';
+  &.layout-default {
+    @import 'layouts/_default';
+  }
+  &.layout-horizontal {
+    @import 'layouts/_horizontal';
+  }
+}
+.skin-custom {
+  @import 'skins/_custom-skin';
+  @import '_partials/partials';
+  @import 'custom';
+  &.layout-default {
+    @import 'layouts/_default';
+  }
+  &.layout-horizontal {
+    @import 'layouts/_horizontal';
+  }
+}
+
+@import '_partials/_ie11';

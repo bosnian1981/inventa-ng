@@ -1,0 +1,76 @@
+<div class="mda-card mda-card-material animated delay-02">
+  <div class="mda-card-header low">
+    <div class="mda-card-header-title">Basic use of (mat-table) uses display flex</div>
+    <div class="mda-card-control">
+      <a matTooltip="more info ..." href="https://material.angular.io/components/categories" target="_blank">
+        <i class="fa fa-link"></i>
+      </a>
+    </div>
+  </div>
+  <div class="mda-card-body">
+
+    <div class="mda-card-body-inner">
+
+      <mat-tab-group>
+        <mat-tab label="UI">
+          
+          <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <!-- Position Column -->
+            <ng-container matColumnDef="position">
+              <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+              <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="weight">
+              <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+            </ng-container>
+          
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="symbol">
+              <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+            </ng-container>
+          
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+
+        </mat-tab>
+
+        <mat-tab label="HTML">
+          <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button ngxClipboard (click)="copy('html')">
+            <i class="fa fa-copy"></i>
+          </button>
+          <pre>
+              <code highlight [code]="htmlCode"></code>
+            </pre>
+        </mat-tab>
+        <mat-tab label="TS">
+          <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button ngxClipboard (click)="copy('ts')">
+            <i class="fa fa-copy"></i>
+          </button>
+          <pre>
+              <code highlight [code]="tsCode"></code>
+            </pre>
+        </mat-tab>
+        <mat-tab label="CSS">
+          <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button ngxClipboard (click)="copy('css')">
+            <i class="fa fa-copy"></i>
+          </button>
+          <pre>
+              <code highlight [code]="cssCode"></code>
+            </pre>
+        </mat-tab>
+      </mat-tab-group>
+
+    </div>
+  </div>
+</div>

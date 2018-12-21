@@ -1,0 +1,178 @@
+// badge :: start
+.mat-badge {
+  .mat-badge-content {
+    top: -16px;
+    right: -19px;
+    background: $toolbar-card-header-image-bg;
+  }
+  &.red {
+    .mat-badge-content {
+      background: $red;
+    }
+  }
+  &.green {
+    .mat-badge-content {
+      background: $green;
+    }
+  }
+  &.blue {
+    .mat-badge-content {
+      background: $blue;
+    }
+  }
+}
+// badge :: end
+
+// progres bar :: start
+.mat-progress-bar-fill::after {
+  background-color: color(quaternary, light);
+}
+// progres bar :: end
+
+.mat-tab-label-content .tab-icon {
+  font-size: 13px;
+  display: inline-block;
+}
+
+.mat-tab-body-content {
+  margin-top: 15px;
+  background: $mat-tab-body-content-bg;
+  padding: 40px;
+  border-radius: 5px;
+}
+
+.mat-tab-body.mat-tab-body-active {
+  overflow-y: hidden !important;
+}
+
+.mat-button.copyCodeBtn {
+  position: absolute;
+  top: 35px;
+  right: 20px;
+  font-size: 18px;
+  display: none;
+  background: color(secondary, dark);
+  color: #f5f5f5;
+  opacity: 0.5;
+  &:hover {
+    background: color(secondary, light);
+  }
+}
+
+.mat-tab-body-content:hover .mat-button.copyCodeBtn {
+  display: inline-block;
+}
+
+.button-row button {
+  margin-right: 8px;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: $text-default-color;
+}
+
+.mat-card,
+.mat-datepicker-content,
+.mat-expansion-panel,
+.mat-table,
+.mat-paginator {
+  background: color(primary, light);
+}
+.mat-dialog-container,
+.mat-button-toggle-appearance-standard {
+  background: color(primary, base);
+}
+.mat-tooltip {
+  border-radius: 0;
+  background: $mat-tooltip-bg;
+}
+.mat-button-toggle-appearance-standard {
+  height: 40px;
+  button {
+    height: 40px;
+    .mat-button-toggle-label-content {
+      line-height: 40px;
+      padding: 1px 20px;
+    }
+  }
+}
+
+// mat dialog
+.mat-dialog-container {
+  .dialog-header {
+    height: 50px;
+
+    border-bottom: 1px solid #ddd;
+    h4 {
+      font-size: 20px;
+    }
+  }
+  .dialog-body {
+    padding: 30px 0;
+    p {
+      margin: 0 !important;
+    }
+  }
+  .dialog-footer {
+    text-align: right;
+  }
+}
+// end - dialog
+
+// mat table :: start
+mat-cell,
+mat-header-cell {
+  padding-left: 10px;
+  font-size: 0.8rem !important;
+  font-weight: 300;
+  color: $text-default-color;
+}
+.mat-table-body {
+  overflow-x: auto;
+}
+.mat-table-header {
+  padding: 0 10px 10px;
+}
+// mat table :: end
+
+// mat checkbox :: start
+.mat-checkbox {
+  label {
+    margin-bottom: 0;
+  }
+}
+// mat checkbox :: end
+
+// mat button :: start
+.mat-button {
+  font-weight: 300;
+  &.mat-button-with-icon {
+    .mat-icon {
+      margin-bottom: 3px;
+      @include icon-size(20);
+    }
+  }
+}
+
+// mat button :: end
+
+// examples :: start
+.example-h2 {
+  margin: 10px;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+.example-margin {
+  margin: 0 10px;
+}
+
+.mat-nested-tree-node {
+  list-style: none;
+}
+// examples :: end

@@ -1,0 +1,19 @@
+<div class="chart-wrapper-inner">
+  <caption>
+    Signups
+  </caption>
+  <div class="chart-body">
+    <ngx-charts-bar-vertical
+      [scheme]="colorScheme"
+      [results]="data"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      (select)="onSelect($event)"
+    >
+    </ngx-charts-bar-vertical>
+  </div>
+</div>

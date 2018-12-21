@@ -1,0 +1,90 @@
+<div class="mda-section">
+  <div class="row m-0 w-100">
+    <div class="col-md-12 pl-2 mb-4 pr-2 animated bounceInUp">
+      
+      <div class="mda-card mda-card-material animated delay-02">
+        <div class="mda-card-header low">
+          <div class="mda-card-header-title">Stepper overview</div>
+          <div class="mda-card-control">
+            <a matTooltip="more info ..." href="https://material.angular.io/components/categories" target="_blank">
+              <i class="fa fa-link"></i>
+            </a>
+          </div>
+        </div>
+        <div class="mda-card-body">
+      
+          <div class="mda-card-body-inner">
+      
+            <mat-tab-group>
+              <mat-tab label="UI">
+                  <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+                      {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+                    </button>
+                    <mat-horizontal-stepper [linear]="isLinear" #stepper>
+                      <mat-step [stepControl]="firstFormGroup">
+                        <form [formGroup]="firstFormGroup">
+                          <ng-template matStepLabel>Fill out your name</ng-template>
+                          <mat-form-field>
+                            <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+                          </mat-form-field>
+                          <div>
+                            <button mat-button matStepperNext>Next</button>
+                          </div>
+                        </form>
+                      </mat-step>
+                      <mat-step [stepControl]="secondFormGroup">
+                        <form [formGroup]="secondFormGroup">
+                          <ng-template matStepLabel>Fill out your address</ng-template>
+                          <mat-form-field>
+                            <input matInput placeholder="Address" formControlName="secondCtrl" required>
+                          </mat-form-field>
+                          <div>
+                            <button mat-button matStepperPrevious>Back</button>
+                            <button mat-button matStepperNext>Next</button>
+                          </div>
+                        </form>
+                      </mat-step>
+                      <mat-step>
+                        <ng-template matStepLabel>Done</ng-template>
+                        You are now done.
+                        <div>
+                          <button mat-button matStepperPrevious>Back</button>
+                          <button mat-button (click)="stepper.reset()">Reset</button>
+                        </div>
+                      </mat-step>
+                    </mat-horizontal-stepper>
+              </mat-tab>
+      
+              <mat-tab label="HTML">
+                <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button ngxClipboard (click)="copy('html')">
+                  <i class="fa fa-copy"></i>
+                </button>
+                <pre>
+                  <code highlight [code]="htmlCode"></code>
+                </pre>
+              </mat-tab>
+              <mat-tab label="TS">
+                <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button ngxClipboard (click)="copy('ts')">
+                  <i class="fa fa-copy"></i>
+                </button>
+                <pre>
+                  <code highlight [code]="tsCode"></code>
+                </pre>
+              </mat-tab>
+              <mat-tab label="CSS">
+                <button class="copyCodeBtn" matTooltip="copy code ..." mat-button mat-icon-button ngxClipboard (click)="copy('css')">
+                  <i class="fa fa-copy"></i>
+                </button>
+                <pre>
+                  <code highlight [code]="cssCode"></code>
+                </pre>
+              </mat-tab>
+            </mat-tab-group>
+      
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

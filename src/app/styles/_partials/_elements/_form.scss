@@ -1,0 +1,21 @@
+.mda-form {
+  .form-group {
+    margin-bottom: 20px;
+  }
+  label {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: $form-label-color;
+    margin-bottom: 0.1rem;
+  }
+  input,
+  select {
+    background: $form-input-bg;
+    color: $form-input-fg;
+    border-radius: 3px;
+    border-color: $form-control-border;
+    font-size: 0.9rem;
+    font-weight: 300;
+  
+  }
+}

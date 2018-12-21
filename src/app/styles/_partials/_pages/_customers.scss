@@ -1,0 +1,60 @@
+.customers {
+  .mat-table-header {
+    width: 100%;
+    .btn-new-customer {
+      position: absolute;
+      right: 0;
+      top: 25px;
+      background: $card-header-bg;
+      color: $card-header-fg;
+      &:hover {
+        box-shadow: none !important;
+      }
+    }
+    .btn-delete-customers {
+      margin: 20px 0 -5px 15px;
+      color: $red;
+    }
+  }
+
+  .mat-table-body {
+    margin-top: 30px;
+    width: 100%;
+    .mat-table {
+      border-radius: 5px;
+      .mat-checkbox-layout {
+        margin: 0;
+      }
+      .mat-column-select,
+      .mat-column-id {
+        flex: 0 0 50px;
+      }
+      .mat-column-name,
+      .mat-column-surname {
+        flex: 0 0 100px;
+      }
+      .mat-column-email,
+      .mat-column-phone {
+        flex: 0 0 190px;
+      }
+      .mat-column-actions {
+        flex: 0 0 120px;
+      }
+      i.fa {
+        font-size: 1.5rem;
+        width: 50px;
+        text-align: center;
+        &.fa-male {
+          color: $blue;
+        }
+        &.fa-female {
+          color: $pink;
+        }
+      }
+    }
+  }
+  .mat-paginator {
+    width: 100%;
+    padding-right: 20px;
+  }
+}

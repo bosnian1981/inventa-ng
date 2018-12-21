@@ -1,0 +1,17 @@
+<div class="mda-card mt-5 animated fadeIn delay-03">
+    <div class="mda-card-header low">
+      <div class="mda-card-header-title">
+        <i class="fa fa-users"></i> Visitors
+      </div>
+      <div class="mda-card-control">
+        <ul class="years">
+          <li (click)="getData(2016)">2016</li>
+          <li (click)="getData(2017)">2017</li>
+          <li (click)="getData(2018)">2018</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mda-card-body p-3 pt-0">
+        <canvas id="line-chart"></canvas>
+    </div>
+  </div>

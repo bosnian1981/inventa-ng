@@ -1,0 +1,149 @@
+<div #toolbar class="toolbar">
+  <!-- tasks dropdown :: start -->
+  <button
+    class="toolbar-button toolbar-tasks-button"
+    mat-button
+    mat-icon-button
+    matToltip="tasks"
+    (click)="toggleTasksCard()"
+  >
+    <mat-icon>list</mat-icon>
+    <span matBadge="3" class="red" matBadgeOverlap="false">
+      <span class="pulsating-circle red"></span>
+    </span>
+  </button>
+
+  <div
+    #tasksCard
+    id="tasks-card"
+    class="mda-card d-none animated"
+    (clickOutside)="hideTasksCard()"
+    [exclude]="'.toolbar-tasks-button'"
+  >
+    <app-tasks></app-tasks>
+  </div>
+  <!-- tasks dropdown :: end -->
+
+  <!-- messages dropdown :: start -->
+  <button
+    class="toolbar-button toolbar-message-button"
+    mat-button
+    mat-icon-button
+    matToltip="mesages"
+    (click)="toggleMessagesCard()"
+  >
+    <mat-icon>email</mat-icon>
+    <span matBadge="4" class="blue" matBadgeOverlap="false">
+      <span class="pulsating-circle blue"></span>
+    </span>
+  </button>
+
+  <div
+    #messagesCard
+    id="messages-card"
+    class="mda-card d-none animated"
+    (clickOutside)="hideMessagesCard()"
+    [exclude]="'.toolbar-message-button'"
+  >
+    <app-messages></app-messages>
+  </div>
+  <!-- messages dropdown :: end -->
+
+  <!-- alerts dropdown :: start -->
+  <button
+    class="toolbar-button toolbar-alerts-button"
+    mat-button
+    mat-icon-button
+    matToltip="alerts"
+    (click)="toggleAlertsCard()"
+  >
+    <mat-icon>notifications</mat-icon>
+    <span matBadge="8" class="green" matBadgeOverlap="false">
+      <span class="pulsating-circle green"></span>
+    </span>
+  </button>
+
+  <div
+    #alertsCard
+    id="alerts-card"
+    class="mda-card d-none animated"
+    (clickOutside)="hideAlertsCard()"
+    [exclude]="'.toolbar-alerts-button'"
+  >
+    <app-alerts></app-alerts>
+  </div>
+  <!-- alerts dropdown :: end -->
+
+  <!-- languages dropdown :: start -->
+  <figure class="toolbar-button toolbar-language-button">
+    <img
+      alt="{{selectedLanguage ? selectedLanguage.name : 'English'}}"
+      src="assets/images/flags/{{selectedLanguage ? selectedLanguage.image : 'english'}}.svg"
+      (click)="toggleLanguageCard()"
+    />
+  </figure>
+
+  <div
+    #languageCard
+    id="language-card"
+    class="mda-card d-none animated"
+    (clickOutside)="hideLanguageCard()"
+    [exclude]="'.toolbar-language-button'"
+  >
+    <app-languages></app-languages>
+  </div>
+  <!-- languages dropdown :: end -->
+
+  <!-- profile dropdown :: start -->
+  <figure
+    class="toolbar-button toolbar-profile-button animated"
+    matToltip="profile"
+  >
+    <img
+      alt="profile"
+      src="assets/images/users/user_1.jpg"
+      (click)="toggleProfileCard()"
+    />
+  </figure>
+
+  <div
+    #profileCard
+    id="profile-card"
+    class="mda-card d-none animated"
+    (clickOutside)="hideProfileCard()"
+    [exclude]="'.toolbar-profile-button'"
+  >
+    <app-profile></app-profile>
+  </div>
+  <!-- profile dropdown :: end -->
+</div>
+
+<!-- toggler for toolbar :: start -->
+<button
+  (click)="toggleToolbar()"
+  *ngIf="showToolbarToggler"
+  (clickOutside)="hideToolbar()"
+  [exclude]="'.toolbar'"
+  class="toolbar-button toolbar-toggler-button mr-3"
+  mat-button
+  matPrefix
+  mat-icon-button
+  matTooltip="Toolbar ..."
+>
+  <mat-icon>more_horiz</mat-icon>
+</button>
+<!-- toggler for toolbar :: end -->
+
+<!-- toggler for toolbar :: start -->
+<button
+  (click)="toggleChat()"
+  *ngIf="showChatToggler"
+  class="toolbar-button chat-toggler-button mr-3"
+  mat-button
+  matPrefix
+  mat-icon-button
+  matTooltip="Chat ..."
+>
+  <mat-icon>chat</mat-icon>
+</button>
+<!-- toggler for toolbar :: end -->

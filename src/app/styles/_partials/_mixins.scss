@@ -1,0 +1,201 @@
+// general mixins :: start
+// shadow :: start
+@mixin shadow($params, $important: null) {
+  -webkit-box-shadow: $params $important;
+  box-shadow: $params $important;
+}
+// shadow :: end
+@mixin transform-translate($param1, $param2) {
+  -webkit-transform: translate($param1, $param2);
+  -ms-transform: translate($param1, $param2);
+  transform: translate($param1, $param2);
+}
+// transform :: start
+
+// gradient background :: start
+@mixin gradient-bg($color1, $color2) {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0e141a+0,485665+99 */
+  background: $color1; /* Old browsers */
+  background: -moz-linear-gradient(
+    -45deg,
+    $color1 0%,
+    $color2 99%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    -45deg,
+    $color1 0%,
+    $color2 99%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    135deg,
+    $color1 0%,
+    $color2 99%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+// gradient background :: end
+
+// start :: transition animation
+@mixin transition($property, $time) {
+  -webkit-transition: $property $time + s;
+  transition: $property $time + s;
+}
+// transition animation :: end
+
+// placeholder color: start
+@mixin placeholder-color($color) {
+  &::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $color;
+    opacity: 1; /* Firefox */
+  }
+
+  &:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: $color;
+  }
+
+  &::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: $color;
+  }
+}
+
+// animation delay :: start
+@mixin animation-delay($time) {
+  -webkit-animation-delay: $time + s;
+  animation-delay: $time + s;
+}
+// animation delay :: end
+
+// perfect scroollbar :: start
+@mixin perfect-scrollbar-thumb-width($width) {
+  .ps.ps--active-y > .ps__rail-y {
+    width: $width + px;
+    background: transparent;
+    .ps__thumb-y {
+      right: 0;
+      width: $width + px;
+    }
+  }
+}
+@mixin perfect-scrollbar-thumb-bg($bg) {
+  .ps__thumb-y {
+    opacity: 0.7;
+    background-color: $bg;
+  }
+  .ps__rail-y:hover > .ps__thumb-y,
+  .ps__rail-y:focus > .ps__thumb-y,
+  .ps__rail-y.ps--clicking .ps__thumb-y {
+    background-color: $bg;
+  }
+}
+// perfect scroollbar :: end
+
+// icon size :: start
+@mixin icon-size($size) {
+  width: $size + px;
+  height: $size + px;
+  line-height: $size + px;
+  font-size: $size + px;
+}
+@mixin icon-size-rem($size) {
+  width: $size + rem;
+  height: $size + rem;
+  line-height: $size + rem;
+  font-size: $size + rem;
+}
+// icon size :: start
+
+@mixin position($position) {
+  position: $position;
+}
+@mixin side($side, $oposite-side, $margin) {
+  #{$side}: $margin + px;
+  #{$oposite-side}: auto;
+}
+@mixin width($width) {
+  width: $width + px;
+  @include transition(width, 0.3);
+}
+@mixin height-substract($substraction-value) {
+  height: calc(100vh - #{$substraction-value}px);
+  @include transition(height, 0.3);
+}
+@mixin margin-fixed($margin-position, $margin, $priority: null) {
+  #{$margin-position}: $margin + px $priority;
+}
+@mixin margin($margin-position, $margin) {
+  margin-#{$margin-position}: $margin + px;
+  @include transition(margin-#{$margin-position}, 0.3);
+}
+// general mixins :: end
+
+// start :: footer
+@mixin footer-fixed($selector, $left-margin, $right-margin, $height-substract) {
+  &.#{$selector} {
+    .mda-footer {
+      position: fixed !important;
+      left: $left-margin + px;
+      right: $right-margin + px;
+      z-index: 105;
+      @include transition(all, 0.3);
+    }
+    .mda-chat {
+      z-index: 107;
+    }
+    .mda-main-perfect-scrollbar {
+      height: calc(100vh - #{$height-substract}px) !important;
+    }
+    button.scroll-top {
+      bottom: $footer-height + 20 + px;
+    }
+    @if $selector == 'footer-above' {
+      .mda-nav-vertical {
+        bottom: $footer-height + px !important;
+        @include transition(bottom, 0.3);
+        .navigation {
+          height: calc(100vh - #{$height-substract}px) !important;
+        }
+      }
+    } @else {
+      .mda-nav-vertical {
+        bottom: 0;
+        @include transition(bottom, 0.3);
+        .navigation {
+          height: calc(100vh - #{$header-height}px) !important;
+        }
+      }
+    }
+    &.navbar-horizontal {
+      .mda-main-perfect-scrollbar {
+        @include height-substract(
+          $header-height + $horizontal-navigation-height + $footer-height
+        );
+      }
+    }
+  }
+}
+@mixin footer-fixed-left-right($selector, $left-margin, $right-margin) {
+  &.#{$selector} {
+    .mda-footer {
+      left: $left-margin + px;
+      right: $right-margin + px;
+    }
+  }
+}
+@mixin footer-fixed-left($selector, $left-margin) {
+  &.#{$selector} {
+    .mda-footer {
+      left: $left-margin + px;
+    }
+  }
+}
+@mixin footer-fixed-right($selector, $right-margin) {
+  &.#{$selector} {
+    .mda-footer {
+      right: $right-margin + px;
+    }
+  }
+}
+// footer :: end

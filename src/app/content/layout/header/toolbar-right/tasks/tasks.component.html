@@ -1,0 +1,41 @@
+<div class="mda-card-header">
+  <div class="mda-card-header-inner">
+    <div class="mda-card-header-title">New Tasks</div>
+    <div class="mda-card-header-image">
+      <mat-icon class="animated tada delay-1s">list</mat-icon>
+    </div>
+  </div>
+</div>
+<div class="mda-card-body">
+  <ul class="card-list">
+    <li class="animated slideInRight delay-0">
+      <a class="w-100" href="javascript:;" (click)="select()">
+        <span>Generating Sales Report ...</span> <span class="float-right">40%</span>
+        <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+      </a>
+    </li>
+    <li class="animated slideInRight delay-01">
+      <a class="w-100" href="javascript:;" (click)="select()">
+        <span>Importing Contacts ...</span> <span class="float-right">60%</span>
+        <mat-progress-bar mode="determinate" value="60"></mat-progress-bar>
+      </a>
+    </li>
+    <li class="animated slideInRight delay-02">
+      <a class="w-100" href="javascript:;" (click)="select()">
+        <span>Uploading product images ...</span> <span class="float-right">20%</span>
+        <mat-progress-bar mode="determinate" value="20"></mat-progress-bar>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<div class="mda-card-footer">
+  <div class="mda-card-footer-summary">
+    Total: <span>16 tasks</span>
+  </div>
+  <div class="mda-card-footer-action">
+    <button mat-button class="footer-action-button">
+      view all ...
+    </button>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="mda-wrapper">
+  <app-nav-vertical
+    *ngIf="layout == 'default'"
+    class="mda-nav-vertical"
+    (clickOutside)="closeNavigation()"
+  ></app-nav-vertical>
+
+  <div class="mda-main-section d-flex w-100 h-100">
+    <div id="mainContainer" [perfectScrollbar]="config" (ps-scroll-y)="onScroll()" class="mda-main-perfect-scrollbar">
+      <app-header class="mda-header">header</app-header>
+
+      <app-nav-horizontal
+        *ngIf="layout == 'horizontal'"
+        class="mda-nav-horizontal"
+      >
+      </app-nav-horizontal>
+
+      <mat-progress-bar *ngIf="loading" class="progress" mode="indeterminate">
+      </mat-progress-bar>
+
+      <app-subheader>subheader</app-subheader>
+
+      <div class="mda-content"><router-outlet></router-outlet></div>
+
+      <app-footer
+        class="mda-footer d-flex align-items-center p-4 pr-4"
+      ></app-footer>
+
+      <div id="overlay"></div>
+    </div>
+  </div>
+
+  <app-chat class="mda-chat" id="chat"></app-chat>
+</div>
+
+<app-settings (layoutEvent)="layoutEventHander($event)"></app-settings>
+
+<button *ngIf="showScrollUpBtn" class="scroll-top animated tada" mat-button mat-icon-button (click)="scrollTop()">
+  <mat-icon>arrow_upward</mat-icon>
+</button>

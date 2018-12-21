@@ -1,0 +1,360 @@
+.mda-dashboard {
+  .mda-card {
+    border-radius: 5px;
+    border: $dashboard-card-border;
+    .mda-card-header {
+      background: $card-header-bg;
+      border-radius: 5px 5px 0 0;
+      .mda-card-header-title {
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+      }
+    }
+    .mda-card-body {
+      background: $card-body-bg;
+    }
+    &.transparent {
+      .mda-card-header {
+        background: $card-transparent-header-bg !important;
+      }
+      .mda-card-body {
+        background: $card-transparent-body-bg !important;
+      }
+    }
+  }
+
+  .info-blocks {
+    .mda-card {
+      margin-bottom: 30px;
+      .mda-card-header {
+        align-items: flex-end;
+        background: $info-card-header-bg;
+        border-bottom: none;
+        height: 35px;
+        color: #f5f5f5;
+        .mda-card-header-title {
+          opacity: 0.7;
+          font-weight: 300;
+          color: #f5f5f5;
+        }
+        .mda-card-header-icon {
+          display: flex;
+          flex-grow: 1;
+          justify-content: flex-end;
+          align-items: center;
+          margin-bottom: -4px;
+          opacity: 0.7;
+          i {
+            @include icon-size(30);
+          }
+        }
+      }
+      .mda-card-body {
+        flex-direction: row;
+        align-items: flex-end;
+        padding-left: 15px;
+        min-height: 45px;
+        border-radius: 0 !important;
+        background: transparent;
+        color: #f5f5f5;
+        span.value {
+          font-family: 'primelight', Arial, sans-serif;
+          font-size: 1.6rem;
+        }
+      }
+      .mda-card-footer {
+        justify-content: flex-start;
+        padding-left: 15px;
+        border-top: 1px solid rgba($color: #000000, $alpha: 0.2);
+        height: 30px;
+        border-radius: 0 0 5px 5px;
+        background: transparent;
+        font-size: 0.8rem;
+        opacity: 0.7;
+        color: #f5f5f5;
+        i {
+          margin-right: 5px;
+        }
+      }
+      &.visitors {
+        @include gradient-bg($purple, rgba($color: $purple, $alpha: 0.5));
+      }
+      &.subscribers {
+        @include gradient-bg($red, rgba($color: $red, $alpha: 0.5));
+      }
+      &.sales {
+        @include gradient-bg($orange, rgba($color: $orange, $alpha: 0.5));
+      }
+      &.revenue {
+        @include gradient-bg($green, rgba($color: $green, $alpha: 0.5));
+      }
+    }
+  }
+  .os-usage {
+    .mda-card {
+      margin-bottom: 30px;
+      .chart-wrapper {
+        min-height: 330px;
+      }
+      .site-analytics-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        ul li {
+          font-size: 0.9rem;
+          font-weight: 300;
+          color: $text-default-color;
+        }
+        .mat-progress-bar-fill::after {
+          background-color: $header-progress-bar-after-bg;
+        }
+      }
+    }
+  }
+  .sales-widget {
+    .mda-card {
+      margin-bottom: 30px;
+      .mda-card-header .mda-card-control ul {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        li {
+          cursor: pointer;
+          margin-left: 15px;
+          font-size: 0.8rem;
+          opacity: 0.6;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+      .mda-card-body {
+        height: 330px;
+        .chart-wrapper {
+          height: 100%;
+          padding-bottom: 20px;
+        }
+      }
+    }
+  }
+  .visitors-widget {
+    .mda-card {
+      position: relative;
+      margin-bottom: 30px;
+      height: 400px;
+      border-radius: 0;
+      margin-left: -30px;
+      margin-right: -50px;
+      border: none;
+      color: color(light-grey, light);
+      background: $visitors-bg1;
+      @include media-breakpoint-down(lg) {
+        margin-right: -30px;
+        padding: 10px 20px
+      }
+      .mda-card-header {
+        background: none;
+        border-radius: 0;
+        border-bottom: none;
+        color: #f5f5f5;
+        margin-bottom: -50px;
+        padding: 30px;
+        .mda-card-header-title {
+          color: #f5f5f5;
+          opacity: 0.8;
+        }
+        ul {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          li {
+            cursor: pointer;
+            margin-left: 15px;
+            font-size: 0.8rem;
+            opacity: 0.6;
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
+      .mda-card-body {
+        background: none;
+        border-radius: 0;
+        height: 100%;
+        padding: 20px !important;
+      }
+    }
+  }
+  .marketing {
+    .mda-card {
+      position: relative;
+      margin-bottom: 30px;
+      min-height: 530px;
+      border-radius: 5px;
+      .mda-card-body {
+        padding: 6px;
+        .col-left {
+          padding-right: 3px;
+        }
+        .col-right {
+          padding-left: 3px;
+        }
+        .chart-wrapper {
+          min-height: 200px;
+          margin-bottom: 5px;
+          border: 1px solid rgba($color: color(primary, base), $alpha: 0.2);
+          .chart-wrapper-inner {
+            padding: 10px;
+            background: $marketing-chart-bg;
+            .chart-body {
+              display: flex;
+              align-items: center;
+            }
+            .scheme-footer {
+              .progress-section {
+                font-size: 0.9rem;
+                font-weight: 300;
+                color: $text-default-color;
+              }
+            }
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+  .todo {
+    .mda-card {
+      .mda-card-header {
+        background: $todo-card-header-bg;
+      }
+      .mda-card-body {
+        background: $todo-card-bg;
+        .todo-categories {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          height: 100%;
+          background: $todo-categories-bg;
+          ul {
+            display: flex;
+            flex-grow: 1;
+            flex-direction: column;
+            li a {
+              display: flex;
+              align-items: center;
+              height: 50px;
+              padding: 0 20px;
+              border-bottom: 1px solid $todo-categories-border;
+              font-size: 0.9rem;
+              font-weight: 300;
+              color: $text-default-color;
+              &:hover {
+                background: $todo-categories-bg-hover;
+              }
+              i {
+                margin-right: 20px;
+                @include icon-size(24);
+                opacity: 0.3;
+              }
+              span.category-text {
+                flex-grow: 1;
+                padding-left: 20px;
+              }
+            }
+          }
+          .new-category {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            border-top: 1px solid $todo-new-category-border;
+            background: $todo-new-category-bg;
+            .mat-form-field-label {
+              font-size: 0.9rem;
+              font-weight: 300;
+              top: 25px;
+            }
+            .mat-form-field.mat-focused .mat-form-field-label {
+              color: $text-default-color;
+            }
+          }
+        }
+        .todo-main {
+          background: $todo-main-bg;
+          padding: 20px;
+          height: 100%;
+          .mat-form-field-label {
+            font-size: 0.9rem;
+            font-weight: 300;
+            top: 25px;
+          }
+          .mat-form-field.mat-focused .mat-form-field-label {
+            color: $text-default-color;
+          }
+          .mat-form-field-suffix {
+            margin-right: 8px;
+          }
+          ul {
+            li {
+              display: flex;
+              align-items: center;
+              height: 40px;
+              .mat-checkbox {
+                flex-grow: 1;
+                font-size: 0.9rem;
+                font-weight: 300;
+                opacity: 0.7;
+                &:hover {
+                  opacity: 1;
+                }
+                label {
+                  margin-bottom: 0;
+                }
+                .checkbox-text.deleted {
+                  text-decoration: line-through;
+                }
+              }
+              .mat-button {
+                opacity: 0.4;
+                &:hover {
+                  opacity: 1;
+                }
+                .mat-icon {
+                  @include icon-size(18);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .sessions {
+    ul li {
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .mda-card-body {
+    .col-left,
+    .col-right {
+      padding: 0 !important;
+    }
+    .chart-wrapper {
+      &:last-child {
+        .inner {
+          margin-bottom: 6px;
+        }
+      }
+    }
+  }
+}

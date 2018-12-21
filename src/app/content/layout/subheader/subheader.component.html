@@ -1,0 +1,16 @@
+<div class="mda-subheader" *ngIf="breadcrumbs.length > 0">
+  <div class="subheader-title d-flex align-items-center">
+    {{breadcrumbs.length > 0 ? breadcrumbs[breadcrumbs.length - 1].name : 'Dashboard'}}
+  </div>
+
+  <div *ngIf="breadcrumbs.length > 0" class="breadcrumb-cover">
+    <ol class="breadcrumb">
+      <li *ngIf="router.url != '/pages/dashboard'" class="breadcrumb-item"><a routerLink="/" (click)="closeSubMenus()"><i
+            class="fa fa-home"></i></a></li>
+      <li *ngFor="let breadcrumb of breadcrumbs; let i = index;" class="breadcrumb-item">
+        <a [hidden]="i == (breadcrumbs.length - 1)" [routerLink]="[breadcrumb.url]">{{breadcrumb.name}}</a>
+        <span [hidden]="i != (breadcrumbs.length - 1)"><i *ngIf="router.url == '/pages/dashboard'" class="fa fa-home mr-2"></i>{{breadcrumb.name}}</span>
+      </li>
+    </ol>
+  </div>
+</div>

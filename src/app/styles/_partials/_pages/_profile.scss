@@ -1,0 +1,122 @@
+.mda-user-profile {
+  display: flex;
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  @include shadow($card-shadow);
+  .mda-user-profile-base {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    .profile-card {
+      padding: 40px 0 20px;
+      width: 100%;
+      background: $profile-card-bg;
+      .profile-card-image {
+        background: $profile-card-image-bg;
+        padding: 6px;
+        border-radius: 50%;
+        img {
+          border-radius: 50%;
+          width: 130px;
+        }
+      }
+      .profile-card-title {
+        margin-top: 10px;
+        font-size: 1.5rem;
+        opacity: 0.9;
+        font-weight: 300;
+      }
+      .profile-card-subtitle {
+        font-size: 0.7rem;
+        opacity: 0.7;
+        font-weight: 400;
+      }
+    }
+    .profile-navigation {
+      width: 100%;
+      background: $profile-navigation-bg;
+      padding: 35px 0;
+      flex-grow: 1;
+      ul {
+        li {
+          position: relative;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding: 10px 20px;
+          margin: 0 10px 10px 0;
+          color: $text-default-color;
+
+          //   border-bottom: 1px solid color(primary, base);
+          .profile-navigation-item {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: $text-default-color;
+            opacity: 0.7;
+            i {
+              text-align: center !important;
+              padding-left: 2px;
+              background: $profile-icon-bg;
+              @include icon-size(30);
+              font-size: 0.9rem;
+              border-radius: 50%;
+            }
+            span.text {
+              padding-left: 15px;
+            }
+            .mat-badge {
+              position: absolute;
+              right: 23px;
+              top: 25px;
+              span.pulsating-circle {
+                -webkit-transform: translateX(-122%) translateY(-55%);
+                transform: translateX(-122%) translateY(-55%);
+              }
+              .mat-badge-content {
+                right: 0;
+              }
+            }
+          }
+          &:last-child {
+            border-bottom: none;
+          }
+          &:hover,
+          &.selected {
+            border-radius: 0 30px 30px 0;
+            background: $profile-navigation-item-hover;
+          }
+        }
+      }
+    }
+  }
+  .mda-user-profile-content {
+    padding: 10px 20px;
+    background: $profile-content-bg;
+    .mat-tab-label-content {
+      font-weight: 300;
+    }
+    .mat-tab-body-content {
+      padding: 15px 0;
+      font-weight: 300;
+      background: none;
+    }
+  }
+}
+
+.mda-form {
+  display: flex;
+  flex-direction: column;
+  .mda-form-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .mda-form-control {
+      flex-grow: 1;
+    }
+  }
+}
