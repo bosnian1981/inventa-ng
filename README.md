@@ -15,6 +15,7 @@
 </div>
 
 <div id="intro">
+<h2>Introduction</h2>
 <p><a href="http://inventang.mdathemes.com/">INVENTA-ng</a> is a modern admin template based on Angular 7+, Materail Design, Bootstrap 4 …</p>
 <p>Our long experience working as web developers for various customers resulted with the idea that a modern app should be attractive and simple for use at the same time, so we designed InventaNG theme. </p>
 <p><a href="http://inventang.mdathemes.com/">INVENTA-ng</a> has quite inovative and positively different design developed according to latest and highest standards of coding. Our theme provides you all benefits that come with use of  <b>Angular CLI, Angular  7+, Angular Material, Google Material, Bootstrap 4 and SCSS</b>.</p>
