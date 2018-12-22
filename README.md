@@ -1,8 +1,6 @@
 <h1>INVENTA-ng</h1>
 <h2>Admin Theme based on Angular 7+, Angular Material, Bootstrap 4</h2>
 
-<hr>
-
 <p>INVENTA-ng is a modern admin template based on Angular 7+, Materail Design, Bootstrap 4 …</p>
 <p>Our long experience working as web developers for various customers resulted with the idea that a modern app should be attractive and simple for use at the same time, so we designed InventaNG theme. </p>
 <p>INVENTA-ng has quite inovative and positively different design developed according to latest and highest standards of coding. Our theme provides you all benefits that come with use of  <b>Angular CLI, Angular  7+, Angular Material, Google Material, Bootstrap 4 and SCSS</b>.</p>
@@ -83,5 +81,5 @@ $ npm run build</pre></div>
 <div id="support">
 <h2>Support INVENTA-ng</h2>
 <p>INVENTA-ng is an MIT licensed open source project and completely free to use.</p> 
-<p>However, given the great effort and time to create an extra quality admin theme, each of your help will be of great help to provide you with more content and more quality code. You can support our work donating on <a href="https://paypal.me/mdathemes">PayPal</a>. Thank you in advance. Your help will be very appreciated.</p>
+<p>However, given the great effort and time to create an extra quality admin theme, your help is necessary to us in order to provide you more content and more quality code. <b>You can support our work donating on <a href="https://paypal.me/mdathemes">PayPal</a></b>. Thank you in advance. Your help will be very appreciated.</p>
 </div>
