@@ -1,0 +1,1683 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)https://getbootstrap.com/docs/4.1/examples/starter-template/ -->
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- **Favicon** -->
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./assets/plugins/prism/prism.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="./styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <div id="logo">
+        <a href="index.html">
+          <img src="./assets/images/logo.png" alt="" title="" />
+          <span class="ml-1 one">inventa</span> <span class="two">ng</span>
+        </a>
+      </div>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div
+        class="collapse navbar-collapse justify-content-end"
+        id="navbarsExampleDefault"
+      >
+        <ul class="navbar-nav justify-content-end">
+          <li class="nav-item"><a class="nav-link" href="#intro">Intro</a></li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href=""
+              id="dropdownAngularIntro"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >Angular Introduction</a
+            >
+
+            <div class="dropdown-menu" aria-labelledby="dropdownAngularIntro">
+              <a class="dropdown-item" href="#agularOverview"
+                >Angular Overview</a
+              >
+              <a class="dropdown-item" href="#agularInstalation"
+                >Angular Instalation</a
+              >
+              <a class="dropdown-item" href="#agularDeployment"
+                >Angular Deployment</a
+              >
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href=""
+              id="dropdownThemeDetails"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >INVENTA-ng Details</a
+            >
+
+            <div class="dropdown-menu" aria-labelledby="dropdownThemeDetails">
+              <a class="dropdown-item" href="#themeQuickStart">Quick Start</a>
+              <a class="dropdown-item" href="#themeSettings">Theme Settings</a>
+              <a class="dropdown-item" href="#themeCustomSkin"
+                >Create Custom Skin</a
+              >
+              <a class="dropdown-item" href="#themeNewPage">Create New Page</a>
+              <a class="dropdown-item" href="#themeFilesStructure"
+                >Files Structure</a
+              >
+              <a class="dropdown-item" href="#themeStylesheets">Styleshets</a>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#references">References</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#changelog">Changelog</a>
+          </li>
+
+          <!-- <li class="nav-item"> -->
+            <!-- <a class="nav-link" href="#support">Support & Feedback</a> -->
+          <!-- </li> -->
+        </ul>
+      </div>
+    </nav>
+
+    <article id="intro" class="container-fluid main-container pl-0 pr-0">
+      <section class="page text-center">
+
+        <div class="intro-title pt-5 pb-4">
+          <h1 class="">
+            INVENTA<span>NG</span>
+          </h1>
+          <h3>
+            Angular 7+, Google Material, Bootstrap 4 based Admin Template
+          </h3>
+        </div>
+          <img class="w-60" src="./assets/images/theme-screenshots/responsive.png" alt="">
+        
+      </section>
+    </article>
+
+    <article
+      id="agularOverview"
+      class="container-fluid main-container pl-0 pr-0"
+    >
+      <section class="page">
+        <div class="section-header">
+          <div class="container section-title">Angular Overview</div>
+        </div>
+
+        <div class="section-body container">
+          <div class="card mb-4">
+            <div class="card-header">
+              <div class="card-title">What is Angular?</div>
+            </div>
+            <div class="card-body p-3">
+              <p>
+                <span class="text-primary">Angular</span> is an open-source
+                front-end framework developed by Google for creating dynamic,
+                modern web apps.
+              </p>
+              <p class="m-0">
+                Angular helps build interactive and dynamic single page
+                applications (SPAs) with its compelling features including
+                templating, two-way binding, modularization, RESTful API
+                handling, dependency injection, and AJAX handling.
+              </p>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <div class="card-title">Why to choose Angular?</div>
+            </div>
+            <div class="card-body p-3">
+              <p>
+                Angular/TypeScript duo is one of the most productive ways of
+                developing mid-to-large size Web applications that can run in
+                any modern Web browser as well as on mobile platform.
+              </p>
+              <p>Below are some of benefits of choosing Angular:</p>
+              <ul class="list-group list-group-flush mt-3">
+                <li class="list-group-item">
+                  <p class="m-0">
+                    <span class="text-primary">Supported by Google</span> - One
+                    of the biggest advantage of Angular is that it is supported
+                    by Google. The best part about it is Google’s Long-Term
+                    Support (LTS).
+                  </p>
+                </li>
+
+                <li class="list-group-item">
+                  <p class="m-0">
+                    <span class="text-primary">TypeScript</span> - Angular
+                    applications are built using TypeScript language, a
+                    superscript for JavaScript, which ensures higher security as
+                    it supports types (primitives, interfaces, etc.). It helps
+                    catch and eliminate errors early when writing the code or
+                    performing maintenance tasks.
+                  </p>
+                  <p>
+                    You can find more infomation about TypeScript at:
+                    <a
+                      href="https://www.typescriptlang.org/"
+                      class="text-secondary"
+                      target="_blank"
+                      >typescriptlang.org</a
+                    >
+                  </p>
+                </li>
+
+                <li class="list-group-item">
+                  <p class="m-0">
+                    <span class="text-primary">Modular Structure</span> -
+                    Angular organizes code into buckets, whether it is
+                    components, directives, pipes, or services. Those who are
+                    familiar with Angular refer to these buckets as modules.
+                    Modules make application functionality organization easy,
+                    segregating it into features and reusable chunks. Modules
+                    also allow for lazy loading, which paves way for application
+                    feature loading in the background or on-demand.
+                  </p>
+                </li>
+
+                <li class="list-group-item">
+                  <p class="m-0">
+                    <span class="text-primary">Code Consistency</span> -
+                    Consistent coding has several benefits, such as it makes
+                    sites easier to use and enables the use of templates or
+                    pre-defined code snippets.
+                  </p>
+                </li>
+
+                <li class="list-group-item">
+                  <p class="m-0">
+                    <span class="text-primary">Easy Testing</span> - In Angular,
+                    testing is extremely simple. Angular.js modules has the
+                    application parts, which are easy to manipulate. With module
+                    separation, you can load the necessary services, while
+                    effectively performing automatic testing. You don’t even
+                    need to remember module loading order if you follow “one
+                    file-one module” principle.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <div class="card-title">WWhat is Angular CLI?</div>
+            </div>
+            <div class="card-body p-3">
+              <p>
+                <span class="text-primary">Command Line Interface (CLI)</span>
+                comes with commands that help us create and start on our project
+                very fast.
+              </p>
+              <p>The Angular CLI helps with:</p>
+
+              <ul class="list-group list-group-flush mt-3">
+                <li class="list-group-item">
+                  <p class="m-0">
+                    <span class="text-primary">Bootstrapping a project</span> -
+                    It creates the initial project structure with a root
+                    NgModule and a root component and bootstraps it using the
+                    <code>platformBootstrapDynamic</code> method.
+                  </p>
+                </li>
+
+                <li class="list-group-item">
+                  <p class="m-0">
+                    <span class="text-primary">Serving and live reloading</span>
+                    - The CLI starts a local web-server so we can view our
+                    application in the browser via localhost:4200.
+                  </p>
+                  <p class="m-0">
+                    The CLI also watches for any changes to our files and
+                    automatically reloads the webpage if there are any.
+                  </p>
+                </li>
+
+                <li class="list-group-item">
+                  <p class="m-0">
+                    <span class="text-primary">Code generation</span> - Using
+                    the CLI we can create components directives, services, pipes
+                    etc…​ all from the command line with all the necessary
+                    files, folders and boilerplate code included.
+                  </p>
+                </li>
+
+                <li class="list-group-item">
+                  <p class="m-0">
+                    <span class="text-primary">Testing</span> - The generated
+                    code also comes with bootstrapped jasmine test spec files,
+                    we can use the CLI to compile and run all the tests with a
+                    single command.
+                  </p>
+                  <p class="m-0">
+                    Whenever the CLI detects changes to any file it re-runs all
+                    the tests automatically in the background.
+                  </p>
+                </li>
+
+                <li class="list-group-item">
+                  <p class="m-0">
+                    <span class="text-primary">Packaging and releasing</span> -
+                    The CLI doesn’t just stop with development, using it we can
+                    also package our application ready for release to a server.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article
+      id="agularInstalation"
+      class="container-fluid main-container pl-0 pr-0"
+    >
+      <section class="page">
+        <div class="section-header">
+          <div class="container section-title">Angular Instalation</div>
+        </div>
+        <div class="section-body container">
+          <div class="card mb-4">
+            <div class="card-header">
+              <div class="card-title">Prerequisites</div>
+            </div>
+            <div class="card-body p-3">
+              <p>
+                At first, make sure your development environment includes
+                Node.js® and an npm package manager.
+              </p>
+              <p><span class="text-primary">Node.js</span></p>
+              <p>Angular requires Node.js version 8.x or 10.x.</p>
+
+              <ul class="list-group list-group-flush mt-2">
+                <li class="list-group-item">
+                  To check your version, run <code>node -v</code> in a
+                  terminal/console window.
+                </li>
+                <li class="list-group-item">
+                  To get Node.js, go to
+                  <a
+                    class="text-primary"
+                    href="https://nodejs.org"
+                    target="_blank"
+                    >nodejs.org</a
+                  >.
+                </li>
+              </ul>
+
+              <p class="mt-4">
+                <span class="text-primary">npm package manager</span>
+              </p>
+              <p>
+                Angular, the Angular CLI, and Angular apps depend on features
+                and functionality provided by libraries that are available as
+                npm packages. To download and install npm packages, you must
+                have an npm package manager.
+              </p>
+              <p>
+                This Quick Start uses the npm client command line interface,
+                which is installed with Node.js by default.
+              </p>
+              <p>
+                To check that you have the npm client installed, run
+                <code>npm -v</code> in a terminal/console window.
+              </p>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <div class="card-title">Step 1: Install the Angular CLI</div>
+            </div>
+            <div class="card-body p-3">
+              <p>Install the Angular CLI globally.</p>
+
+              <code> npm install -g @angular/cli </code>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <div class="card-title">
+                Step 2: Create a workspace and initial application
+              </div>
+            </div>
+            <div class="card-body p-3">
+              <p>To create a new workspace and initial app project:</p>
+              <p>
+                1. Run the CLI command ng new and provide the name my-app, as
+                shown here:
+              </p>
+              <code>ng new my-app</code>
+              <p class="mt-3">
+                2. The ng new command prompts you for information about features
+                to include in the initial app project. Accept the defaults by
+                pressing the Enter or Return key.
+              </p>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <div class="card-title">Step 3: Serve the application</div>
+            </div>
+            <div class="card-body p-3">
+              <p>1. Go to the workspace folder (my-app).</p>
+              <p>
+                2. Launch the server by using the CLI command
+                <code>ng serve</code>, with the <code>--open</code> option.
+              </p>
+              <code> cd my-app </code> <br />
+              <code> ng serve --open </code>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article
+      id="agularDeployment"
+      class="container-fluid main-container pl-0 pr-0"
+    >
+      <section class="page">
+        <div class="section-header">
+          <div class="container section-title">Angular Deployment</div>
+        </div>
+        <div class="section-body container">
+          <div class="card mb-4">
+            <div class="card-header">
+              <div class="card-title">Simplest deployment possible</div>
+            </div>
+            <div class="card-body p-3">
+              <p>
+                For the simplest deployment, create a production build and copy
+                the output directory to a web server.
+              </p>
+              <p>1. Start with the production build:</p>
+              <code>ng build --prod</code>
+              <p class="mt-3">
+                2. Copy everything within the output folder (<code>dist/</code>
+                by default) to a folder on the server.
+              </p>
+              <p>
+                3. Configure the server to redirect requests for missing files
+                to <code>index.html</code>
+              </p>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <div class="card-title">Angular Compilation</div>
+            </div>
+            <div class="card-body p-3">
+              <p>Angular offers two ways to compile your application:</p>
+              <p>
+                <span class="text-primary">Just-in-Time (JIT)</span>, which
+                compiles your app in the browser at runtime.
+              </p>
+              <p>
+                <span class="text-primary">Ahead-of-Time (AOT)</span>, which
+                compiles your app at build time.
+              </p>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <div class="card-title">JiT - Just-in-Time compilation</div>
+            </div>
+            <div class="card-body p-3">
+              <p>
+                JIT compilation is the default when you run the ng build (build
+                only) or ng serve (build and serve locally) CLI commands:
+              </p>
+              <code>ng build </code> <br />
+              <code>ng serve</code>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <div class="card-title">AoT - Ahead-of-Time compilation</div>
+            </div>
+            <div class="card-body p-3">
+              <p>
+                For AOT compilation, include the --aot option with the ng build
+                or ng serve command:
+              </p>
+              <code>ng build --aot</code> <br />
+              <code>ng serve --aot</code>
+
+              <p class="mt-3">
+                The ng build command with the --prod meta-flag (ng build --prod)
+                compiles with AOT by default.
+              </p>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <div class="card-title">Why compile with AOT?</div>
+            </div>
+            <div class="card-body p-3">
+              <ul class="list-group list-group-flush mt-2">
+                <li class="list-group-item">
+                  <span class="text-primary">Faster rendering</span> - With AOT,
+                  the browser downloads a pre-compiled version of the
+                  application. The browser loads executable code so it can
+                  render the application immediately, without waiting to compile
+                  the app first.
+                </li>
+
+                <li class="list-group-item">
+                  <span class="text-primary">Fewer asynchronous requests</span>
+                  - The compiler inlines external HTML templates and CSS style
+                  sheets within the application JavaScript, eliminating separate
+                  ajax requests for those source files.
+                </li>
+
+                <li class="list-group-item">
+                  <span class="text-primary"
+                    >Smaller Angular framework download size</span
+                  >
+                  - There's no need to download the Angular compiler if the app
+                  is already compiled. The compiler is roughly half of Angular
+                  itself, so omitting it dramatically reduces the application
+                  payload.
+                </li>
+
+                <li class="list-group-item">
+                  <span class="text-primary"
+                    >Detect template errors earlier</span
+                  >
+                  - The AOT compiler detects and reports template binding errors
+                  during the build step before users can see them.
+                </li>
+
+                <li class="list-group-item">
+                  <span class="text-primary">Better security</span> - AOT
+                  compiles HTML templates and components into JavaScript files
+                  long before they are served to the client. With no templates
+                  to read and no risky client-side HTML or JavaScript
+                  evaluation, there are fewer opportunities for injection
+                  attacks.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article
+      id="themeQuickStart"
+      class="container-fluid main-container pl-0 pr-0"
+    >
+      <section class="page">
+        <div class="section-header">
+          <div class="container section-title">Theme - Cuick Start</div>
+        </div>
+        <div class="section-body container">
+          <div class="card mb-4">
+            <div class="card-header">
+              <div class="card-title">Step 1 - Install Node.js</div>
+            </div>
+            <div class="card-body p-3">
+              <p>
+                If you don't have Node.js installed, download and install it
+                from
+                <a
+                  class="text-primary"
+                  href="https://nodejs.org/en/download/"
+                  target="_blank"
+                  >nodejs.org/en/download/</a
+                >
+              </p>
+              <p>
+                <span class="text-primary">Note:</span> On download page choose
+                <span class="text-secondary"
+                  ><b>Recommended For Most Users</b></span
+                >
+              </p>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <div class="card-title">Step 2 - Install Git</div>
+            </div>
+            <div class="card-body p-3">
+              <p>
+                Download and install git for your environment from this address
+                <a
+                  class="text-primary"
+                  href="https://git-scm.com/download/"
+                  target="_blank"
+                  >git-scm.com/download</a
+                >
+              </p>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <div class="card-title">Step 3 - Download INVENTA-ng</div>
+            </div>
+            <div class="card-body p-3">
+              <p>
+                Download the latest theme source from the
+                <a
+                  class="text-primary"
+                  href="https://github.com/mdathemes/inventa-ng"
+                  target="_blank"
+                  >Github</a
+                >.
+              </p>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <div class="card-title">Step 4 - Unpack the code</div>
+            </div>
+            <div class="card-body p-3">
+              <p>Unpack the theme and open in your favorite code editor.</p>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <div class="card-title">Step 5 - Install Angular CLI</div>
+            </div>
+            <div class="card-body p-3">
+              <p>Install the Angular CLI globally running this command:</p>
+              <code>npm install -g @angular/cli</code>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <div class="card-title">Step 6 - Install Dependenies</div>
+            </div>
+            <div class="card-body p-3">
+              <p>
+                After the tools is installed, go inside of the theme directory
+                and install dependencies:
+              </p>
+              <code>npm install</code>
+              <p class="mt-3">
+                This command will install node dependencies defined in
+                <code>package.json</code>
+              </p>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <div class="card-title">Step 7 - Run the Application</div>
+            </div>
+            <div class="card-body p-3">
+              <p>
+                To run a local copy in development mode, execute the command
+                below:
+              </p>
+              <code>ng serve --open</code>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article
+      id="themeSettings"
+      class="container-fluid main-container pl-0 pr-0"
+    >
+      <section class="page">
+        <div class="section-header">
+          <div class="container section-title">Theme Settings</div>
+        </div>
+        <div class="section-body container">
+          <div class="card mb-4">
+            <div class="card-header">
+              <div class="card-title">Introduction</div>
+            </div>
+            <div class="card-body p-3">
+              <p>
+                Theme Settings have predefined options that define the look of
+                the theme.
+              </p>
+              <p>
+                The process of customizing the theme using predefined options is
+                quite easy.
+              </p>
+              <p>
+                In addition to choosing one of the
+                <span class="text-primary">8 predefined skin colors</span>, it
+                is also possible to
+                <span class="text-primary">customize the layout</span>.
+              </p>
+              <p>
+                After selecting the desired options, you need to copy them by
+                clicking the
+                <span class="text-primary">Coppy Settings</span> button at the
+                bottom of the Theme Settings section.
+              </p>
+              <p>
+                The options are copied to the clipboard and the last step is to
+                paste them into the file
+                <span class="text-primary">settings.service.ts</span> located at
+                the app
+                <span class="text-primary">/layout/_settings folder.</span>
+              </p>
+              <p>
+                So the process of customizing the theme using the predefined
+                options consists of the three steps described in the pictures
+                below
+              </p>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <div class="card-title">Step 1 - Choose Appropriate Options</div>
+            </div>
+            <div class="card-body p-3">
+              <div class="row">
+                <div class="col-md-4 pb-3">
+                  <img
+                    class="w-100"
+                    src="assets/images/theme-settings/colors.png"
+                    alt=""
+                  />
+                </div>
+                <div class="col-md-4 pb-3">
+                  <img
+                    class="w-100"
+                    src="assets/images/theme-settings/layouts.png"
+                    alt=""
+                  />
+                </div>
+                <div class="col-md-4 pb-3">
+                  <img
+                    class="w-100"
+                    src="assets/images/theme-settings/navbar.png"
+                    alt=""
+                  />
+                </div>
+                <div class="col-md-4 pb-3">
+                  <img
+                    class="w-100"
+                    src="assets/images/theme-settings/header.png"
+                    alt=""
+                  />
+                </div>
+                <div class="col-md-4 pb-3">
+                  <img
+                    class="w-100"
+                    src="assets/images/theme-settings/footer.png"
+                    alt=""
+                  />
+                </div>
+                <div class="col-md-4 pb-3">
+                  <img
+                    class="w-100"
+                    src="assets/images/theme-settings/chat.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <div class="card-title">
+                Step 2 - Copy Selected Options to Clipboard
+              </div>
+            </div>
+            <div class="card-body p-3">
+              <img src="assets/images/theme-settings/save-options.png" alt="" />
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <div class="card-title">Step 3 - Paste Selected Options</div>
+            </div>
+            <div class="card-body p-3">
+              <p>
+                Paste selected options into the file
+                <span class="text-primary">settings.service.ts</span> located at
+                the app
+                <span class="text-primary">/layout/_settings folder.</span>
+              </p>
+              <img src="assets/images/theme-settings/settings.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article
+      id="themeCustomSkin"
+      class="container-fluid main-container pl-0 pr-0"
+    >
+      <section class="page">
+        <div class="section-header">
+          <div class="container section-title">Custom Skin</div>
+        </div>
+        <div class="section-body container">
+          <div class="card mb-4">
+            <div class="card-header">
+              <div class="card-title">Create a Custom Skin</div>
+            </div>
+            <div class="card-body p-3">
+              <p>
+                The prosess of creating a Custom Skin is very simple, because
+                <span class="text-primary">_custom.scss</span> file has been
+                already created and all you need to do is to follow these steps:
+              </p>
+
+              <ul class="list-group list-group-flush mt-3">
+                <li class="list-group-item">
+                  1. Change the line: <code>skin: 'light-blue'</code> to
+                  <code>skin: 'custom'</code> in
+                  <span class="text-primary">settins.service.ts</span> file
+                  located at
+                  <span class="text-primary"
+                    >app/content/layout/_settings/</span
+                  >
+                </li>
+
+                <li class="list-group-item">
+                  2. Change styles in
+                  <span class="text-primary">_custom.scss</span> file located at
+                  <span class="text-primary">app/styles/skins/</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article id="themeNewPage" class="container-fluid main-container pl-0 pr-0">
+      <section class="page">
+        <div class="section-header">
+          <div class="container section-title">New Page</div>
+        </div>
+        <div class="section-body container">
+          <div class="card mb-4">
+            <div class="card-header">
+              <div class="card-title">Create a new Page</div>
+            </div>
+            <div class="card-body p-3">
+              <p>To create a new page please follow these steps:</p>
+
+              <ul class="list-group list-group-flush mt-3">
+                <li class="list-group-item">
+                  1. Open up a terminal and navigate to
+                  <span class="text-primary">app/pages</span> folder.
+                </li>
+                <li class="list-group-item">
+                  2. Generate a new module: <code>ng g module page-name</code>
+                </li>
+
+                <li class="list-group-item">
+                  3. <code>cd page-name</code> to change directory into the
+                  newModule folder
+                </li>
+
+                <li class="list-group-item">
+                  4. Generate a new component:
+                  <code>ng g component page-name --flat</code>
+                </li>
+
+                <li class="list-group-item">
+                  <p>
+                    5. Configure the routes at
+                    <span class="text-primary">new-page.module.ts</span>
+                  </p>
+
+                  Now,
+                  <span class="text-primary">new-page.module.ts</span> shuld
+                  look like below:
+
+                  <pre class="language-ts"><code>
+                    import { NgModule } from '@angular/core';
+                    import { CommonModule } from '@angular/common';
+                    import { NewPageComponent } from './new-page.component';
+                    import { RouterModule } from '@angular/router';
+            
+                    export const routes = [
+                    { path: '', component: NewPageComponent, pathMatch: 'full' }
+                    ];
+            
+                    @NgModule({
+                    declarations: [NewPageComponent],
+                    imports: [
+                      CommonModule,
+                      RouterModule.forChild(routes)
+                    ]
+                    })
+                    export class NewPageModule { }
+                  </code></pre>
+                </li>
+
+                <li class="list-group-item">
+                  <p>
+                    6. Add a new route to
+                    <span class="text-primary">pages.routing.ts</span> located
+                    at <span class="text-primary">app/pages/</span>
+                  </p>
+
+                  <pre class="language-ts"><code>
+                      {
+                        path: 'new-page',
+                        loadChildren: './new-page/new-page.module#NewPageModule',
+                        data: { breadcrumb: 'New Page' }
+                      }
+                    </code></pre>
+                </li>
+
+                <li class="list-group-item">
+                  <p>
+                    7. And the last step is to add a link to the new page to the
+                    <span class="text-primary">Navigation</span>.
+                  </p>
+                  <p>
+                    You can find navigation data in
+                    <span class="text-primary">nav.data.ts</span> located at
+                    <span class="text-primary"
+                      >app/layout/navigation/nav-core</span
+                    >
+                  </p>
+
+                  <p>
+                    <span class="text-primary pt-2">Root Navigation Link</span>
+                  </p>
+                  <p>
+                    Below is an example of adding new link to root of the
+                    Navigation:
+                  </p>
+                  <pre class="language-ts"><code>
+                      export const NavData = [
+                        // Root
+                        new NavModel(1, 'Dashboard', '/dashboard', null, 'area-chart', 'fa', null, false, 0),
+                        new NavModel(2, 'New Page', '/new-page', null, 'icon-name', 'fa', null, false, 0),
+                        .
+                        .
+                        .
+                      ]
+                  </code></pre>
+
+                  <p class="mt-3">
+                    In above example new link is added to the root list of the
+                    navigation items and below Dashboard link.
+                  </p>
+
+                  <p><span class="text-primary mt-3 pt-2">Sublink</span></p>
+                  <p>
+                    In order to add link as sublink of other link, we need to
+                    add a foreign id of the parent link.
+                  </p>
+                  <p>
+                    For example if we want to add new link as a sublink of
+                    Dashboard link we will add the following code:
+                  </p>
+                  <pre class="language-ts"><code>
+                      export const NavData = [
+                        // Root
+                        new NavModel(1, 'Dashboard', '/dashboard', null, 'area-chart', 'fa', null, true, 0),
+                        new NavModel(2, 'New Page', '/new-page', null, 'icon-name', 'fa', null, false, 1),
+                        .
+                        .
+                        .
+                      ]
+                  </code></pre>
+
+                  <p class="mt-4">
+                    New page is available by the following this url
+                    <span class="text-primary"
+                      >http://localhost:4200/new-page</span
+                    >
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article
+      id="themeFilesStructure"
+      class="container-fluid main-container pl-0 pr-0"
+    >
+      <section class="page">
+        <div class="section-header">
+          <div class="container section-title">File Structure</div>
+        </div>
+        <div class="section-body container">
+          <div class="card mb-4">
+            <div class="card-header">
+              <div class="card-title">Files Structure</div>
+            </div>
+            <div class="card-body p-3">
+              <table class="table mt-1">
+                <tbody>
+                  <tr>
+                    <td class="border-top-0">&bull; node_modules/</td>
+                    <td class="border-top-0">
+                      NPM package installation folder
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border-top-0">&bull; src/</td>
+                    <td class="border-top-0">
+                      This folder contains the actual source code for
+                      developers.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pl-30">&bull; app/</td>
+                    <td>
+                      Contains all the “modules” and “components” of our
+                      application. Every application has at least one “module”
+                      and one “component”.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pl-45">&bull; content/</td>
+                    <td>Contains UI visible content of our application</td>
+                  </tr>
+                  <tr>
+                    <td class="pl-60">&bull; auth/</td>
+                    <td>
+                      Authentication module. Contains Login, Register and
+                      Password Recovery components
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pl-60">&bull; layout/</td>
+                    <td>
+                      Contains main structure of UI as Header, Navigation,
+                      Footer ...
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pl-60">&bull; pages/</td>
+                    <td>Place where we create pages and their content</td>
+                  </tr>
+                  <tr>
+                    <td class="pl-45">&bull; shared/</td>
+                    <td>
+                      Shared and reusable components, data, services, directives
+                      ...
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pl-45">&bull; styles/</td>
+                    <td>
+                      All scss files where we define the look of our application
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pl-45">&bull; app.component.html</td>
+                    <td>Main application html file</td>
+                  </tr>
+                  <tr>
+                    <td class="pl-45">&bull; app.component.ts</td>
+                    <td>Main application component</td>
+                  </tr>
+                  <tr>
+                    <td class="pl-45">&bull; app.module.ts</td>
+                    <td>Main application module</td>
+                  </tr>
+                  <tr>
+                    <td class="pl-45">&bull; app.routing.ts</td>
+                    <td>Application routes</td>
+                  </tr>
+                  <tr>
+                    <td class="pl-30">&bull; assets/</td>
+                    <td>Static assets</td>
+                  </tr>
+                  <tr>
+                    <td class="pl-45">&bull; fonts/</td>
+                    <td>Some additional fonts used on the theme</td>
+                  </tr>
+                  <tr>
+                    <td class="pl-45">&bull; images/</td>
+                    <td>Images used in the theme</td>
+                  </tr>
+                  <tr>
+                    <td class="pl-45">&bull; lib/</td>
+                    <td>3rd Party Libraries</td>
+                  </tr>
+                  <tr>
+                    <td class="pl-30">&bull; environments/</td>
+                    <td>
+                      Contains files whre we can store configuration settings
+                      for different environments.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pl-30">&bull; favicon.ico</td>
+                    <td>Favicon</td>
+                  </tr>
+                  <tr>
+                    <td class="pl-30">&bull; index.html</td>
+                    <td>
+                      Contains our Angular application. Here, you can not find
+                      any reference to CSS or other JS files. All other pages
+                      are dynamically inserted into the page.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pl-30">&bull; karma.conf.js</td>
+                    <td>
+                      File used to store the setting of Karma i.e. test cases.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pl-30">&bull; main.ts</td>
+                    <td>
+                      Starting point of our application. Here, we can bootstrap
+                      (the process of initializing or loading) our main module
+                      using bootstrapModule method like
+                      <code
+                        >platformBrowserDynamic().bootstrapModule(AppModule);</code
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pl-30">&bull; polyfills.ts</td>
+                    <td>
+                      Imports scripts required for running Angular because
+                      angular framework uses the features of javascript which
+                      are not available in the current version of javascript
+                      supported by the most browser
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pl-30">&bull; styles.scss</td>
+                    <td>Default scss stylesheet</td>
+                  </tr>
+                  <tr>
+                    <td class="pl-30">&bull; test.ts</td>
+                    <td>Used for setting the testing environment</td>
+                  </tr>
+                  <tr>
+                    <td class="pl-15">&bull; .editorconfig</td>
+                    <td>
+                      Used when you are working in a team environment. If you
+                      are working in a team environment then make sure that all
+                      developers of a team use the same setting in this file.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pl-15">&bull; angular.json</td>
+                    <td>Standard configuration file of the application</td>
+                  </tr>
+                  <tr>
+                    <td class="pl-15">&bull; packege.json</td>
+                    <td>
+                      Contains all information like name of the project,
+                      versions information, dependencies and dev-dependencies
+                      settings
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pl-15">&bull; tsconfig.json</td>
+                    <td>
+                      Has a bunch of settings for your TypeScript compiler, so
+                      the typescript compiler looks at the setting and based on
+                      these settings, compile the typescript code into
+                      javascript, so that browser can understand.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pl-15">&bull; tslint.json</td>
+                    <td>
+                      Checks the TS code for readability, maintainability and
+                      functionality errors.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article
+      id="themeStylesheets"
+      class="container-fluid main-container pl-0 pr-0"
+    >
+      <section class="page">
+        <div class="section-header">
+          <div class="container section-title">Stylesheets</div>
+        </div>
+        <div class="section-body container">
+          <div class="card mb-4">
+            <div class="card-header">
+              <div class="card-title">Stylesheets Files Structure</div>
+            </div>
+            <div class="card-body p-3">
+              <table class="table mt-1">
+                <tbody>
+                  <tr>
+                    <td class="border-top-0">&bull; styles/</td>
+                    <td class="border-top-0">
+                      Contains multiple scss files which manage theme layouts,
+                      colors, elements ...
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pl-30">&bull; _partials/</td>
+                    <td>
+                      Contains files that define the look of individual theme
+                      parts<br />
+                      <span class="text-danger"
+                        ><b
+                          >Important: The contents of this folder should not be
+                          changed!</b
+                        >
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pl-30">&bull; _layouts/</td>
+                    <td>
+                      Contains styles that define different layouts and
+                      responsivity<br />
+                      <span class="text-danger"
+                        ><b
+                          >Important: The contents of this folder should not be
+                          changed!</b
+                        >
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pl-45">&bull; _default.scss</td>
+                    <td>
+                      Defines styles for default - vertical layout<br />
+                      <span class="text-danger"
+                        ><b
+                          >Important: The contents of this folder should not be
+                          changed!</b
+                        >
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pl-45">&bull; _horizontal.scss</td>
+                    <td>
+                      Defines styles for horizontal layout<br />
+                      <span class="text-danger"
+                        ><b
+                          >Important: The contents of this folder should not be
+                          changed!</b
+                        >
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pl-45">&bull; _variables.scss</td>
+                    <td>
+                      Contains variables that define the size of individual
+                      elements.<br />
+                      <span class="text-info"
+                        ><b>Variables in this file can be changed!</b>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pl-30">&bull; skins/</td>
+                    <td>
+                      Contains scss files that define different skin colors.<br />
+                      <span class="text-danger"
+                        ><b
+                          >Important: In this folder, nothing should be changed
+                          except custom-skin.scss files!</b
+                        >
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pl-30">&bull; base.scss</td>
+                    <td>
+                      Some general static styles <br />
+                      <span class="text-danger"
+                        ><b
+                          >Important: In this folder, nothing should be changed
+                          except custom-skin.scss files!</b
+                        >
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pl-30">&bull; theme.scss</td>
+                    <td>
+                      Combines themes and layouts depending on the options set
+                      in the settings.service.ts file<br />
+                      <span class="text-danger"
+                        ><b
+                          >Important: In this folder, nothing should be changed
+                          except custom-skin.scss files!</b
+                        >
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pl-30">&bull; custom.scss</td>
+                    <td>
+                      An empty file where developer should set its own styles.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article id="references" class="container-fluid main-container pl-0 pr-0">
+      <section class="page">
+        <div class="section-header">
+          <div class="container section-title">References</div>
+        </div>
+        <div class="section-body container">
+          <div class="card mb-4">
+            <div class="card-header">
+              <div class="card-title">References</div>
+            </div>
+            <div class="card-body p-3">
+              <table class="table m-2">
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Node.js</td>
+                    <td>
+                      <a
+                        class="text-primary"
+                        href="https://nodejs.org/en/"
+                        target="_blank"
+                        >https://nodejs.org/en/</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Angular Material</td>
+                    <td>
+                      <a
+                        class="text-primary"
+                        href="https://material.angular.io/"
+                        target="_blank"
+                        >https://material.angular.io</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>ngx-toastr</td>
+                    <td>
+                      <a
+                        class="text-primary"
+                        href="https://www.npmjs.com/package/ngx-toastr"
+                        target="_blank"
+                        >https://www.npmjs.com/package/ngx-toastr</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Animate.css</td>
+                    <td>
+                      <a
+                        class="text-primary"
+                        href="https://daneden.github.io/animate.css/"
+                        target="_blank"
+                        >https://daneden.github.io/animate.css</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Moment.js</td>
+                    <td>
+                      <a
+                        class="text-primary"
+                        href="https://momentjs.com/"
+                        target="_blank"
+                        >https://momentjs.com</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Bootstrap</td>
+                    <td>
+                      <a
+                        class="text-primary"
+                        href="https://getbootstrap.com/docs/4.0/getting-started/download/"
+                        target="_blank"
+                        >https://getbootstrap.com</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Ng-Bootstrap</td>
+                    <td>
+                      <a
+                        class="text-primary"
+                        href="https://ng-bootstrap.github.io/#/getting-started"
+                        target="_blank"
+                        >https://ng-bootstrap.github.io/#/getting-started</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>jQuery</td>
+                    <td>
+                      <a
+                        class="text-primary"
+                        href="https://www.npmjs.com/package/jquery"
+                        target="_blank"
+                        >https://www.npmjs.com/package/jquery</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Popper.js</td>
+                    <td>
+                      <a
+                        class="text-primary"
+                        href="https://github.com/FezVrasta/popper.js#installation"
+                        target="_blank"
+                        >https://github.com/FezVrasta/popper.js#installation</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>ngx-highlightjs</td>
+                    <td>
+                      <a
+                        class="text-primary"
+                        href="https://libraries.io/npm/ngx-highlightjs/2.1.4"
+                        target="_blank"
+                        >https://github.com/FezVrasta/popper.js#installation</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>angular-in-memory-web-api</td>
+                    <td>
+                      <a
+                        class="text-primary"
+                        href="https://angular.io/tutorial/toh-pt6"
+                        target="_blank"
+                        >https://angular.io/tutorial/toh-pt6</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Quill</td>
+                    <td>
+                      <a
+                        class="text-primary"
+                        href="https://www.npmjs.com/package/quill"
+                        target="_blank"
+                        >https://www.npmjs.com/package/quill</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Ngx-Quill</td>
+                    <td>
+                      <a
+                        class="text-primary"
+                        href="https://github.com/KillerCodeMonkey/ngx-quill"
+                        target="_blank"
+                        >https://github.com/KillerCodeMonkey/ngx-quill</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Charts.js</td>
+                    <td>
+                      <a
+                        class="text-primary"
+                        href="https://github.com/chartjs/Chart.js"
+                        target="_blank"
+                        >https://github.com/chartjs/Chart.js</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Ngx-Charts</td>
+                    <td>
+                      <a
+                        class="text-primary"
+                        href="https://swimlane.gitbook.io/ngx-charts/installing"
+                        target="_blank"
+                        >https://swimlane.gitbook.io/ngx-charts/installing</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Angular Calendar</td>
+                    <td>
+                      <a
+                        class="text-primary"
+                        href="https://www.npmjs.com/package/angular-calendar"
+                        target="_blank"
+                        >https://www.npmjs.com/package/angular-calendar</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Angular Flatpickr</td>
+                    <td>
+                      <a
+                        class="text-primary"
+                        href="https://www.npmjs.com/package/angularx-flatpickr"
+                        target="_blank"
+                        >https://www.npmjs.com/package/angularx-flatpickr</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>ng-click-outside</td>
+                    <td>
+                      <a
+                        class="text-primary"
+                        href="https://www.npmjs.com/package/ng-click-outside"
+                        target="_blank"
+                        >https://www.npmjs.com/package/ng-click-outside</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Ngx-Clipboard</td>
+                    <td>
+                      <a
+                        class="text-primary"
+                        href="https://www.npmjs.com/package/ngx-clipboard"
+                        target="_blank"
+                        >https://www.npmjs.com/package/ngx-clipboard</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Angular Perfect Scrollbar</td>
+                    <td>
+                      <a
+                        class="text-primary"
+                        href="https://www.npmjs.com/package/ngx-perfect-scrollbar"
+                        target="_blank"
+                        >https://www.npmjs.com/package/ngx-perfect-scrollbar</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Angular Maps</td>
+                    <td>
+                      <a
+                        class="text-primary"
+                        href="https://angular-maps.com/guides/getting-started/"
+                        target="_blank"
+                        >https://angular-maps.com/guides/getting-started/</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Line Awesome Icons</td>
+                    <td>
+                      <a
+                        class="text-primary"
+                        href="https://icons8.com/line-awesome"
+                        target="_blank"
+                        >https://icons8.com/line-awesome</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article id="changelog" class="container-fluid main-container pl-0 pr-0">
+      <section class="page">
+        <div class="section-header">
+          <div class="container section-title">Changelog</div>
+        </div>
+        <div class="section-body container">
+          <div class="card mb-4">
+            <div class="card-header"><div class="card-title">v1.0.0</div></div>
+            <div class="card-body p-3">
+              <span class="badge badge-primary">New</span>
+              <ul class="list-group w-100 list-group-flush mt-3">
+                <li class="list-group-item">Initial Setup</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <!--<article id="support" class="container-fluid main-container pl-0 pr-0">
+        <section class="page">
+          <div class="section-header">
+            <div class="container section-title">Support and Feedback</div>
+          </div>
+          <div class="section-body container">
+            <div class="card mb-4">
+              <div class="card-header"><div class="card-title">How to contact us? </div></div>
+              <div class="card-body p-3">
+                  
+                  <p>All questions will be answered within 48 hours.</p>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header"><div class="card-title">What the Support includes?</div></div>
+                <div class="card-body p-3">
+                    <ul class="list-group list-group-flush mt-2">
+                        <li class="list-group-item">
+                            Answering questions about how to use the item.
+                        </li>
+                        <li class="list-group-item">
+                            Answering technical questions about the item (and included third party assets).
+                        </li>
+                        <li class="list-group-item">
+                            Help with defects in the item or included third party assets.
+                        </li>
+                        <li class="list-group-item">
+                            Item updates to ensure ongoing compatibility and to resolve security vulnerabilities.
+                        </li>
+                      </ul>
+                </div>
+              </div>
+
+              <div class="card mb-4">
+                  <div class="card-header"><div class="card-title">What the Support does not include?</div></div>
+                  <div class="card-body p-3">
+                      <ul class="list-group list-group-flush mt-2">
+                          <li class="list-group-item">
+                              Installation of the item
+                          </li>
+                          <li class="list-group-item">
+                              Hosting, server environment, or software.
+                          </li>
+                          <li class="list-group-item">
+                              Support for third party plug-ins.
+                          </li>
+                          <li class="list-group-item">
+                              Plugins integration.
+                            </li>
+                        </ul>
+                  </div>
+                </div>
+          </div>
+        </section>
+      </article>-->
+
+    <!-- /.container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./assets/js/jquery-3.3.1.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./assets/plugins/prism/prism.js"></script>
+  </body>
+</html>

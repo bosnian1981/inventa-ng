@@ -1,0 +1,182 @@
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: 'primelight';
+  src: url('./assets/font/prime/primelight-webfont.woff2') format('woff2'),
+    url('./assets/font/primelight-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'primeregular';
+  src: url('./assets/font/prime/primeregular-webfont.woff2') format('woff2'),
+    url('./assets/font/prime/primeregular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.main-container {
+  padding: 86px 0 0;
+}
+
+#logo a {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  height: 70px;
+  font-size: 21px;
+  color: #fff !important;
+  text-transform: uppercase;
+  padding-top: 1px;
+}
+
+#logo a img {
+  width: 60px;
+}
+
+#logo a span {
+  display: flex;
+  align-items: center;
+  letter-spacing: 1px;
+  padding-left: 15px;
+}
+
+#logo a span.one {
+  padding-top: 2px;
+  font-family: primeregular, Arial, sans-serif !important;
+  opacity: 0.85;
+  font-size: 28px;
+}
+
+#logo a span.two {
+  margin-top: -2px;
+  font-family: primelight, Arial, sans-serif !important;
+  font-size: 14px;
+  color: #fff;
+  padding-left: 1px;
+  opacity: 0.95;
+}
+
+/* navigation :: start */
+ul.navbar-nav li {
+  font-size: 15px;
+}
+
+@media (min-width: 768px) {
+  .navbar-expand-md ul.navbar-nav .nav-link {
+    font-size: 1rem;
+    padding-right: 0.7rem;
+    padding-left: 0.7rem;
+  }
+}
+
+/* navigation :: end */
+
+/* section :: start */
+.section-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 140px;
+  background: #2c6dcc url(assets/images/patterns/crossword.png);
+}
+
+.section-title {
+  font-family: 'primelight', Arial, sans-serif;
+  font-size: 1.9rem;
+  font-weight: 300;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -40px;
+  color: #f5f5f5;
+}
+
+.section-body {
+  margin-top: -45px;
+}
+
+/* section :: end */
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+  font-weight: 400;
+}
+
+.card-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-grow: 0;
+  height: 45px;
+  border-bottom: 1px solid rgba(44, 109, 204, 0.4);
+  border-radius: 5px 5px 0 0;
+  padding: 0 15px;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  margin-bottom: 0;
+  color: #232323;
+  font-weight: 500;
+}
+/* card :. start */
+
+/* paddings :: start */
+/* padding left :: start */
+.pl-15 { 
+  padding-left: 15px !important;
+}
+.pl-30 { 
+  padding-left: 30px !important;
+}
+.pl-45 { 
+  padding-left: 45px !important;
+}
+.pl-60 { 
+  padding-left: 60px !important;
+}
+.pl-75 { 
+  padding-left: 75px !important;
+}
+/* padding left :: start */
+
+/* padding right :: start */
+.pr-15 { 
+  padding-right: 15px !important;
+}
+.pr-30 { 
+  padding-right: 30px !important;
+}
+.pr-45 { 
+  padding-right: 45px !important;
+}
+.pr-60 { 
+  padding-right: 60px !important;
+}
+.pr-75 { 
+  padding-right: 75px !important;
+}
+/* padding right :: end */
+/* paddings :: end  */
+
+#intro img {
+  width: 70%;
+}
+
+.intro-title h1 {
+  font-family: 'primeregular', Arial, sans-serif;
+  font-size: 3.5rem;
+}
+
+.intro-title h1 span {
+  font-size: 1.5rem;
+  padding-bottom: 10px;
+}
