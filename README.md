@@ -1,9 +1,9 @@
-<h1>INVENTA-ng</h1>
+<h1><a href="http://inventang.mdathemes.com/">INVENTA-ng</a></h1>
 <h2>Admin Theme based on Angular 7+, Angular Material, Bootstrap 4</h2>
 
-<p>INVENTA-ng is a modern admin template based on Angular 7+, Materail Design, Bootstrap 4 …</p>
+<p><a href="http://inventang.mdathemes.com/">INVENTA-ng</a> is a modern admin template based on Angular 7+, Materail Design, Bootstrap 4 …</p>
 <p>Our long experience working as web developers for various customers resulted with the idea that a modern app should be attractive and simple for use at the same time, so we designed InventaNG theme. </p>
-<p>INVENTA-ng has quite inovative and positively different design developed according to latest and highest standards of coding. Our theme provides you all benefits that come with use of  <b>Angular CLI, Angular  7+, Angular Material, Google Material, Bootstrap 4 and SCSS</b>.</p>
+<p><a href="http://inventang.mdathemes.com/">INVENTA-ng</a> has quite inovative and positively different design developed according to latest and highest standards of coding. Our theme provides you all benefits that come with use of  <b>Angular CLI, Angular  7+, Angular Material, Google Material, Bootstrap 4 and SCSS</b>.</p>
 <p>Simplicity is a crutial feature of modern real - world app and that simplicity should cover both sides at the same time - developers and users. </p>
 <p>It's beauty is accomplished with gradient colors, background patterns and appealing animations.</p>
 <p>It comes with a lot of UI elements, pages, apps and fonts and is a great start for any admin website.</p>
@@ -51,10 +51,10 @@ $ npm run build</pre></div>
 
 <div id="documentation">
 <h2>Documentation</h2>
-<p>There are 2 addresses of the INVENTA-ng documentation:</p>
+<p>There are 2 addresses of the <a href="http://inventang.mdathemes.com/">INVENTA-ng</a> documentation:</p>
 <ul>
 <li>Online - <a href="http://inventang.mdathemes.com/#/documentation/theme-quick-start" target="_blank"></a>inventang.mdathemes.com...</li>
-<li>Offline - Inside the root directory of the INVENTA-ng project</li>
+<li>Offline - Inside the root directory of the <a href="http://inventang.mdathemes.com/">INVENTA-ng</a> project</li>
 </ul>
 </div>
 
@@ -70,7 +70,7 @@ $ npm run build</pre></div>
 <div id="copyright">
 <h2>Copyright and license</h2>
 
-<p>INVENTA-ng Code is released under MIT licence <b>apart redistribution the code as stock. REDISTRIBUTION IS NOT PERMITED.</b></p>
+<p><a href="http://inventang.mdathemes.com/">INVENTA-ng</a> Code is released under MIT licence <b>apart redistribution the code as stock. REDISTRIBUTION IS NOT PERMITED.</b></p>
 
 <h4>Copyright 2018 MERSUDIN DELIC</h4>
 <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
@@ -79,7 +79,7 @@ $ npm run build</pre></div>
 </div>
 
 <div id="support">
-<h2>Support INVENTA-ng</h2>
-<p>INVENTA-ng is an MIT licensed open source project and completely free to use.</p> 
+<h2>Support <a href="http://inventang.mdathemes.com/">INVENTA-ng</a></h2>
+<p><a href="http://inventang.mdathemes.com/">INVENTA-ng</a> is an MIT licensed open source project and completely free to use.</p> 
 <p>However, given the great effort and time to create an extra quality admin theme, your help is necessary to us in order to provide you more content and more quality code. <b>You can support our work donating on <a href="https://paypal.me/mdathemes">PayPal</a></b>. Thank you in advance. Your help will be very appreciated.</p>
 </div>
