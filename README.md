@@ -1,6 +1,20 @@
 <h1><a href="http://inventang.mdathemes.com/">INVENTA-ng</a></h1>
 <h2>Admin Theme based on Angular 7+, Angular Material, Bootstrap 4</h2>
 
+<h2>Table of Contents</h2>
+
+<ul>
+<li><a href="#intro">Intro</a></li>
+<li><a href="#instalation">Instalation</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#creators">Creators</a></li>
+<li><a href="#copyright">Copyright</a></li>
+<li><a href="#support">Support</a></li>
+
+</div>
+
+<div id="intro">
 <p><a href="http://inventang.mdathemes.com/">INVENTA-ng</a> is a modern admin template based on Angular 7+, Materail Design, Bootstrap 4 …</p>
 <p>Our long experience working as web developers for various customers resulted with the idea that a modern app should be attractive and simple for use at the same time, so we designed InventaNG theme. </p>
 <p><a href="http://inventang.mdathemes.com/">INVENTA-ng</a> has quite inovative and positively different design developed according to latest and highest standards of coding. Our theme provides you all benefits that come with use of  <b>Angular CLI, Angular  7+, Angular Material, Google Material, Bootstrap 4 and SCSS</b>.</p>
@@ -26,18 +40,22 @@
 <li>Premium Support</li>
 <li>Lifetime updates</li>
 </ul>
+</div>
 
 <div id="instalation">
 <h2>Instalation</h2>
 <h3>Clone repo</h3>
-<div class="highlight highlight-source-shell"><pre><span class="pl-c"><span class="pl-c">#</span> clone the repo</span>
+<div class="highlight highlight-source-shell">
+<pre><span class="pl-c"><span class="pl-c">#</span> clone the repo</span>
 $ git clone https://github.com/mdathemes/inventa-ng.git my-project
 
 <span class="pl-c"><span class="pl-c">#</span> go into app's directory</span>
 \$ <span class="pl-c1">cd</span> my-project
 
 <span class="pl-c"><span class="pl-c">#</span> install app's dependencies</span>
-\$ npm install</pre></div>
+\$ npm install
+</pre>
+</div>
 </div>
 
 <div id="usage">
