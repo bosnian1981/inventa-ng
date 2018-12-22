@@ -81,5 +81,5 @@ $ npm run build</pre></div>
 <div id="support">
 <h2>Support <a href="http://inventang.mdathemes.com/">INVENTA-ng</a></h2>
 <p><a href="http://inventang.mdathemes.com/">INVENTA-ng</a> is an MIT licensed open source project and completely free to use.</p> 
-<p>However, given the great effort and time to create an extra quality admin theme, your help is necessary to us in order to provide you more content and more quality code. <b>You can support our work donating on <a href="https://paypal.me/mdathemes">PayPal</a></b>. Thank you in advance. Your help will be very appreciated.</p>
+<p>However, given the great effort and time to create an extra quality admin theme, your help is necessary to us in order to provide you more content and more quality code. <b>You can support our work donating on <a href="https://paypal.me/mdathemes" target="_blank">PayPal</a></b>. Thank you in advance. Your help will be very appreciated.</p>
 </div>
