@@ -1,4 +1,5 @@
-# InventaNg
+
+Angular 7+, Angular Material, Bootstrap 4 based Admin Theme
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
 
