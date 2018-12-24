@@ -1,17 +1,25 @@
 .mda-footer {
-    position: relative;
-    display: flex;
-    bottom: 0;
-    flex-direction: row;
-    height: $footer-height + px;
-    background: $footer-bg;
+  position: relative;
+  display: flex;
+  bottom: 0;
+  flex-direction: row;
+  height: $footer-height + px;
+  background: $footer-bg;
 
-    @include transition(left, 0.3);
-    span {
-        font-size: 0.9rem;
-        color: #f5f5f5 !important;
+  @include transition(left, 0.3);
+
+  span {
+    font-size: 0.9rem;
+    color: #f5f5f5 !important;
+  }
+
+  a {
+    color: #f5f5f5 !important;
+  }
+
+  .btn-donate {
+    @include media-breakpoint-down(xs) {
+      display: none;
     }
-    a {
-        color: #f5f5f5 !important;
-    }
+  }
 }

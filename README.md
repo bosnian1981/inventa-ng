@@ -81,8 +81,8 @@ $ npm run build</pre></div>
 <h2>Creators</h2>
 
 <ul>
-<li>Mersudin Delic - https://www.linkedin.com/in/mersudin-delic-3946b25b/</li>
-<li>Edina Delic - https://www.linkedin.com/in/edina-delic-a646baaa/</li>
+<li><a href="https://www.linkedin.com/in/mersudin-delic-3946b25b/" target="_blank">Mersudin Delic</a></li>
+<li><a href="https://www.linkedin.com/in/edina-delic-a646baaa/" target="_blank">Edina Delic</a></li>
 </ul>
 </div>
 
@@ -91,7 +91,7 @@ $ npm run build</pre></div>
 
 <p><a href="http://inventang.mdathemes.com/">INVENTA-ng</a> Code is released under MIT licence <b>apart redistribution the code as stock. REDISTRIBUTION IS NOT PERMITED.</b></p>
 
-<h4>Copyright 2018 MERSUDIN DELIC</h4>
+<p><b>Copyright 2018 MERSUDIN DELIC</b></p>
 <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
 <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
 <p>HE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
@@ -100,5 +100,5 @@ $ npm run build</pre></div>
 <div id="support">
 <h2>Support <a href="http://inventang.mdathemes.com/">INVENTA-ng</a></h2>
 <p><a href="http://inventang.mdathemes.com/">INVENTA-ng</a> is an MIT licensed open source project and completely free to use.</p> 
-<p>However, given the great effort and time to create an extra quality admin theme, your help is necessary to us in order to provide you more content and more quality code. <b>You can support our work donating on <a href="https://paypal.me/mdathemes" target="_blank">PayPal</a></b>. Thank you in advance. Your help will be very appreciated.</p>
+<p>However, given the great effort and time to create an high quality admin theme, your help is necessary to us in order to provide you more content and more quality code. <b>You can support our work donating on <a href="https://paypal.me/mdathemes" target="_blank">PayPal</a></b>. Thank you in advance. Your help will be very appreciated.</p>
 </div>

@@ -127,43 +127,54 @@ ul.navbar-nav li {
   color: #232323;
   font-weight: 500;
 }
+
 /* card :. start */
 
 /* paddings :: start */
 /* padding left :: start */
-.pl-15 { 
+.pl-15 {
   padding-left: 15px !important;
 }
-.pl-30 { 
+
+.pl-30 {
   padding-left: 30px !important;
 }
-.pl-45 { 
+
+.pl-45 {
   padding-left: 45px !important;
 }
-.pl-60 { 
+
+.pl-60 {
   padding-left: 60px !important;
 }
-.pl-75 { 
+
+.pl-75 {
   padding-left: 75px !important;
 }
+
 /* padding left :: start */
 
 /* padding right :: start */
-.pr-15 { 
+.pr-15 {
   padding-right: 15px !important;
 }
-.pr-30 { 
+
+.pr-30 {
   padding-right: 30px !important;
 }
-.pr-45 { 
+
+.pr-45 {
   padding-right: 45px !important;
 }
-.pr-60 { 
+
+.pr-60 {
   padding-right: 60px !important;
 }
-.pr-75 { 
+
+.pr-75 {
   padding-right: 75px !important;
 }
+
 /* padding right :: end */
 /* paddings :: end  */
 
@@ -179,4 +190,14 @@ ul.navbar-nav li {
 .intro-title h1 span {
   font-size: 1.5rem;
   padding-bottom: 10px;
+}
+
+@media (max-width: 1199.98px) and (min-width: 768px) {
+  .navbar-expand-md {
+    flex-flow: column;
+  }
+
+  .main-container {
+    padding: 125px 0 0;
+  }
 }

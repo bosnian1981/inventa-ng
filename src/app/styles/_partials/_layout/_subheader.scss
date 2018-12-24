@@ -39,10 +39,12 @@
     //   height: ($subheader-height - 20) / 2 + px;
     // }
     padding-right: 20px;
-    font-family: 'primelight', Arial, sans-serif;
+    color: $subheader-title-color;
+    h1 {
+      font-family: 'primelight', Arial, sans-serif;
     font-size: 1.9rem;
     font-weight: 300;
-    color: $subheader-title-color;
+    }
   }
   // breadcrumb :: start
   .breadcrumb-cover {
