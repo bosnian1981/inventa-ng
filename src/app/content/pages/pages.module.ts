@@ -11,13 +11,13 @@ import { PagesRoutingModule } from './pages.routing';
 @NgModule({
   imports: [
     CommonModule,
-    PagesRoutingModule,
     SharedModule,
     LayoutModule,
     MatProgressBarModule,
     MatButtonModule,
     MatIconModule,
-    ClickOutsideModule
+    ClickOutsideModule,
+    PagesRoutingModule
   ],
   declarations: [PagesComponent]
 })

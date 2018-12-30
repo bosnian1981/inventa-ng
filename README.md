@@ -81,8 +81,8 @@ $ npm run build</pre></div>
 <h2>Creators</h2>
 
 <ul>
-<li><a href="https://www.linkedin.com/in/mersudin-delic-3946b25b/" target="_blank">Mersudin Delic</a></li>
-<li><a href="https://www.linkedin.com/in/edina-delic-a646baaa/" target="_blank">Edina Delic</a></li>
+<li><a href="https://www.linkedin.com/in/mersudin-delic-3946b25b/" target="_blank">Mersudin</a></li>
+<li><a href="https://www.linkedin.com/in/edina-delic-a646baaa/" target="_blank">Edina</a></li>
 </ul>
 </div>
 
